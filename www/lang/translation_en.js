@@ -5,7 +5,7 @@ var translations_en = {
     mail_input: 'Email',
     pass_1_input: 'Password',
     pass_2_input: 'Repeat password',
-    register_btn_lbl: '¡Register!',
+    register_btn_lbl: 'Register',
     register_already_lbl: 'I\'m already registered, login:',
     no_register_already_lbl: 'I\'m not registered, suscribe in below form',
     start_session: 'Start session!',
