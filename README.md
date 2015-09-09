@@ -1,4 +1,4 @@
-Instalaturik dituen moduloak:
+#Instalaturik dituen moduloak:#
 
 Angular Translate (pascalprecht.translate): https://github.com/angular-translate/angular-translate
 ngMessages (Angular Messages): https://github.com/angular/bower-angular-messages
