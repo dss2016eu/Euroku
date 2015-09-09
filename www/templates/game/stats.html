@@ -1,0 +1,52 @@
+
+<ion-view title="{{'stats_title' | translate}}">
+    <ion-nav-buttons side="left">
+        <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="returnToRanking()">
+            {{"back_text" | translate}}
+        </button>
+    </ion-nav-buttons>
+  <ion-content class="has-header white">
+    <div class="row">
+        <div class="col col-25">
+            <img width="70px" height="70px" src="{{statsData.photo}}" alt="" />
+        </div>
+        <div class="col col-75">
+            <b>{{statsData.username}}</b><br />
+            {{statsData.town}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class ="col">
+            <p><b>{{"this_in_tribe" | translate}} </b></p> 
+            {{"first_play_game_data" | translate}} {{statsData.join}}<br/>
+            {{"last_play_game_data" | translate}} {{statsData.last}}<br/>
+            {{"total_plays_count" | translate}} {{statsData.plays}}
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col"><p><b>{{"play_games_count" | translate}}</b></p></div>
+    </div>
+    <div class="row">
+        <div class="col col-25">
+            <img src="{{statsData.chart}}" width="80px" height="80px" alt="" />
+        </div>
+        <div class="col col-75">
+            {{"win" | translate}} % {{statsData.win}}<br/>
+            {{"draw" | translate}} % {{statsData.draw}}<br/>
+            {{"lost" | translate}} % {{statsData.lost}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class ="col">
+            <p><b>{{"avg_stats" | translate}}</b></p>
+            {{"time_avg" | translate}} {{statsData.avgtime}}<br/>
+            {{"ok_avg" | translate}} {{statsData.success}}
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
