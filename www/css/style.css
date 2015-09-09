@@ -1,4 +1,317 @@
-/* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: 'fontastiquefontastique';
+    src: url('../img/fontastique-webfont.eot');
+    src: url('../img/fontastique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../img/fontastique-webfont.woff2') format('woff2'),
+         url('../img/fontastique-webfont.woff') format('woff'),
+         url('../img/fontastique-webfont.ttf') format('truetype'),
+         url('../img/fontastique-webfont.svg#fontastiquefontastique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    color: #666;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #666;
+    font-family: 'fontastiquefontastique';
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+img, .center, .answers {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+h1, h4, .center{
+  text-align: center;
+}
+
+h1.title{
+  margin-left: -10px;
+}
+
+span.text{
+  margin-left: 20px;
+}
+
+.button-dark{
+  background-color:  #52bfd3 !important;
+  border-color: #19acb6 !important;
+  font-family: 'fontastiquefontastique';
+  font-size: 180%;
+  text-transform: uppercase;
+}
+
+.answers{
+  width: 80%;
+  clear:both;
+  margin-top: 50px !important;
+  text-align:center;
+}
+
+
+.item_ans{
+  margin-top: 15px !important;
+  border-radius: 10px;
+}
+
+.question{
+
+  color: #d71a4a;
+  float: left;
+  margin-left: 20px;
+}
+/**emaitza*************/
+
+.erantzuna{
+  background: #efefef;
+}
+
+.erantzuna h2{
+  margin:0 8px 0 0;
+  float: left;
+  font-size: 28px;
+}
+
+
+.erantzun_text{
+   font-family: 'fontastiquefontastique';
+   margin: 10px 0 15px !important;
+   font-size:120%;
+}
+
+.erantzuna p{
+  margin:0;
+}
+
+.erantzuna .button{
+  line-height: auto;
+  height: auto;
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 0;
+}
+
+.erantzuna .text span{
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
+.icons{
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+
+
+.player_level{
+  max-width: 100%;
+}
+
+.irabazi_text, .guztira_text, .zure_maila_text{
+  text-transform: uppercase;
+  font-size: 85%;
+
+}
+
+.irabazi_text span, .guztira_text span, .zure_maila_text span{
+  font-size: 180%;
+  display: block;
+  clear:left;
+   font-family: 'fontastiquefontastique';
+}
+
+.artaburua.zure_maila_text span{
+  color: #d71a4a;
+}
+
+.ikaslea.zure_maila_text span{
+  color:#ee7632;
+}
+
+.ega.zure_maila_text span{
+  color: #dd3c94;
+}
+
+.irakaslea.zure_maila_text span{
+  color: #f3cb26;
+}
+
+.euskaltzaina.zure_maila_text span{
+  color: #1a9869;
+}
+
+.mitxelena_xvi.zure_maila_text span{
+  color: #52bfd3;
+}
+
+.ko_response {
+  background: #eff0ec;
+}
+
+.ok_response {
+  background: #f0ecec;
+}
+
+
+.ko_response h2, .ko_response .erantzun_text{
+  color: #c42626;
+}
+
+.ok_response h2, .ok_response .erantzun_text{
+  color: #a7c426;
+}
+
+
+.points{
+  float: right;
+  margin-right:20px;
+  font-size: 20px;
+}
+
+.points span{
+ display: block;
+ text-transform: uppercase;
+ font-size: 11px;
+ font-family: arial;
+ font-weight:normal;
+}
+
+.answers .item-content {
+    padding: 12px 49px 12px 16px;
+}
+
+
+.center{
+  padding-top: 50px;
+}
+
+
+.emaitza_azpi{
+  padding: 0 20px;
+}
+
+.emaitza_azpi .center{
+  padding: 0;
+}
+.layout{
+  padding: 30px;
+  background: #333;
+  margin-bottom:10px;
+}
+
+.correct {
+  background-color: #DFF0D8;
+  color: #468847;
+}
+
+.text_incorrect {
+  color: #ff0033 !important;
+  text-align: center;
+  padding: 5px;
+}
+
+.incorrect {
+  color: #B94A48;
+  background-color: #F2DEDE;
+}
+
+.background, .background .pane, .background .item, .background .item-complex .item-content{
+    background-color: #f7f8fa;
+}
+
+
+/****about us**************/
+
+.aboutus{
+  padding: 20px;
+}
+
+.logotipoak{
+  font-size: 80%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+/*###################################################################
+  Erropnka popup-aren diseinua
+####################################################################*/
+
+.popup-head, .popup-buttons .button, .popup-buttons .button:link{
+  background-color: #333;
+  border-color: #333;
+}
+
+.popup-buttons .button, .button-dark {
+  -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+}
+
+.popup-buttons .button:active{
+  background: #505a61;
+  border-color: #333;
+    background-image: -webkit-linear-gradient(top, #505a61, #596c78);
+    background-image: -moz-linear-gradient(top, #505a61, #596c78);
+    background-image: -ms-linear-gradient(top, #505a61, #596c78);
+    background-image: -o-linear-gradient(top, #505a61, #596c78);
+    background-image: linear-gradient(to bottom, #505a61, #596c78);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+
+
+/************header*****/
+
+.title .title-image{
+  margin-top: 5px;
+  height: 80%;
+}
+
+
+
+/******bideoak responsive egiteko ***********************/
+
+.bideoa {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    height: 0;
+}
+
+.bideoa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+}
+
+
+/**************************************************
+Form validations CSS class
+**************************************************/
 .error-container {
   margin: 5px 0;
 }
