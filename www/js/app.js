@@ -21,7 +21,6 @@ angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'pascalpr
     }
   });
 
-
   if (window.localStorage.getItem('lang') === null)
   {
     if(typeof navigator.globalization !== "undefined") {

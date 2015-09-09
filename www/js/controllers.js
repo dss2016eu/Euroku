@@ -41,7 +41,22 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope, $translate) {
+.controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window) {
+
+  $scope.$on('$ionicView.afterEnter', function(){
+    console.log(window.localStorage.getItem('lang'));
+    $translate.use(window.localStorage.getItem('lang'));
+    console.log("49 Playlist");
+
+    if (window.localStorage.getItem('change_language') === "yes")
+    {
+      $window.location.reload(true);
+      window.localStorage.setItem('change_language', "no");
+      console.log("Change language...");
+    }
+    //$window.location.reload(true)
+  });
+
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -50,16 +65,23 @@ angular.module('euroku.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
-  console.log(window.localStorage.getItem('lang'));
-  $translate.use(window.localStorage.getItem('lang'));
+
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $translate) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state) {
 
   $translate.use(window.localStorage.getItem('lang'));
   $scope.changeLanguage = function (key) {
     $translate.use(key);
     window.localStorage.setItem('lang', key);
     console.log(window.localStorage.getItem('lang'));
+    window.localStorage.setItem('change_language', "yes");
   };
+
+  $scope.returnToMain = function ()
+  {
+    $state.go('app.playlists');
+  };
+
+
 });
