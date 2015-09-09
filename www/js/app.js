@@ -63,6 +63,16 @@ angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'euroku.d
     controller: 'AppCtrl'
   })
 
+  .state('app.main', {
+    url: '/',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/general/main.html',
+        controller: 'MainCtrl'
+      }
+    }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
@@ -100,5 +110,5 @@ angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'euroku.d
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/');
 });
