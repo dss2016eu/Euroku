@@ -2,18 +2,29 @@
 
   <ion-content>
     <h1>Euroku</h1>
-    <p>
-      <button class="button button-block button-dark" ng-click="">  {{'lang_en' | translate}}</button>
-    </p>
-    <p>
-      <button class="button button-block button-dark" ng-click="">  {{'lang_es' | translate}}</button>
-    </p>
-    <p>
-      <button class="button button-block button-dark" ng-click="">  {{'lang_eu' | translate}}</button>
-    </p>
-
-  </p>
-
+    <div class="center">
+      <div class="row">
+          <div class="col"></div><!--20% for left side-->
+          <div class="col col-80">
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_en' | translate}}
+              </button>
+            </div>
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_es' | translate}}
+              </button>
+            </div>
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_eu' | translate}}
+              </button>
+            </div>
+        </div>
+        <div class="col"></div> <!--20% for right side-->
+      </div>
+    </div>
   </ion-content>
   <div class="bar bar-footer bar-balanced">
     <button class="button button-clear">Left</button>
