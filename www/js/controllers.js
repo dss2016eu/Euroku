@@ -68,6 +68,11 @@ angular.module('euroku.controllers', [])
 
 })
 
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
+{
+  $ionicSideMenuDelegate.canDragContent(false);
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state) {
 
   $translate.use(window.localStorage.getItem('lang'));
