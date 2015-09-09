@@ -1,124 +1,122 @@
 var translations_es = {
     //Hasierako orrialdea, erregistroa edo login egiteko gunean
-    main_title: 'Euroku - Donostia 2016 Juego',
-    user_input: 'User',
-    mail_input: 'Email',
-    pass_1_input: 'Password',
-    pass_2_input: 'Repeat password',
-    register_btn_lbl: 'Â¡Register!',
-    register_already_lbl: 'I\'m already registered, login:',
-    no_register_already_lbl: 'I\'m not registered, suscribe in below form',
-    start_session: 'Start session!',
-    start_session_title: 'Start session',
-    close_lbl: 'Close',
-    search: 'Search',
-    cancel: 'Cancel',
-    about: 'About application',
-    home: 'Start',
-    complete_form_login: 'The login username and password is required!',
-
+    main_title: 'Euskaldunon tribuaren jokoa',
+    user_input: 'Usuario',
+    mail_input: 'Correo Electrónico',
+    pass_1_input: 'Contraseña',
+    pass_2_input: 'Repetir contraseña',
+    register_btn_lbl: '¡Registrarse!',
+    register_already_lbl: 'Ya estoy registrado, iniciar sesión:',
+    no_register_already_lbl: 'No estoy registrado, registrarme en el siguiente formulario',
+    start_session: '¡Iniciar sesión!',
+    start_session_title: 'Iniciar sesión',
+    close_lbl: 'Cerrar',
+    search: 'Buscar',
+    cancel: 'Cancelar',
+    about: 'Sobre la aplicación',
+    home: 'Inicio',
+    complete_form_login: '¡Para iniciar sesión es obligatorio introducir usuario y contraseña!',
     //komentario froga
-    main_description: 'Each game consists of 5 questions ' +
-                        ' whose main objective is to answer correctly in the shortest time possible',
-    start_play: 'Play',
+    main_description: 'Cada partida consta de 5 preguntas '+
+                        'cuyo objetivo principal es responder correctamente en el menor tiempo posible',
+    start_play: 'Empezar a jugar',
 
     //Login (Session)
 
-    passwords_not_equals: 'The passwords are not the same',
-    username_email_exist: '(*) Mail user and wish to register <br/> '+
-                                          ' are already registered . Forgot your password?',
-    username_exist: '(*) Users who wish to register is already registered',
-    email_exist: '(*) The email you want to record exists',
+    passwords_not_equals: 'Las contraseñas introducidas no son iguales',
+    username_email_exist: '(*) El correo y usuario que deseas registrar<br/> '+
+                                          'ya están registrados. ¿Has olvidado la contraseña?',
+    username_exist: '(*) El usuario que deseas registrar ya está registrado',
+    email_exist: '(*) El correo electrónico que deseas registrar está registrado',
 
-    close_session_dialog_title: 'Tribual - Close session',
-    close_session_dialog_text: 'Are you sure you want to logout?',
+    close_session_dialog_title: 'Tribual - Cerrar sesión',
+    close_session_dialog_text: '¿Estás seguro que deseas cerrar la sesión?',
 
     //Profila konfigurazioa
-    config_title: 'Configuration',
-    name: 'Name',
-    lastname: 'Lastname ',
+    config_title: 'Configuración',
+    name: 'Nombre',
+    lastname: 'Apellido (s)',
     email: 'Email',
-    town: 'Town',
-    yes: 'Yes',
+    town: 'Población',
+    yes: 'Si',
     no: 'No',
-    save: 'Save',
-    notifications: 'Notificacions',
-    take_photo: 'Take photo',
-    photo_options: 'Select profile photo option',
-    take_picture: 'Select photo from device',
-    take_photo_menu: 'Take camera photo',
+    save: 'Guardar',
+    notifications: 'Notificaciones',
+    take_photo: 'Coger foto',
+    photo_options: 'Selecciona una opción para la foto',
+    take_picture: 'Selecciona la foto desde el dispositivo',
+    take_photo_menu: 'Saca una foto',
 
     //Languages
-    language: 'Language',
+    language: 'Lenguaje',
     lang_en: 'English',
-    lang_es: 'Spanish',
-    lang_eu: 'Basque',
+    lang_es: 'Español',
+    lang_eu: 'Euskera',
 
     //Ranking
-    ranking_title: 'Ranking',
-    active: "Active",
-    all: "All",
+    ranking_title: 'Clasificación',
+    active: "Activos",
+    all: "Todos",
 
-    ranking_info_1: ' PLAYES. YOU ARE IN ',
+    ranking_info_1: ' JUGADORES. ESTÁS EN EL ',
     ranking_info_2: '',
 
     //Last plays
-    last_play_1: '',
-    last_play_2: ' LAST GAMES',
-    win: 'Win',
-    draw: 'Draw',
-    lost: 'Lost',
-    points_lbl: 'Points',
-    last_plays_title: 'Your games',
+    last_play_1: 'Últimas ',
+    last_play_2: ' partidas',
+    win: 'Ganar',
+    draw: 'Empatar',
+    lost: 'Perder',
+    points_lbl: 'Puntos',
+    last_plays_title: 'Últimas partidas',
 
     //Quiz texts
-    first_player: 'You are first to answer these questions, waits for '
-        + ' results when playing the second player',
-    time_quiz: 'Time',
-    details_quiz: 'Details',
-    return_main_menu: 'Another more',
-    game_results_title: 'Game Results',
-    source_text: 'Source',
+    first_player: 'Eres el primero en contestar estas preguntas, espera a recibir '
+        +'los resultados cuando juegue el segundo jugador',
+    time_quiz: 'Tiempo',
+    details_quiz: 'Detalles',
+    return_main_menu: 'Otra más',
+    game_results_title: 'Resultados de la partida',
+    source_text: 'Fuente',
 
     //Play game texts
 
-    correct_answer: 'Correct answer!!',
-    incorrect_answer: 'Incorrect Answer!!',
-    play_quiz: 'Game',
-    next_question: 'Next question',
-    end_game: 'Finish game',
+    correct_answer: '¡¡Respuesta correcta!!',
+    incorrect_answer: '¡¡Respuesta incorrecta!!',
+    play_quiz: 'Partida',
+    next_question: 'Siguiente pregunta',
+    end_game: 'Finalizar partida',
 
     //Tribes data
-    tribes_title: 'Tribes',
-    my_tribes: 'My Tribes',
-    more_tribes: 'More Tribes',
+    tribes_title: 'Tribus',
+    my_tribes: 'Mis tribus',
+    more_tribes: 'Más tribus',
 
     //Stats
 
-    stats_title: 'Statistics',
-    this_in_tribe: 'In this tribe: ',
-    first_play_game_data: 'First game: ',
-    last_play_game_data: 'Last game: ',
-    total_plays_count: 'Total games: ',
-    play_games_count: 'Games played so far: ',
-    avg_stats: 'Average Stats: ',
-    time_avg: 'Time: ',
-    ok_avg: 'Success Answers',
+    stats_title: 'Estadísticas',
+    this_in_tribe: 'En esta tribu: ',
+    first_play_game_data: 'Primera partida: ',
+    last_play_game_data: 'Última partida: ',
+    total_plays_count: 'Total partidas: ',
+    play_games_count: 'Partidas jugadas hasta el momento',
+    avg_stats: 'Estadísticas medias: ',
+    time_avg: 'Tiempo: ',
+    ok_avg: 'Acertadas',
 
     //About Tribual
-    what_is_tribual: '¿Qué es Euroku?',
+    what_is_tribual: '¿Qué es tribual?',
 
     //Menu
 
-    logout: 'Close session',
-    back_text: 'Back',
-    share_title: 'Share',
+    logout: 'Cerra sesión',
+    back_text: 'Atrás',
+    share_title: 'Compartir',
 
     //Errors messages
-    login_no_correct: 'The data log is incorrect. Please try again',
-    error_no_ranking : ' Error performing request for classification. Please try again later ',
-    history_error : ' Error performing request for the latest games. Please try again later ',
-    error_about : ' Error performing request to qualify under " What\'s tribual ? " information. Please try again later ',
-    error_get_tribes : ' Error performing request for our tribes. Please try again later ',
-    error_get_more_tribes : ' Error performing request for more tribes. Please try again later '
-}
+    login_no_correct: 'Los datos de inicio de sesión son incorrectos. Por favor, inténtalo de nuevo',
+    error_no_ranking: 'Error al realizar petición para obtener clasificación. Por favor, inténtalo más tarde',
+    history_error: 'Error al realizar petición para obtener las últimas partidas. Por favor, inténtalo más tarde',
+    error_about: 'Error al realizar petición para obtener la información correspondiente a "¿Qué es Tribual?". Por favor, inténtalo más tarde',
+    error_get_tribes: 'Error al realizar petición para obtener nuestra tribus. Por favor, inténtalo más tarde',
+};  error_get_more_tribes: 'Error al realizar petición para obtener más tribus. Por favor, inténtalo más tarde'
