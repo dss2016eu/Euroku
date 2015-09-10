@@ -73,6 +73,15 @@ angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'euroku.d
     }
   })
 
+  .state('app.register', {
+    url: '/register',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/user/register.html'
+      }
+    }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
