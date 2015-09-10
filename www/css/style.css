@@ -49,6 +49,11 @@ span.text{
   text-transform: uppercase;
 }
 
+.button-dark.activated
+{
+  background-color: #3e6d75 !important;
+}
+
 .answers{
   width: 80%;
   clear:both;
