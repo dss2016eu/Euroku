@@ -1,0 +1,34 @@
+<ion-view view-title=""  cache-view="false" hide-back-button="true" >
+<!--hide-nav-bar="true"-->
+  <ion-content>
+    <h1>Euroku</h1>
+    <div class="center">
+      <div class="row">
+          <div class="col"></div><!--20% for left side-->
+          <div class="col col-80">
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_en' | translate}}
+              </button>
+            </div>
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_es' | translate}}
+              </button>
+            </div>
+            <div class="row responsive-sm">
+                <button class="button button-block button-dark" ng-click="">
+                  {{'lang_eu' | translate}}
+              </button>
+            </div>
+        </div>
+        <div class="col"></div> <!--20% for right side-->
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+    <button class="button button-clear">Left</button>
+    <div class="title">{{'play_quiz' | translate}}</div>
+    <button class="button button-clear">Right</button>
+  </div>
+</ion-view>
