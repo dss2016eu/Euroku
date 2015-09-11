@@ -1,25 +1,42 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">{{'close_lbl' | translate}}</button>
-    </div>
-  </ion-header-bar>
+<ion-view view-title="{{'start_session_title' |translate}}">
   <ion-content>
-    <form ng-submit="doLogin()">
+    <h1>{{'start_session_title' | translate}}</h1>
+    <form name="loginForm" novalidate="" ng-submit="setLoginData(loginForm)" novalidate>
+
       <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
+
+        <label class="item item-input" ng-class="{ 'has-errors' : loginForm.username.$invalid, 'no-errors' : loginForm.username.$valid}">
+          <span class="input-label">{{'user_input' | translate}}</span>
+          <input type="text" name="username" ng-model="logIn.username" ng-minlength="4" ng-maxlength="20" required>
         </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+
+        <div class="error-container" ng-show="loginForm.username.$error" ng-messages="loginForm.username.$error">
+          <div ng-messages-include="templates/error/error.html"></div>
+        </div>
+
+        <label class="item item-input" ng-class="{ 'has-errors' : loginForm.password.$invalid && loginForm.$submitted, 'no-errors' : loginForm.password.$valid  && loginForm.$submitted}">
+          <span class="input-label">{{'pass_1_input' | translate}}</span>
+          <input type="password" name="password" ng-model="logIn.password" ng-minlength="4" ng-maxlength="20" required>
         </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+
+        <div class="error-container last-error-container" ng-show="loginForm.password.$error && loginForm.$submitted" ng-messages="loginForm.password.$error">
+          <div ng-messages-include="templates/error/error.html"></div>
+        </div>
+
       </div>
+      <div class="row">
+          <div class="col"></div><!--20% for left side-->
+          <div class="col col-80">
+            <div class="row responsive-sm">
+                <button class="button button-full button-dark" type="submit" >
+                  {{'start_session' | translate}}
+                </button>
+            </div>
+        </div>
+        <div class="col"></div> <!--20% for right side-->
+      </div>
+
+
     </form>
   </ion-content>
-</ion-modal-view>
+</ion-view>

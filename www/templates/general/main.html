@@ -1,4 +1,4 @@
-<ion-view view-title=""  cache-view="false" hide-back-button="true" >
+<ion-view view-title=""  cache-view="false" hide-back-button="true" hide-nav-bar="true" >
 <!--hide-nav-bar="true"-->
   <ion-content>
     <h1>Euroku</h1>
@@ -7,17 +7,17 @@
           <div class="col"></div><!--20% for left side-->
           <div class="col col-80">
             <div class="row responsive-sm">
-                <button class="button button-block button-dark" ng-click="">
+                <button class="button button-block button-dark" ng-click="goToMainMenuLayout('en')">
                   {{'lang_en' | translate}}
               </button>
             </div>
             <div class="row responsive-sm">
-                <button class="button button-block button-dark" ng-click="">
+                <button class="button button-block button-dark" ng-click="goToMainMenuLayout('es')">
                   {{'lang_es' | translate}}
               </button>
             </div>
             <div class="row responsive-sm">
-                <button class="button button-block button-dark" ng-click="">
+                <button class="button button-block button-dark" ng-click="goToMainMenuLayout('eu')">
                   {{'lang_eu' | translate}}
               </button>
             </div>
