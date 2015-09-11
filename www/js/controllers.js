@@ -68,9 +68,17 @@ angular.module('euroku.controllers', [])
 
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate)
 {
   $ionicSideMenuDelegate.canDragContent(false);
+
+  $scope.goToMainMenuLayout = function(key)
+  {
+    $translate.use(key);
+    window.localStorage.setItem('lang', key);
+    console.log(window.localStorage.getItem('lang'));
+    $state.go('app.mainmenu');
+  };
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state) {
