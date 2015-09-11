@@ -4,7 +4,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'euroku.directives', 'pascalprecht.translate', 'ngMessages'])
+angular.module('euroku', ['ionic',
+                          'ngCordova' ,
+                          'euroku.controllers',
+                          'euroku.register',
+                          'euroku.directives',
+                          'pascalprecht.translate',
+                          'ngMessages'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -77,7 +83,8 @@ angular.module('euroku', ['ionic', 'ngCordova' , 'euroku.controllers', 'euroku.d
     url: '/register',
     views: {
       'menuContent': {
-        templateUrl: 'templates/user/register.html'
+        templateUrl: 'templates/user/register.html',
+        controller: 'RegisterCtrl'
       }
     }
   })
