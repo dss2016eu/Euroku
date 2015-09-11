@@ -8,6 +8,8 @@ angular.module('euroku', ['ionic',
                           'ngCordova' ,
                           'euroku.controllers',
                           'euroku.register',
+                          'euroku.login',
+                          'euroku.mainmenu',
                           'euroku.directives',
                           'pascalprecht.translate',
                           'ngMessages'])
@@ -54,7 +56,7 @@ angular.module('euroku', ['ionic',
   $translateProvider.translations('eu', translations_eu);
   $translateProvider.translations('en', translations_en);
   $translateProvider.translations('es', translations_es);
-  $translateProvider.preferredLanguage('es');
+  $translateProvider.preferredLanguage(window.localStorage.getItem('lang'));
   // Enable escaping of HTML
   $translateProvider.useSanitizeValueStrategy('escaped');
 })
@@ -79,12 +81,32 @@ angular.module('euroku', ['ionic',
     }
   })
 
+  .state('app.mainmenu', {
+    url: '/mainmenu',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/general/main_with_select_language.html',
+        controller: 'MainMenuCtrl'
+      }
+    }
+  })
+
   .state('app.register', {
     url: '/register',
     views: {
       'menuContent': {
         templateUrl: 'templates/user/register.html',
         controller: 'RegisterCtrl'
+      }
+    }
+  })
+
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/user/login.html',
+        controller: 'LoginCtrl'
       }
     }
   })
