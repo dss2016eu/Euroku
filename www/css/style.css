@@ -28,6 +28,13 @@ img, .center, .answers {
     margin-right: auto
 }
 
+.border img{
+ width: 100%;
+ height: auto;
+ margin-top: 15px;
+ padding: 10px
+}
+
 
 h1, h4, .center{
   text-align: center;
@@ -39,6 +46,13 @@ h1.title{
 
 span.text{
   margin-left: 20px;
+}
+
+img.displayed {
+  margin-top: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-dark{
