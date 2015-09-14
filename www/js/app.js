@@ -10,6 +10,7 @@ angular.module('euroku', ['ionic',
                           'euroku.register',
                           'euroku.login',
                           'euroku.mainmenu',
+                          'euroku.quiz',
                           'euroku.directives',
                           'pascalprecht.translate',
                           'ngMessages'])
@@ -72,7 +73,7 @@ angular.module('euroku', ['ionic',
   })
 
   .state('app.main', {
-    url: '/',
+    url: '/main',
     views: {
       'menuContent': {
         templateUrl: 'templates/general/main.html',
@@ -120,6 +121,16 @@ angular.module('euroku', ['ionic',
     }
   })
 
+  .state('app.quiz', {
+    url: '/quiz',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/game/quiz.html',
+        controller: 'QuizCtrl'
+      }
+    }
+  })
+
   .state('app.browse', {
       url: '/browse',
       views: {
@@ -148,5 +159,5 @@ angular.module('euroku', ['ionic',
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/');
+  $urlRouterProvider.otherwise('/app/main');
 });
