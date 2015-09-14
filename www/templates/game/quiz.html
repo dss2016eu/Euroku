@@ -1,8 +1,8 @@
-<ion-view title="{{'play_quiz' | translate}}">
+<ion-view title="{{'play_quiz' | translate}}" cache-view="false">
   <ion-nav-buttons side="right">
-  	<b><span id="chronotime" ng-model="tribualtime">0:00:00:00</span></b>
+  	<b><span id="chronotime">0:00:00:00</span></b>
   </ion-nav-buttons>
-  
+
 </ion-header-bar>
   <ion-content class="has-header">
   <div ng-show="startgame">
@@ -11,43 +11,43 @@
 				<h2>{{question.qtype.title}}</h2>
 			</div>
 			<div class="border">
-				
+
 				<h3 ng-bind-html="question.title"></h3>
 				<div ng-show="containimage [$index]">
 					<img src="{{images [$index]}}" alt = ""/>
 				</div>
-				
+
 			</div>
 
 			<h3 ng-show="correctanswer" class="correct" >{{"correct_answer" | translate}}</h3>
 			<h3 ng-show="incorrectanswer" class="incorrect">{{"incorrect_answer" | translate}}</h3>
-			<ion-radio 
-		    	ng-model="choice" 
-		    	ng-change = "checkAnswer ({{orders [$index][0]}}, $index)" 
+			<ion-radio
+		    	ng-model="choice"
+		    	ng-change = "checkAnswer ({{orders [$index][0]}}, $index)"
 		    	value="{{orders [$index][0]}}"
 		    	ng-disabled="disabled">
 		    		{{answer_questions [$index] [0]}}
 		   	</ion-radio>
-			<ion-radio 
-				ng-model="choice" 
+			<ion-radio
+				ng-model="choice"
 				ng-change = "checkAnswer ({{orders [$index][1]}}, $index)"
 				value="{{orders [$index][1]}}"
 				ng-disabled="disabled">
 					{{answer_questions [$index] [1]}}
 			</ion-radio>
-			<ion-radio 
-				ng-model="choice" 
+			<ion-radio
+				ng-model="choice"
 				ng-change="checkAnswer ({{orders [$index][2]}}, $index)"
 				ng-disabled="disabled"
 				value="{{orders [$index][2]}}">
 					{{answer_questions [$index] [2]}}
 			</ion-radio>
-		  	
+
 		</div>
-		
+
 	</div>
-    
-	
+
+
 	<button ng-show="next" class="button button-block button-tribual" ng-click="nextQuestion()">
 		  {{"next_question" | translate}}</button>
 	<button ng-show="finish" class="button button-block button-tribual" ng-click="endGame()">
