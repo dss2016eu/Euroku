@@ -13,361 +13,132 @@
 angular.module('euroku.quiz', [])
 
 .controller('QuizCtrl', function($scope, $http, $ionicLoading, $ionicHistory,
-									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate) {
+									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, URL_LOCALHOST, $timeout) {
 
-  //Not show left side menu with drag action
-  $ionicSideMenuDelegate.canDragContent(false);
+  $scope.orders = randomAnswersOrders (1);
+  console.log($scope.orders);
 
-  if (window.localStorage.getItem('lang') === null)
-  {
-        console.log('Not specify language...');
-        $scope.selectlang = 'eu';
-  }
-  else
-  {
-        $scope.selectlang = window.localStorage.getItem('lang');
-  }
+  console.log(URL_LOCALHOST);
 
-  $scope.class_name = "chrono_back";
+  console.log(URL_LOCALHOST);
 
-  //Load select tribe id from preferences file
+  var irudia = "";
 
-  //$scope.selectlang = 'eu';
+  $scope.datua = '{"zuzena": "Legutio (Araba)", "bideo_helbidea": "http://bideoak.ahotsak.com/LEG030/leg030_009.flv", "img": "' + irudia + '", ' +
+              '"jatorria": "http://ahotsak.eus/legutio/pasarteak/leg-030-009/", "title": "Zein herritakoa da pasarte hau?", '+
+              '"okerra2": "Itzaltzu (Nafarroa)", "okerra1": "Elgorriaga (Nafarroa)", "zailtasuna": 1070, "id": 18959, "puntuak": 1070}';
 
-  $translate.use($scope.selectlang);
+  $scope.datua = JSON.parse($scope.datua);
 
-  $scope.select_tribe_id = window.localStorage.getItem ('select_tribe_id');
+  console.log($scope.datua);
+  $scope.answers = [$scope.datua.zuzena, $scope.datua.okerra1, $scope.datua.okerra2];
+  $scope.question = { id: $scope.datua.id,
+                                            title: $scope.datua.title,
+                                            answer1: $scope.answers [0],
+                                            answer2: $scope.answers [1],
+                                            answer3: $scope.answers [2],
+                                            difficult: $scope.datua.zailtasuna,
+                                            img: $scope.datua.img,
+                                              source: $scope.datua.jatorria};
 
-  if ($scope.select_tribe_id === null || $scope.select_tribe_id === '')
-  {
-    $scope.select_tribe_id = 1;
-    window.localStorage.setItem('select_tribe_id', 1);
-  }
+  console.log($scope.question.difficult);
 
-	//Response variables to use in quiz...
+  $scope.playvideo = false;
 
-	$scope.correctanswer = false;
-	$scope.incorrectanswer = false;
-	$scope.choice = '-----';
-	$scope.disabled = false;
-	$scope.orders = [];
-	$scope.currentanswer = 0;
-	$scope.questionshow = [true, false, false, false, false];
-	$scope.containimage = [false, false, false, false, false];
-  $scope.images = [];
-	$scope.next = false;
-	$scope.finish = false;
+  $scope.loading = false;
 
-  $scope.tribualtime = '00:00:00';
 
-  $scope.userresponseresults = [0, 0, 0, 0, 0];
+  $ionicLoading.show();
 
-	$scope.orders = randomAnswersOrders ();
 
-	$ionicHistory.nextViewOptions({
-	            disableBack: true
-	});
-  	$scope.title = 'Partida';
 
-  	$scope.token = window.localStorage.getItem ('token');
-  	$scope.username = window.localStorage.getItem ('username');
-
-  	$ionicLoading.show();
-
-  	//Game Quiz data...
-
-  	$scope.quizid = 0;
-
-    //chronoStop();
-
-	var req = {
-		 method: 'GET',
-		 url: 'https://tribual.codesyntax.com/api/v1/get?tribe_id='+ $scope.select_tribe_id,
-		 headers: {
-		   'Content-Type': 'application/json',
-		   'Authorization': 'Token '+ $scope.token
-		 }
-	};
-
-  var data = '{"q1":{"attribution":"","qtype":{"desc":"","id":93,"title":"Nork margotu zuen?"},"id":206348,"desc":""' +
-',"photo_url_xxhdpi":"/media/photologue/photos/cache/1435837131_xxhdpi.jpg","title":"Margolaria","url"'+
-':"http://anitalaydonmillersmiddlegradeblog.blogspot.com/2010/07/oil-pastel-klee-portrait.html","incorrect_answer_two"' +
-':"Edvard Munch","incorrect_answer_one":"Mark Rothko","provider":"anitalaydonmillersmiddlegradeblog.blogspot ' +
-'.com","correct_answer":"Paul Klee"},"q3":{"attribution":"EpMartín ☼","qtype":{"desc":"","id":8,"title"' +
-':"Zer herri da argazkikoa?"},"id":13299,"desc":null,"photo_url_xxhdpi":"/media/photologue/photos/cache'+
-'/1405409010870_xxhdpi.jpg","title":"Zer herritakoa da argazki hau?","url":"http://www.panoramio.com/photo' +
-'/29516313","incorrect_answer_two":"Mugerre","incorrect_answer_one":"Iurreta","provider":"Panoramio","correct_answer"'+
-':"Senpere"},"q2":{"attribution":"AritzIbañezLusarreta @aritzibanez","qtype":{"desc":"","id":3,"title"'+
-':"Hitzokei"},"id":10447,"desc":"","photo_url_xxhdpi":"","title":"Greziar musikari zorrotzegia","url"'+
-':"http://twitter.com/aritzibanez/status/484944044007886848","incorrect_answer_two":"BELAUKNEEKATU","incorrect_answer_one"'+
-':"MUGIRO","provider":"Twitter","correct_answer":"TIKIS MIKIS THEODORAKIS"},"q5":{"attribution":"Wikipedia"'+
-',"qtype":{"desc":"","id":22,"title":"Nazioak"},"id":33559,"desc":null,"photo_url_xxhdpi":"/media/photologue'+
-'/photos/cache/1410366424_xxhdpi.jpg","title":"Munduko banderak","url":"http://eu.wikipedia.org/wiki/Azawad"'+
-',"incorrect_answer_two":"Akrotiri eta Dhekelia","incorrect_answer_one":"Argentina","provider":"Wikipedia"'+
-',"correct_answer":"Azawad"},"q4":{"attribution":"","qtype":{"desc":"","id":9,"title":"Non jaio zen?"'+
-'},"id":9650,"desc":"","photo_url_xxhdpi":"","title":"Mari Abrego Santesteban mendigoizalea eta Euskal'+
- 'Herriko himalaismoaren aitzindaria izan da. Non jaio zen?","url":"http://eu.wikipedia.org/wiki/Mari_Abrego"'+
-',"incorrect_answer_two":"Miranda Arga","incorrect_answer_one":"Tutera","provider":"Wikipedia","correct_answer"'+
-':"Iruñea"},"id":220969}';
-
-  console.log(data);
-
-  data = JSON.parse(data);
-  console.log(data);
-  $scope.quizid = data.id;
-  $scope.questions = [data.q1, data.q2, data.q3, data.q4, data.q5];
-
-  $scope.answervarnames = ['answer_one', 'answer_two', 'answer_three', 'answer_four', 'answer_five'];
-  $scope.startgame = true;
-
-  $scope.answer_questions = [];
-
-  for (var q = 0; q < $scope.questions.length; q++)
-  {
-      if ($scope.questions [q].photo_url_xxhdpi === '')
-      {
-        $scope.containimage [q] = false;
-        console.log('Irudia ez du');
-        $scope.images.push('img/ic_blank.png');
-      }
-      else
-      {
-        $scope.containimage [q] = true;
-        console.log('Irudia DU');
-        $scope.images.push('https://tribual.codesyntax.com'+$scope.questions[q].photo_url_xxhdpi);
-      }
-
-      var question_answer = [];
-      for (var a = 0; a < 3; a++)
-      {
-          if ($scope.orders [q] [a] === 1)
-          {
-              question_answer.push($scope.questions[q].correct_answer);
-          }
-          else if ($scope.orders [q] [a] === 2)
-          {
-              question_answer.push($scope.questions[q].incorrect_answer_one);
-          }
-          else if ($scope.orders [q] [a] === 3)
-          {
-              question_answer.push($scope.questions[q].incorrect_answer_two);
-          }
-
-      }
-
-      $scope.answer_questions.push(question_answer);
-  }
-
-  console.log($scope.answer_questions);
-
-  console.log('******************************************');
-  console.log($scope.images [0]);
-  console.log($scope.images [1]);
-  console.log($scope.images [2]);
-  console.log($scope.images [3]);
-  console.log($scope.images [4]);
-  console.log('******************************************');
   $ionicLoading.hide();
+        $scope.loading = true;
+    /*var req = {
+       method: 'GET',
+       url: $scope.localhost+'/euskalkitegia/api/v1/getquestion?device_hash='+$scope.deviceid,
+       headers: {
+         'Content-Type': 'application/json'
+       }
+    };
+    $http(req).success (function(data){
+      $scope.datua = data;
+      console.log(data);
 
-	/*$http(req).success(function(data){
-			console.log(data);
-			$scope.quizid = data.id;
-			$scope.questions = [data.q1, data.q2, data.q3, data.q4, data.q5];
+    }).error(function(){
 
-			$scope.answervarnames = ['answer_one', 'answer_two', 'answer_three', 'answer_four', 'answer_five'];
-            $scope.startgame = true;
-
-            $scope.answer_questions = [];
-
-            for (var q = 0; q < $scope.questions.length; q++)
-            {
-                if ($scope.questions [q].photo_url_xxhdpi === '')
-                {
-                  $scope.containimage [q] = false;
-                  console.log('Irudia ez du');
-                  $scope.images.push('img/ic_blank.png');
-                }
-                else
-                {
-                  $scope.containimage [q] = true;
-                  console.log('Irudia DU');
-                  $scope.images.push('https://tribual.codesyntax.com'+$scope.questions[q].photo_url_xxhdpi);
-                }
-
-                var question_answer = [];
-                for (var a = 0; a < 3; a++)
-                {
-                    if ($scope.orders [q] [a] === 1)
-                    {
-                        question_answer.push($scope.questions[q].correct_answer);
-                    }
-                    else if ($scope.orders [q] [a] === 2)
-                    {
-                        question_answer.push($scope.questions[q].incorrect_answer_one);
-                    }
-                    else if ($scope.orders [q] [a] === 3)
-                    {
-                        question_answer.push($scope.questions[q].incorrect_answer_two);
-                    }
-
-                }
-
-                $scope.answer_questions.push(question_answer);
-            }
-
-            console.log($scope.answer_questions);
-
-            console.log('******************************************');
-      			console.log($scope.images [0]);
-            console.log($scope.images [1]);
-            console.log($scope.images [2]);
-            console.log($scope.images [3]);
-            console.log($scope.images [4]);
-            console.log('******************************************');
-
-            //chronoStart();
-		}).error(function(){
-			console.log('Error');
-			 $ionicLoading.hide();
-		})
-		.then(function() {
             $ionicLoading.hide();
-            window.localStorage.setItem('quiz_play', true);
-            console.log('[QUIZ PLAY] (quiz.js--> 144): ' + window.localStorage.getItem('quiz_play'));
-        });*/
+            $scope.loading = false;
 
-	$scope.endGame = function ()
-	{
-		/*$http.defaults.headers.post['Authorization'] = 'Token '+ $scope.token;
+            //If error---> show 'main' layout
+            $state.go('app.main');
+            window.localStorage.setItem ('error', 'Partidaren galderaren informazioa jasotzean '+
+              'ezusteko errorea eman da. Barkatu eragozpenak. Saiatu berriro mesedez ;)');
 
-    $scope.gametime = time ();
-    console.log('Time to finish: ' + $scope.gametime);
-        //$http.defaults.headers.post= {'Authorization': 'Token '+ $scope.loginstatus.token};
-	 	var url = 'https://tribual.codesyntax.com/api/v1/get';
+    })
+    .then(function() {
+      $ionicLoading.hide();
+        console.log($scope.datua);
+        //window.location.reload(true);
+        $scope.answers = [$scope.datua.zuzena, $scope.datua.okerra1, $scope.datua.okerra2];
 
-        $scope.params = 'answer_one='+$scope.userresponseresults [0]+
-                        '&answer_two='+$scope.userresponseresults [1]+
-                        '&answer_three='+$scope.userresponseresults [2]+
-                        '&answer_four='+$scope.userresponseresults [3]+
-                        '&answer_five='+$scope.userresponseresults [4]+
-                        '&response_time=' + $scope.gametime+
-                        '&quiz_id='+$scope.quizid;
+        console.log($scope.datua.bideo_helbidea.replace("flv", "mp4"));
 
-        $http.post(url, $scope.params).
-                success(function(data, status, headers, config) {
-                    console.log(data);
-                }).
-                error(function(data, status, headers, config) {
-                  console.log('Error:' + status);
-                }).
-                then(function()
-                  {
-                    window.localStorage.setItem('quiz_play', false);
-                    console.log('[QUIZ PLAY] (quiz.js--> 173): ' + window.localStorage.getItem('quiz_play'));
-                    $state.go('app.results',{'gameId':$scope.quizid});
-
-                    /*$ionicHistory.nextViewOptions({
-                        disableBack: true
-                    });
-                });*/
+        $scope.question = { id: $scope.datua.id,
+                                              title: $scope.datua.title,
+                                              answer1: $scope.answers [0],
+                                              answer2: $scope.answers [1],
+                                              answer3: $scope.answers [2],
+                                              difficult: $scope.datua.zailtasuna,
+                                              video: $scope.datua.bideo_helbidea.replace("flv", "mp4"),
+                                              source: $scope.datua.jatorria};
 
 
-        //$state
+        console.log($scope.question);
 
-        $state.go('app.main');
-	};
+        $ionicLoading.hide();
+        $scope.loading = true;
 
-
-
-  	$scope.checkAnswer = function (value, index)
-  	{
-  		//chronoStop();
-
-      $ionicScrollDelegate.scrollBottom();
-
-  		$scope.currentanswer = index+1;
-  		$scope.correctanswer = false;
-  		$scope.incorrectanswer = false;
-  		$scope.disabled = true;
-
-  		console.log(value + ' '+ index+ 'Question nº: '+ $scope.currentanswer);
-  		//$scope.disabled = true;
-    	if (value === 1)
-    	{
-      		$scope.correctanswer = true;
-    	}
-    	else
-    	{
-    		$scope.incorrectanswer = true;
-    	}
-    	console.log('Check Answer: ' + value);
-    	console.log('Asmatua: ' + $scope.correctanswer);
-    	console.log('Hutsa: ' + $scope.incorrectanswer);
-
-      if ($scope.correctanswer === true) //asmatua
-      {
-        $scope.userresponseresults [index] = 1;
-      }
-
-    	if ($scope.currentanswer === 5)
-    	{
-    		console.log('Game Finish');
-    		$scope.next = false;
-			  $scope.finish = true;
-    	}
-    	else
-    	{
-    		$scope.next = true;
-    	}
-  	};
-
-  	$scope.nextQuestion = function ()
-  	{
-  		$scope.correctanswer = false;
-  		$scope.incorrectanswer = false;
-		  $scope.next = false;
-  		$scope.disabled = false;
-
-  		//Hurrengo galdera erakutsi
-  		$scope.questionshow [$scope.currentanswer] = true;
-
-  		//Erantzun den galdera ezkutatzeko
-  		$scope.questionshow [$scope.currentanswer -1 ] = false;
-
-  		//$scope.containimage [$scope.currentanswer] = true;
-
-  		$scope.containimage [$scope.currentanswer - 1] = false;
-
-      //chronoContinue();
-
-      $ionicScrollDelegate.scrollTop();
-  	};
-
-});
+    });*/
 
 
-function randomAnswersOrders ()
-{
-    //'1' value is correct answer
-    var random = [];
-    for (var j = 0; j < 5; j++)
+    $scope.showVideo = function ()
     {
-        var i, arr = [];
-        for (i = 1; i < 4; i++)
-        {
-            arr.push(i);
-        }
-        arr.sort(function ()
-        {
-            return Math.random() - 0.5;
+      window.open($scope.question.video, '_blank', 'location=yes');
+      $scope.video = $scope.question.video;
+      console.log('$scope.playvideo: '+$scope.playvideo );
+    };
+    $scope.checkAnswer = function (value)
+    {
+      console.log(value);
+
+      $scope.disabled = true;
+
+      console.log("Response: " + $scope.answers[value-1]);
+      console.log("Correct: " + $scope.question.answer1);
+
+      if ($scope.datua.zuzena === $scope.answers[value-1])
+      {
+        console.log("Zuzena");
+        console.log($scope.answers[value-1]);
+      }
+      /*$timeout(function() {
+        var params = {
+            response: value,
+            id: $scope.question.id,
+            correct: $scope.question.answer1,
+            points: $scope.question.difficult
+        };
+
+        /*$state.go('app.result', params);
+        $ionicHistory.nextViewOptions({
+                  disableBack: true
         });
 
-        //console.log(arr);
-        random.push(arr);
-    }
-    console.log(random);
-    return random;
-}
+      }, 1000);*/
+    };
+
+});
 
 
 
