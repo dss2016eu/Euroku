@@ -1,41 +1,6 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-
-  /********
-
-  play format:
-
-  {"q1":{"attribution":"","qtype":{"desc":"","id":93,"title":"Nork margotu zuen?"},"id":206348,"desc":""
-,"photo_url_xxhdpi":"/media/photologue/photos/cache/1435837131_xxhdpi.jpg","title":"Margolaria","url"
-:"http://anitalaydonmillersmiddlegradeblog.blogspot.com/2010/07/oil-pastel-klee-portrait.html","incorrect_answer_two"
-:"Edvard Munch","incorrect_answer_one":"Mark Rothko","provider":"anitalaydonmillersmiddlegradeblog.blogspot
-.com","correct_answer":"Paul Klee"},"q3":{"attribution":"EpMartín ☼","qtype":{"desc":"","id":8,"title"
-:"Zer herri da argazkikoa?"},"id":13299,"desc":null,"photo_url_xxhdpi":"/media/photologue/photos/cache
-/1405409010870_xxhdpi.jpg","title":"Zer herritakoa da argazki hau?","url":"http://www.panoramio.com/photo
-/29516313","incorrect_answer_two":"Mugerre","incorrect_answer_one":"Iurreta","provider":"Panoramio","correct_answer"
-:"Senpere"},"q2":{"attribution":"AritzIbañezLusarreta @aritzibanez","qtype":{"desc":"","id":3,"title"
-:"Hitzokei"},"id":10447,"desc":"","photo_url_xxhdpi":"","title":"Greziar musikari zorrotzegia","url"
-:"http://twitter.com/aritzibanez/status/484944044007886848","incorrect_answer_two":"BELAUKNEEKATU","incorrect_answer_one"
-:"MUGIRO","provider":"Twitter","correct_answer":"TIKIS MIKIS THEODORAKIS"},"q5":{"attribution":"Wikipedia"
-,"qtype":{"desc":"","id":22,"title":"Nazioak"},"id":33559,"desc":null,"photo_url_xxhdpi":"/media/photologue
-/photos/cache/1410366424_xxhdpi.jpg","title":"Munduko banderak","url":"http://eu.wikipedia.org/wiki/Azawad"
-,"incorrect_answer_two":"Akrotiri eta Dhekelia","incorrect_answer_one":"Argentina","provider":"Wikipedia"
-,"correct_answer":"Azawad"},"q4":{"attribution":"","qtype":{"desc":"","id":9,"title":"Non jaio zen?"
-},"id":9650,"desc":"","photo_url_xxhdpi":"","title":"Mari Abrego Santesteban mendigoizalea eta Euskal
- Herriko himalaismoaren aitzindaria izan da. Non jaio zen?","url":"http://eu.wikipedia.org/wiki/Mari_Abrego"
-,"incorrect_answer_two":"Miranda Arga","incorrect_answer_one":"Tutera","provider":"Wikipedia","correct_answer"
-:"Iruñea"},"id":220969}
-
-  *****/
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST) {
 
   // Form data for the login modal
   $scope.loginData = {};

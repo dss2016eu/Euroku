@@ -12,10 +12,11 @@ angular.module('euroku', ['ionic',
                           'euroku.mainmenu',
                           'euroku.quiz',
                           'euroku.directives',
+                          'euroku.constants',
                           'pascalprecht.translate',
                           'ngMessages'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, URL_LOCALHOST) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -49,6 +50,8 @@ angular.module('euroku', ['ionic',
   {
     console.log(window.localStorage.getItem('lang'));
   }
+
+
 })
 
 

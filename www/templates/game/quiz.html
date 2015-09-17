@@ -4,53 +4,47 @@
   </ion-nav-buttons>
 
 </ion-header-bar>
-  <ion-content class="has-header">
-  <div ng-show="startgame">
-		<div ng-show="questionshow[$index]" ng-repeat="question in questions">
-			<div class="question_title">
-				<h2>{{question.qtype.title}}</h2>
-			</div>
-			<div class="border">
+  <ion-content>
+    <div class="question_title">
+      <h2>{{question.qtype.title}}</h2>
+    </div>
+    <div class="border">
 
-				<h3 ng-bind-html="question.title"></h3>
-				<div ng-show="containimage [$index]">
-					<img src="{{images [$index]}}" alt = ""/>
-				</div>
+      <h3 ng-bind-html="question.title"></h3>
+      <div ng-show="containimage [$index]">
+        <img src="{{images [$index]}}" alt = ""/>
+      </div>
 
-			</div>
+    </div>
+<!-- http://bideoak.ahotsak.com/GOI017/goi017_031.mp4 -->
+    <h3 class="question"> {{question.title}} </h3>
+    <h4 class="points" ng-show="loading"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
+    <div class="answers" ng-show="loading">
 
-			<h3 ng-show="correctanswer" class="correct" >{{"correct_answer" | translate}}</h3>
-			<h3 ng-show="incorrectanswer" class="incorrect">{{"incorrect_answer" | translate}}</h3>
-			<ion-radio
-		    	ng-model="choice"
-		    	ng-change = "checkAnswer ({{orders [$index][0]}}, $index)"
-		    	value="{{orders [$index][0]}}"
-		    	ng-disabled="disabled">
-		    		{{answer_questions [$index] [0]}}
-		   	</ion-radio>
-			<ion-radio
-				ng-model="choice"
-				ng-change = "checkAnswer ({{orders [$index][1]}}, $index)"
-				value="{{orders [$index][1]}}"
-				ng-disabled="disabled">
-					{{answer_questions [$index] [1]}}
-			</ion-radio>
-			<ion-radio
-				ng-model="choice"
-				ng-change="checkAnswer ({{orders [$index][2]}}, $index)"
-				ng-disabled="disabled"
-				value="{{orders [$index][2]}}">
-					{{answer_questions [$index] [2]}}
-			</ion-radio>
+        <ion-radio class="item_ans"
+            ng-model="choice"
+            ng-change = "checkAnswer (orders[0] [0])"
+            value="{{orders[0] [0]}}"
+            ng-disabled="disabled">
+              {{answers [orders[0] [0] -1]}} <!-- - {{orders[0] [0] -1}}-->
+          </ion-radio>
+        <ion-radio
+          class="item_ans"
+          ng-model="choice"
+          ng-change = "checkAnswer (orders[0] [1])"
+          value="{{orders [0] [1]}}"
+          ng-disabled="disabled">
+            {{answers [orders[0] [1] -1]}} <!-- - {{orders[0] [1] -1}}-->
+        </ion-radio>
+        <ion-radio
+        class="item_ans"
+          ng-model="choice"
+          ng-change="checkAnswer (orders[0] [2])"
+          ng-disabled="disabled"
+          value="{{orders [0][2]}}">
+            {{answers [orders[0] [2] -1]}} <!-- - {{orders[0] [2] -1}}-->
+        </ion-radio>
 
-		</div>
-
-	</div>
-
-
-	<button ng-show="next" class="button button-block button-tribual" ng-click="nextQuestion()">
-		  {{"next_question" | translate}}</button>
-	<button ng-show="finish" class="button button-block button-tribual" ng-click="endGame()">
-		  {{"end_game" | translate}}</button>
+    </div>
   </ion-content>
 </ion-view>
