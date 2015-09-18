@@ -1,7 +1,10 @@
-<ion-view view-title=""  cache-view="false" hide-back-button="false" hide-nav-bar="true">
+<ion-view view-title="Euroku"  cache-view="false" hide-back-button="true">
 <!--hide-nav-bar="true"-->
+<div class="bar bar-header bar-dark">
+  <h1 class="title">bar-light</h1>
+</div>
   <ion-content>
-    <h1>Euroku</h1>
+    <h1></h1>
     <div class="center">
       Iniciar sesión. Registrarme
       <div class="row">
@@ -11,7 +14,7 @@
                 Ya tengo una cuenta.
             </div>
             <div class="row responsive-sm">
-                <button class="button button-block button-dark" ng-click="login()">
+                <button class="button button-block button-dark" ng-click="goToLoginForm()">
                   {{'start_session' | translate}}
               </button>
             </div>
@@ -28,7 +31,7 @@
       </div>
     </div>
   </ion-content>
-  <div class="bar bar-footer bar-balanced">
+  <div class="bar bar-footer bar-dark">
     <button class="button button-clear">Left</button>
     <div class="title">{{'play_quiz' | translate}}</div>
     <button class="button button-clear" href="/quiz">Partida!!</button>
