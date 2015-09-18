@@ -1,6 +1,6 @@
 angular.module('euroku.mainmenu', [])
 
-.controller('MainMenuCtrl', function($scope, $ionicModal, $timeout, $translate, $state) {
+.controller('MainMenuCtrl', function($scope, $ionicModal, $timeout, $translate, $state, $ionicSideMenuDelegate) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -10,6 +10,8 @@ angular.module('euroku.mainmenu', [])
   //});
   //Use local storage save language code
   $translate.use(window.localStorage.getItem('lang'));
+
+  $ionicSideMenuDelegate.canDragContent(false);
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -45,5 +47,9 @@ angular.module('euroku.mainmenu', [])
   $scope.goToRegisterForm = function ()
   {
     $state.go('app.register');
+  };
+  $scope.goToLoginForm = function ()
+  {
+    $state.go('app.login');
   };
 });
