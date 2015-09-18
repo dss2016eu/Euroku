@@ -1,9 +1,11 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope) {
 
   // Form data for the login modal
   $scope.loginData = {};
+
+  $rootScope.menu_show = false;
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/user/login.html', {
@@ -34,8 +36,8 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window) {
-
+.controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window, $rootScope) {
+  $rootScope.menu_show = true;
   $scope.$on('$ionicView.afterEnter', function(){
     console.log(window.localStorage.getItem('lang'));
     $translate.use(window.localStorage.getItem('lang'));
