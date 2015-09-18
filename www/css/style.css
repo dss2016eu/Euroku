@@ -68,6 +68,16 @@ img.displayed {
   background-color: #3e6d75 !important;
 }
 
+.bar-dark
+{
+  background-color:  #52bfd3 !important;
+  color: white;
+  font-family: 'fontastiquefontastique';
+  font-size: 180%;
+  text-transform: uppercase;
+  border-color: #52bfd3 !important;
+}
+
 .answers{
   width: 80%;
   clear:both;
