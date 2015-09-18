@@ -33,13 +33,13 @@ angular.module('euroku.quiz', [])
   console.log($scope.datua);
   $scope.answers = [$scope.datua.zuzena, $scope.datua.okerra1, $scope.datua.okerra2];
   $scope.question = { id: $scope.datua.id,
-                                            title: $scope.datua.title,
-                                            answer1: $scope.answers [0],
-                                            answer2: $scope.answers [1],
-                                            answer3: $scope.answers [2],
-                                            difficult: $scope.datua.zailtasuna,
-                                            img: $scope.datua.img,
-                                              source: $scope.datua.jatorria};
+                      title: $scope.datua.title,
+                      answer1: $scope.answers [0],
+                      answer2: $scope.answers [1],
+                      answer3: $scope.answers [2],
+                      difficult: $scope.datua.zailtasuna,
+                      img: $scope.datua.img,
+                      source: $scope.datua.jatorria};
 
   console.log($scope.question.difficult);
 
