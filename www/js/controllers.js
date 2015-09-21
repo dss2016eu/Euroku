@@ -42,14 +42,6 @@ angular.module('euroku.controllers', [])
     console.log(window.localStorage.getItem('lang'));
     $translate.use(window.localStorage.getItem('lang'));
     console.log("49 Playlist");
-
-    if (window.localStorage.getItem('change_language') === "yes")
-    {
-      $window.location.reload(true);
-      window.localStorage.setItem('change_language', "no");
-      console.log("Change language...");
-    }
-    //$window.location.reload(true)
   });
 
   $scope.playlists = [
@@ -60,7 +52,6 @@ angular.module('euroku.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
-
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate)

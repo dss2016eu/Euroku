@@ -19,8 +19,7 @@ angular.module('euroku.quiz', [])
   console.log($scope.orders);
 
   console.log(URL_LOCALHOST);
-
-  console.log(URL_LOCALHOST);
+  $ionicSideMenuDelegate.canDragContent(false);
 
   var irudia = "";
 

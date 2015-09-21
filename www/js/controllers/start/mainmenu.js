@@ -1,6 +1,6 @@
 angular.module('euroku.mainmenu', [])
 
-.controller('MainMenuCtrl', function($scope, $ionicModal, $timeout, $translate, $state, $ionicSideMenuDelegate) {
+.controller('MainMenuCtrl', function($scope, $ionicModal, $timeout, $translate, $state, $ionicSideMenuDelegate, $ionicHistory) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -44,6 +44,10 @@ angular.module('euroku.mainmenu', [])
     }, 1000);
   };
 
+  $ionicHistory.nextViewOptions({
+                  disableBack: true
+  });
+
   $scope.goToRegisterForm = function ()
   {
     $state.go('app.register');
@@ -52,4 +56,12 @@ angular.module('euroku.mainmenu', [])
   {
     $state.go('app.login');
   };
+  $scope.returnToSelectLanguage = function ()
+  {
+    $state.go('app.main');
+  };
+  $scope.startPlay = function ()
+  {
+    $state.go('app.quiz');
+  }
 });
