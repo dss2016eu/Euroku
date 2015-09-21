@@ -97,6 +97,12 @@ img.displayed {
   float: left;
   margin-left: 20px;
 }
+
+#chronotime
+{
+  font-size: 22px;
+  margin-top: 5px;
+}
 /**emaitza*************/
 
 .erantzuna{
@@ -274,7 +280,7 @@ img.displayed {
 }
 
 /*###################################################################
-  Erropnka popup-aren diseinua
+  Erronka popup-aren diseinua
 ####################################################################*/
 
 .popup-head, .popup-buttons .button, .popup-buttons .button:link{
