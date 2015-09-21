@@ -1,11 +1,9 @@
-<ion-view title="{{'play_quiz' | translate}}" cache-view="false">
+<ion-view view-title="" cache-view="false">
   <ion-nav-buttons side="right">
   	<b><span id="chronotime">0:00:00:00</span></b>
   </ion-nav-buttons>
-
-</ion-header-bar>
   <ion-content>
-    <div class="question_title">
+    <!--<div class="question_title">
       <h2>{{question.qtype.title}}</h2>
     </div>
     <div class="border">
@@ -16,8 +14,19 @@
       </div>
 
     </div>
-<!-- http://bideoak.ahotsak.com/GOI017/goi017_031.mp4 -->
-    <h3 class="question"> {{question.title}} </h3>
+    <h3 class="question"> {{question.title}} </h3>-->
+
+    <div class="question_title">
+        <h2>{{question.qtype.title}}</h2>
+      </div>
+      <div class="border">
+
+        <h3 ng-bind-html="question.title"></h3>
+        <div ng-show="containimage [$index]">
+          <img src="{{images [$index]}}" alt = ""/>
+        </div>
+
+      </div>
     <h4 class="points" ng-show="loading"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
     <div class="answers" ng-show="loading">
 
