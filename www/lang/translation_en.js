@@ -120,5 +120,10 @@ var translations_en = {
     history_error : ' Error performing request for the latest games. Please try again later ',
     error_about : ' Error performing request to qualify under " What\'s tribual ? " information. Please try again later ',
     error_get_tribes : ' Error performing request for our tribes. Please try again later ',
-    error_get_more_tribes : ' Error performing request for more tribes. Please try again later '
-}
+    error_get_more_tribes : ' Error performing request for more tribes. Please try again later ',
+    field_required: 'This field is required',
+    min_field_length: 'Minimum length of this field is 4 characters!',
+    max_field_length: 'Maximum length of this field is 20 characters!',
+    email_invalid: 'Your email address is invalid. Correct format: info@codesyntax.com',
+    passwords_not_equals: 'Must match the previous entry'
+};

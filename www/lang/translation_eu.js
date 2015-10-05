@@ -118,4 +118,10 @@ var translations_eu = {
     history_error: 'Errorea suertatu da azken partiden eskaera egitean. Saiatu berriro beranduago mesedez',
     error_about: 'Errorea suertatu da "Zer da tribual?" informazioa eskaera egitean. Saiatu berriro beranguago mesedez',
     error_get_tribes: 'Errorea suertatu da izena emanda ditugun tribu zerrenda emateko eskaera egitean. Saiatu berriro beranduago mesedez',
-};  error_get_more_tribes: 'Errorea suertatu da izena emanda ez ditugun tribu zerrenda emateko eskaera egitean. Saiatu berriro beranduago mesedez'
+    error_get_more_tribes: 'Errorea suertatu da izena emanda ez ditugun tribu zerrenda emateko eskaera egitean. Saiatu berriro beranduago mesedez',
+    field_required: 'Eremua derrigorrezkoa da',
+    min_field_length: 'La karakterez osaturik egon behar du gutxienez eremua',
+    max_field_length: 'Gehienez 20 karaktere izan ahal ditu eremuak',
+    email_invalid: 'Sartutako posta elektronikoa ez da zuzena. Eredu zuzena: info@codesyntax.com',
+    passwords_not_equals: 'Pasahitzak ez datoz bat'
+};

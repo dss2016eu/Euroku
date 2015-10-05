@@ -119,4 +119,10 @@ var translations_es = {
     history_error: 'Error al realizar petición para obtener las últimas partidas. Por favor, inténtalo más tarde',
     error_about: 'Error al realizar petición para obtener la información correspondiente a "¿Qué es Tribual?". Por favor, inténtalo más tarde',
     error_get_tribes: 'Error al realizar petición para obtener nuestra tribus. Por favor, inténtalo más tarde',
-};  error_get_more_tribes: 'Error al realizar petición para obtener más tribus. Por favor, inténtalo más tarde'
+    error_get_more_tribes: 'Error al realizar petición para obtener más tribus. Por favor, inténtalo más tarde',
+    field_required: 'El campo es obligatorio',
+    min_field_length: '¡La longitud mínima de carácteres de de 4!',
+    max_field_length: '¡El máximo de carácteres permitidos es 20!',
+    email_invalid: 'El correo electrónico es incorrecto. El formato correcto es: info@codesyntax.com',
+    passwords_not_equals: 'Las contraseñas no coinciden'
+};
