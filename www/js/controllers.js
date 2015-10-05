@@ -39,6 +39,11 @@ angular.module('euroku.controllers', [])
 .controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window, $rootScope) {
   $rootScope.menu_show = true;
   $scope.$on('$ionicView.afterEnter', function(){
+
+    if (window.localStorage.getItem('lang') === null)
+    {
+      window.localStorage.setItem('lang', 'es');
+    }
     console.log(window.localStorage.getItem('lang'));
     $translate.use(window.localStorage.getItem('lang'));
     console.log("49 Playlist");
