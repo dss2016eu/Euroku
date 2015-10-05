@@ -72,7 +72,7 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state, $ionicHistory) {
 
   $translate.use(window.localStorage.getItem('lang'));
   $scope.changeLanguage = function (key) {
@@ -84,6 +84,10 @@ angular.module('euroku.controllers', [])
 
   $scope.returnToMain = function ()
   {
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
     $state.go('app.playlists');
   };
 
