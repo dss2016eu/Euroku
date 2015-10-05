@@ -1,20 +1,19 @@
 <!--Documentation about ng-message: https://docs.angularjs.org/api/ngMessages-->
 
-<div class="error" ng-message="compareTo"><i class="ion-information-circled"></i> Must match the previous entry</div>
+<div class="error" ng-message="compareTo"><i class="ion-information-circled"></i> {{"passwords_not_equals" | translate}}</div>
 <div class="error" ng-message="required">
   <i class="ion-information-circled"></i>
-  This field is required!
+  {{"field_required" | translate}}
 </div>
 <div class="error" ng-message="minlength">
   <i class="ion-information-circled"></i>
-  Minimum length of this field is 4 characters!
+  {{"min_field_length" | translate}}
 </div>
 <div class="error" ng-message="maxlength">
   <i class="ion-information-circled"></i>
-  Maximum length of this field is 20 characters!
+  {{"max_field_length" | translate}}
 </div>
 <div class="error" ng-message="email">
   <i class="ion-information-circled"></i>
-  Your email address is invalid. <br/>Correct format: info@codesyntax.com
+  {{"email_invalid" | translate}}
 </div>
-
