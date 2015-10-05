@@ -1,6 +1,9 @@
 angular.module('euroku.login', [])
 
-.controller('LoginCtrl', function($scope) {
+.controller('LoginCtrl', function($scope, $state, $ionicHistory, $ionicSideMenuDelegate) {
+
+  $ionicSideMenuDelegate.canDragContent(false);
+
   $scope.logIn = {
       username: '',
       password : ''
@@ -19,5 +22,14 @@ angular.module('euroku.login', [])
         console.log("Username: " + $scope.logIn.username);
         console.log("Password: " + $scope.logIn.password);
       }
+  };
+
+  $scope.returnToHome = function ()
+  {
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+    $state.go('app.playlists');
   };
 });
