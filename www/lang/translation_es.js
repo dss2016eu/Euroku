@@ -8,6 +8,7 @@ var translations_es = {
     register_btn_lbl: '¡Registrarse!',
     register_already_lbl: 'Ya estoy registrado, iniciar sesión:',
     no_register_already_lbl: 'No estoy registrado, registrarme en el siguiente formulario',
+    send_data: 'Enviar datos',
     start_session: '¡Iniciar sesión!',
     start_session_title: 'Iniciar sesión',
     close_lbl: 'Cerrar',

@@ -8,6 +8,7 @@ var translations_en = {
     register_btn_lbl: 'Register',
     register_already_lbl: 'I\'m already registered, login:',
     no_register_already_lbl: 'I\'m not registered, suscribe in below form',
+    send_data: 'Send Data',
     start_session: 'Start session!',
     start_session_title: 'Start session',
     close_lbl: 'Close',

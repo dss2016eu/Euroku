@@ -8,6 +8,7 @@ var translations_eu = {
     register_btn_lbl: 'Izena eman!',
     register_already_lbl: 'Izena emanda dut dagoeneko, saioa hasi:',
     no_register_already_lbl: 'Ez dut izenik emanda, izena eman hurrengo formularioan',
+    send_data: 'Datuak bidali',
     start_session: 'Saioa hasi!',
     start_session_title: 'Saioa hasi',
     close_lbl: 'Itxi',
