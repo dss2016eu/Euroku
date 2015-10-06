@@ -37,8 +37,10 @@ angular.module('euroku.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window, $rootScope) {
-  $rootScope.menu_show = true;
+ // $rootScope.menu_show = true;
   $scope.$on('$ionicView.afterEnter', function(){
+
+    $rootScope.menu_show = true;
 
     if (window.localStorage.getItem('lang') === null)
     {
@@ -72,8 +74,9 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state, $ionicHistory) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state, $ionicHistory, $ionicSideMenuDelegate) {
 
+$ionicSideMenuDelegate.canDragContent(false);
   $translate.use(window.localStorage.getItem('lang'));
   $scope.changeLanguage = function (key) {
     $translate.use(key);
