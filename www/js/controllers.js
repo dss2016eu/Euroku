@@ -161,4 +161,42 @@ $ionicSideMenuDelegate.canDragContent(false);
   };
 
 
+})
+.controller('WhatIsCtrl', function($scope, $ionicHistory, $state) {
+  $scope.morePlay = function ()
+  {
+    window.localStorage.setItem ('result', 'true');
+    //$state.go('app.play', {}, {reload: true});
+    $state.go('app.quiz');
+    $ionicHistory.nextViewOptions({
+              disableBack: true
+    });
+
+  };
+  $scope.goToSource = function (index)
+    {
+        var url = 'http://www.codesyntax.com';
+      console.log(index+"index...");
+      if (index === 1)
+      {
+        url = 'http://www.codesyntax.com';
+      }
+      else if (index === 2)
+      {
+        url = 'http://www.ahotsak.eus';
+      }
+      else
+      {
+        url = 'http://www.euskara.euskadi.eus/';
+      }
+
+      if($scope.platform === "android")
+        {
+            window.open(url, '_system', 'location=no');
+        }
+        else
+        {
+            window.open(url, '_blank', 'location=yes');
+        }
+    };
 });
