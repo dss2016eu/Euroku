@@ -106,13 +106,14 @@ var translations_es = {
     ok_avg: 'Acertadas',
 
     //About Tribual
-    what_is_tribual: '¿Qué es tribual?',
+    what_is_euroku: '¿Qué es tribual?',
 
     //Menu
 
     logout: 'Cerra sesión',
     back_text: 'Atrás',
     share_title: 'Compartir',
+    change_language: 'Cambiar de idioma',
 
     //Errors messages
     login_no_correct: 'Los datos de inicio de sesión son incorrectos. Por favor, inténtalo de nuevo',

@@ -107,13 +107,14 @@ var translations_en = {
     ok_avg: 'Success Answers',
 
     //About Tribual
-    what_is_tribual: 'What is Euroku?',
+    what_is_euroku: 'What is Euroku?',
 
     //Menu
 
     logout: 'Close session',
     back_text: 'Back',
     share_title: 'Share',
+    change_language: 'Change Language',
 
     //Errors messages
     login_no_correct: 'The data log is incorrect. Please try again',

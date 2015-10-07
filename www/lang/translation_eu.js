@@ -105,13 +105,14 @@ var translations_eu = {
     ok_avg: 'Asmatutakoak',
 
     //About Tribual
-    what_is_tribual: 'Zer da Tribual?',
+    what_is_euroku: 'Zer da Tribual?',
 
     //Menu
 
     logout: 'Itxi saioa',
     back_text: 'Atzera',
     share_title: 'Elkarbanatu',
+    change_language: 'Aldatuz hizkuntzaz',
 
     //Errors messages
     login_no_correct: 'Saioa hasteko sartutako datuak ez dira zuzenak. Saiatu berriro mesedez',
