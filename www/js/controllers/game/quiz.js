@@ -13,8 +13,8 @@
 angular.module('euroku.quiz', [])
 
 .controller('QuizCtrl', function($scope, $http, $ionicLoading, $ionicHistory,
-									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, URL_LOCALHOST, $timeout) {
-
+									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, URL_LOCALHOST, $timeout, $rootScope) {
+$rootScope.menu_show= false;
   $scope.orders = randomAnswersOrders (1);
   console.log($scope.orders);
 
@@ -48,6 +48,8 @@ angular.module('euroku.quiz', [])
 
 
   $ionicLoading.show();
+
+
 
 
 
@@ -121,20 +123,21 @@ angular.module('euroku.quiz', [])
         console.log("Zuzena");
         console.log($scope.answers[value-1]);
       }
-      /*$timeout(function() {
-        var params = {
+      $timeout(function() {
+        /*var params = {
             response: value,
             id: $scope.question.id,
             correct: $scope.question.answer1,
             points: $scope.question.difficult
-        };
+        };*/
 
-        /*$state.go('app.result', params);
+        //params
+        $state.go('app.result');
         $ionicHistory.nextViewOptions({
                   disableBack: true
         });
 
-      }, 1000);*/
+      }, 1000);
     };
 
 });
