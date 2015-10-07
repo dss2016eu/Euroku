@@ -145,6 +145,16 @@ angular.module('euroku', ['ionic',
     }
   })
 
+  .state('app.whatis', {
+      url: '/whatis',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/general/whatis.html',
+          controller: 'WhatIsCtrl'
+        }
+      }
+    })
+
   .state('app.browse', {
       url: '/browse',
       views: {
