@@ -1,6 +1,51 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate) {
+
+  if (window.localStorage.getItem('lang') === null)
+  {
+    $translate.use('es');
+  }
+  $rootScope.optionsLanguage = function()
+  {
+    // Show the action sheet
+   var hideSheet = $ionicActionSheet.show({
+     buttons: [
+       { text: '<b>English</b>' },
+       { text: '<b>Español</b>' },
+       { text: '<b>Euskara</b>' }
+     ],
+     //titleText: 'Modify your album',
+     cancelText: 'Cancel',
+     cancel: function() {
+          // add cancel code..
+        },
+     buttonClicked: function(index) {
+        console.log(index);
+
+        switch(index) {
+            case 0:
+                $scope.updateLanguage('en');
+                break;
+            case 1:
+                $scope.updateLanguage('es');
+                break;
+            case 2:
+                $scope.updateLanguage('eu');
+                break;
+        }
+       return true;
+     }
+   });
+  };
+
+  $scope.updateLanguage = function(key)
+  {
+    $translate.use(key);
+    window.localStorage.setItem('lang', key);
+    console.log(window.localStorage.getItem('lang'));
+    window.localStorage.setItem('select_language', '1');
+  };
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -61,16 +106,37 @@ angular.module('euroku.controllers', [])
   ];
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate)
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory)
 {
-  $ionicSideMenuDelegate.canDragContent(false);
+  //$ionicSideMenuDelegate.canDragContent(false);
+  $rootScope.menu_show = true;
+
+  if (window.localStorage.getItem('select_language') === '1')
+  {
+    $scope.show_play_button = true;
+  }
+  else
+  {
+    $scope.show_play_button = false;
+  }
 
   $scope.goToMainMenuLayout = function(key)
   {
     $translate.use(key);
     window.localStorage.setItem('lang', key);
     console.log(window.localStorage.getItem('lang'));
-    $state.go('app.mainmenu');
+    window.localStorage.setItem('select_language', '1');
+    $scope.show_play_button = true;
+    //$state.go('app.mainmenu');
+  };
+
+  $scope.goPlay = function()
+  {
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+    $state.go('app.quiz');
   };
 })
 
