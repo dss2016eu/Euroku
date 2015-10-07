@@ -56,7 +56,8 @@ img.displayed {
 }
 
 .button-dark{
-  background-color:  #52bfd3 !important;
+  /*background-color:  #52bfd3 !important;*/
+
   border-color: #19acb6 !important;
   font-family: 'fontastiquefontastique';
   font-size: 180%;
@@ -65,17 +66,23 @@ img.displayed {
 
 .button-dark.activated
 {
-  background-color: #3e6d75 !important;
+  /*background-color: #3e6d75 !important;*/
+  background-color: #3378a3 !important;
 }
 
 .bar-dark
 {
-  background-color:  #52bfd3 !important;
+  /*background-color:  #52bfd3 !important;*/
   color: white;
   font-family: 'fontastiquefontastique';
   font-size: 180%;
   text-transform: uppercase;
   border-color: #52bfd3 !important;
+}
+
+.button-dark, .bar-dark
+{
+  background-color:  #46a0db !important;
 }
 
 .answers{
