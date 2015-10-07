@@ -1,4 +1,4 @@
-<ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>'>
+<ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>' cache-view="false" hide-back-button="true">
   <ion-nav-bar class="bar-dark">
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -13,7 +13,7 @@
     <div class="aboutus">
         <h1>{{'what_is_euroku' | translate}}</h1>
         <div class="text">
-              <p>Euskalkien inguruko jokoa da Euskalkitegia. Euskararen ahots eta
+             <!-- <p>Euskalkien inguruko jokoa da Euskalkitegia. Euskararen ahots eta
 kolore guztiak entzun eta ezagutzeko aukera emango dizuna.</p>
 
               <p>Joko erraza, publiko zabalarentzat pentsatua (euskaltzale, ikasle,
@@ -34,7 +34,16 @@ izan asmatzea, orduan eta puntu gehiago lortuko dituzu.</p>
                     <li>  - Gutxienez 1GB RAM.eko memoria.</li>
                     <li>  - Android 4.X gutxienez.</li>
                 </ul><br/>
-                <p>Oharra: Gomendagarria da WIFI bidez jokatzea, bideoek kontsumo handia dutelako.</p>
+                <p>Oharra: Gomendagarria da WIFI bidez jokatzea, bideoek kontsumo handia dutelako.</p>-->
+      <p>{{"paragraph_1" | translate}}.</p>
+      <p>{{"paragraph_2" | translate}}.</p>
+      <p>{{"paragraph_3" | translate}}.</p>
+      <p>{{"paragraph_requirements_text" | translate}}.</p>
+      <ul>
+          <li>  - {{"requirement_one" | translate}}.</li>
+          <li>  - {{"requirement_two" | translate}}.</li>
+      </ul><br/>
+      <p>Oharra: Gomendagarria da WIFI bidez jokatzea, bideoek kontsumo handia dutelako.</p>
       <div class="logotipoak">
             Sortzailea:<br />
                 <div class="row responsive-sm">
@@ -47,7 +56,7 @@ izan asmatzea, orduan eta puntu gehiago lortuko dituzu.</p>
                 <br />
           <!-- Hau probisionala -->
           <div>
-            Babeslea: <br />
+            {{"sponsor" | translate}}: <br />
             <img src = "img/eusko_j.png" ng-click="goToSource(3)" />
                     <br />
         </div>
