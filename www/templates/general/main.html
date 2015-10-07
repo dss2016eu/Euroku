@@ -1,4 +1,4 @@
-<ion-view view-title=""  cache-view="false" hide-back-button="true" hide-nav-bar="true">
+<ion-view view-title=""  cache-view="false" hide-back-button="true" >
 <!--hide-nav-bar="true"-->
 <!--<div class="bar bar-header bar-dark">
 </div>-->
@@ -9,7 +9,7 @@
       </p>
       <img src="img/logotipoa.png" />
       <h4>DN-SS Europar Jokoa</h4>
-      <div class="row">
+      <div class="row" ng-show="!show_play_button">
           <div class="col"></div><!--20% for left side-->
           <div class="col col-80">
             <div class="row responsive-sm">
@@ -29,6 +29,17 @@
             </div>
         </div>
         <div class="col"></div> <!--20% for right side-->
+      </div>
+      <div class="row" ng-show="show_play_button">
+        <div class="col"></div>
+        <div class="col col-80">
+          <div class="row responsive-sm">
+            <button class="button button-block button-dark" ng-click="goPlay()">
+                {{'start_play' | translate}}
+            </button>
+          </div>
+        </div>
+        <div class="col"></div>
       </div>
     </div>
   </ion-content>
