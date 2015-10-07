@@ -11,6 +11,7 @@ angular.module('euroku', ['ionic',
                           'euroku.login',
                           'euroku.mainmenu',
                           'euroku.quiz',
+                          'euroku.result',
                           'euroku.directives',
                           'euroku.constants',
                           'pascalprecht.translate',
@@ -130,6 +131,16 @@ angular.module('euroku', ['ionic',
       'menuContent': {
         templateUrl: 'templates/game/quiz.html',
         controller: 'QuizCtrl'
+      }
+    }
+  })
+
+  .state('app.result', {
+    url: '/result',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/game/result.html',
+        controller: 'ResultCtrl'
       }
     }
   })
