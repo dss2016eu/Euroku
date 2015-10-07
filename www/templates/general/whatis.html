@@ -1,0 +1,59 @@
+<ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>'>
+  <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+      <button class="button button-clear button-icon ion-navicon"
+             menu-toggle="left">
+          </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="aboutus">
+        <h1>{{'what_is_euroku' | translate}}</h1>
+        <div class="text">
+              <p>Euskalkien inguruko jokoa da Euskalkitegia. Euskararen ahots eta
+kolore guztiak entzun eta ezagutzeko aukera emango dizuna.</p>
+
+              <p>Joko erraza, publiko zabalarentzat pentsatua (euskaltzale, ikasle,
+irakasle, gazte eta nagusi...). "Euskal Herriko Ahotsak" proiektuko
+bideoak oinarri hartuta, Euskalkitegia jokoan, bideoetako lekukoak zer
+herritakoak diren asmatzea izango da gakoa.</p>
+
+              <p>Eman play bideoari, findu zure belarria, eta erantzun hiztunak zer
+herritako euskara darabilen. Ahalik eta galderarik gehien asmatzea da
+erronka. Eta, asmatu ahala, puntuak lortzea eta mailaz igotzea. Proba
+bakoitzak puntu-kopuru ezberdina balioko du, eta zenbat eta zailagoa
+izan asmatzea, orduan eta puntu gehiago lortuko dituzu.</p>
+
+                <p>
+                    Euskalkitegia aplikazioan jokatzeko gutxienekoak:
+                </p>
+                <ul>
+                    <li>  - Gutxienez 1GB RAM.eko memoria.</li>
+                    <li>  - Android 4.X gutxienez.</li>
+                </ul><br/>
+                <p>Oharra: Gomendagarria da WIFI bidez jokatzea, bideoek kontsumo handia dutelako.</p>
+      <div class="logotipoak">
+            Sortzailea:<br />
+                <div class="row responsive-sm">
+                    <img src = "img/logoa.png" width="140px" ng-click="goToSource(2)"/>
+                </div>
+                Garatzailea:<br />
+          <div class="row responsive-sm">
+                <img src = "img/logo_codesyntax.gif" width="140px" ng-click="goToSource(1)"/>
+          </div>
+                <br />
+          <!-- Hau probisionala -->
+          <div>
+            Babeslea: <br />
+            <img src = "img/eusko_j.png" ng-click="goToSource(3)" />
+                    <br />
+        </div>
+      </div>
+      </div>
+
+    <button  class=" button button-block button-dark" ng-click="morePlay()">{{'start_play' | translate}}</button>
+  </ion-content>
+</ion-view>
