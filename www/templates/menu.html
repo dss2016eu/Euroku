@@ -14,10 +14,19 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-dark">
-      <h1 class="title">Left</h1>
+      <h1 class="title"></h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
+        <ion-item menu-close href="#/app/quiz">
+          {{'start_play' | translate}}
+        </ion-item>
+        <ion-item menu-close href="#/app/login">
+          Zer da?
+        </ion-item>
+        <ion-item menu-close href="#/app/login">
+          Partekatu
+        </ion-item>
         <ion-item menu-close href="#/app/login">
           Login
         </ion-item>
@@ -36,8 +45,8 @@
         <ion-item menu-close href="#/app/main">
           {{'home' | translate}}
         </ion-item>
-        <ion-item menu-close href="#/app/quiz">
-          {{'start_play' | translate}}
+        <ion-item menu-close ng-click="optionsLanguage()">
+          Aldatu hizkuntza
         </ion-item>
       </ion-list>
     </ion-content>
