@@ -1,107 +1,58 @@
-<ion-view title="{{'game_results_title' | translate}}" class="test" hide-back-button="true">
-  <ion-nav-buttons side="left">
-    	<button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="lastGames()">{{"last_plays_title" | translate}}</button>
-  </ion-nav-buttons>
-  <ion-content class="has-header" id="layout">
-  <div ng-show="loadData">
-	    <h3 class="title_head">{{quizstatemessage}}</h3>
 
-		<div class="border">
-		    <div class="row">
-			  <div class="col col-50"></div>
-			  <div class="col">
-			  		<b ng-hide="{{firstplayer && !secondplayer}}">
-			  			{{usersfriendname [0].substring(0,3)}}.*
-			  		</b>
-						<b ng-show="{{firstplayer && !secondplayer}}">
-							{{usersfriendname [0].substring(0,3)}}.*
-					</b>
-			  </div>
-			  <div class="col">
-			  		<b ng-show="{{firstplayer && secondplayer}}">
-			  			{{usersfriendname [1].substring(0,3)}}.*
-			  		</b>
-					<b ng-show="{{firstplayer && !secondplayer}}">
-						{{usersfriendname [1].substring(0,3)}}.*
-					</b>
-			  </div>
-			</div>
+<ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>' cache-view="false">
+  <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
 
-			<div class="row" ng-repeat = "resp in questions_data">
-			  <div class="col col-50">G{{$index+1}} - {{resp.correct}}</div>
+      <ion-nav-buttons side="left">
+          <button class="button button-clear button-icon ion-navicon"
+             menu-toggle="left">
+          </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="row erantzuna">
+    <div class="col col-25"><img class="icons" src="img/{{image}}.png" width="100%" height="100%"/></div>
+    <div class="col">
+      <h2>{{result.title}}</h2>
+      <p class="erantzun_text">{{result.text}}</p>
+      <p class="text"><span>Erantzun zuzena:</span> {{correct}}</p>
+      <button class="button button-clear button-calm"
+          ng-click="moreInfo()">
+          Informazio +: www.ahotsak.eus
+      </button>
+    </div>
 
-			  <div class="col">
-			  		<img ng-show= "{{resp.res1}}" src="img/zuzen.png" alt="" />
-		             <img ng-hide= "{{resp.res1}}" src="img/oker.png" alt="" />
-			  </div>
-			  <div class="col" ng-hide="{{onlyoneplayer}}">
-			  	<img ng-show= "{{resp.res2}}"  src="img/zuzen.png" alt="" />
-		             <img ng-hide= "{{resp.res2}}" src="img/oker.png" alt="" />
-			  </div>
-			</div>
+  </div>
 
-			<div class="row">
-			  <div class="col col-50">{{"time_quiz" | translate}}</div>
-			  <div class="col">{{userr[10]}}</div>
-			  <div class="col">{{userr[11]}}</div>
-			</div>
+  <div class="row responsive-sm">
+    <div class="col">
 
-			<div class="row">
-			  <div class="col">
-			  		<b ng-hide="{{firstplayer && !secondplayer}}">
-		        			{{usersfriendname [0].substring(0,3)}}.* = {{usersfriendname [0]}}
-		        	</b>
-					<b ng-show="{{firstplayer && !secondplayer}}">
-							{{usersfriendname [0].substring(0,3)}}.* = {{usersfriendname [0]}}
-					</b>
-			  </div>
-			</div>
+    </div>
+  </div>
 
-			<div class="row">
-			  <div class="col">
-			  		<b ng-show="{{firstplayer && secondplayer}}">
-							{{usersfriendname [1].substring(0,3)}}.* = {{usersfriendname [1]}}
-						</b>
-						<b ng-show="{{firstplayer && !secondplayer}}">
-							{{usersfriendname [1].substring(0,3)}}.* = {{usersfriendname [1]}}
-						</b>
-			  </div>
-			</div>
-		</div>
-		<!--Hemen aurkariaren xehetasunak-->
-		<div class="border other_player_result">
-			<img src="{{other_player}}" width="50px" height="50px" />
-				<p>{{friendly_name_text}}</p>
-			  	<p>Start Points: 2090</p>
-				<p> Won points: 20</p>
-				<p> Total Points: 2110</p>
-		</div>
-		
-		
-		<button class="button button-block button-tribual" ng-click="newGame()">
-		  {{"return_main_menu" | translate}}</button>
-		<h3 class="title_head">{{"details_quiz" | translate}}</h3>
-		<div class="border">
-			<div ng-repeat="details in questions_data">
-				<div ng-show=" {{details.containurl}}" ng-click= "openSource($index)">
-							<p><b ng-bind-html="details.title"></b></p>
-							<p>{{details.correct}}</p>
-							<p>{{details.attribution}}</p>
-							<!--<button class = "button" ng-click= "openSource($index)" >{{"source_text" | translate}}</button>-->
-				</div>
-				<div ng-show="{{!details.containurl}}" class="linkcable">
-					<div>
-							<p><b ng-bind-html="details.title"></b></p>
-							<p>{{details.correct}}</p>
-							<p>{{details.attribution}}</p>
-					</div>
-				</div>
-				<hr class="source_separate" />
-				
-			</div>
-		</div>
+  <div class="row">
+    <div class="col col-50"><img class="player_level" src="{{img_maila}}"/></div>
+    <div class="col">
+      <p class="irabazi_text">Irabazitako puntuak: <span>{{winpoints}}</span></p>
+      <p class="guztira_text">Guztira: <span>{{play.puntuak}}</span></p>
+      <p class="zure_maila_text">Zure maila: <span>{{play.zure_maila}}</span></p>
+    </div>
 
-		
+  </div>
+  <div class="emaitza_azpi">
+    <span class="center">
+        (Hurrengo maila lortzeko <b>{{play.hurrengo_erronkarako_puntuak}}</b> puntu falta dituzu)
+    </span>
+
+    <button  class=" button button-block button-dark" ng-click="morePlay()">Jokatu</button>
+  </div>
+
+  <div class="row" >
+    <h3>Kirmen Uribe eta Mikel Urdangarin Cosmopoétican</h3>
+  </div>
+  <div class="row">
+    <img src="http://dss2016.eu/media/com_ohanah/attachments/931941142-Donostia2016_Cosmopotica_.jpg" style="width:100%" />
   </div>
   </ion-content>
 </ion-view>
