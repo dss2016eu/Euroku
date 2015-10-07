@@ -16,7 +16,7 @@
     <div class="col">
       <h2>{{result.title}}</h2>
       <p class="erantzun_text">{{result.text}}</p>
-      <p class="text"><span>Erantzun zuzena:</span> {{correct}}</p>
+      <p class="text"><span>{{"correct_answer" | translate}}</span> {{correct}}</p>
       <button class="button button-clear button-calm"
           ng-click="moreInfo()">
           Informazio +: www.ahotsak.eus
@@ -34,9 +34,9 @@
   <div class="row">
     <div class="col col-50"><img class="player_level" src="{{img_maila}}"/></div>
     <div class="col">
-      <p class="irabazi_text">Irabazitako puntuak: <span>{{winpoints}}</span></p>
-      <p class="guztira_text">Guztira: <span>{{play.puntuak}}</span></p>
-      <p class="zure_maila_text">Zure maila: <span>{{play.zure_maila}}</span></p>
+      <p class="irabazi_text">{{"won_points" | translate}}: <span>{{winpoints}}</span></p>
+      <p class="guztira_text">{{"total_points" | translate}}: <span>{{play.puntuak}}</span></p>
+      <p class="zure_maila_text">{{"your_level" | translate}}: <span>{{play.zure_maila}}</span></p>
     </div>
 
   </div>
@@ -45,7 +45,7 @@
         (Hurrengo maila lortzeko <b>{{play.hurrengo_erronkarako_puntuak}}</b> puntu falta dituzu)
     </span>
 
-    <button  class=" button button-block button-dark" ng-click="morePlay()">Jokatu</button>
+    <button  class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
   </div>
 
   <div class="row" >
