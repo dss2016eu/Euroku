@@ -1,4 +1,4 @@
-<ion-view view-title="" cache-view="false">
+<ion-view view-title="" cache-view="false" hide-back-button="true">
   <ion-nav-buttons side="right">
   	<b><span id="chronotime">0:00:00:00</span></b>
   </ion-nav-buttons>
@@ -22,9 +22,9 @@
       <div class="border">
 
         <h3 ng-bind-html="question.title"></h3>
-        <div ng-show="containimage [$index]">
+        <!--<div ng-show="containimage [0]">
           <img src="{{images [$index]}}" alt = ""/>
-        </div>
+        </div>-->
 
       </div>
     <h4 class="points" ng-show="loading"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
