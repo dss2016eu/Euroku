@@ -105,7 +105,7 @@ var translations_eu = {
     ok_avg: 'Asmatutakoak',
 
     //About Tribual
-    what_is_euroku: 'Zer da Tribual?',
+    what_is_euroku: 'Zer da Euroku?',
 
     //Menu
 

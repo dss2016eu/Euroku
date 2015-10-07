@@ -106,7 +106,7 @@ var translations_es = {
     ok_avg: 'Acertadas',
 
     //About Tribual
-    what_is_euroku: '¿Qué es tribual?',
+    what_is_euroku: '¿Qué es Euroku?',
 
     //Menu
 
