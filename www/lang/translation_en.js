@@ -83,11 +83,14 @@ var translations_en = {
 
     //Play game texts
 
-    correct_answer: 'Correct answer!!',
-    incorrect_answer: 'Incorrect Answer!!',
+    correct_answer: 'Correct answer:',
+    incorrect_answer: 'Incorrect Answer:',
     play_quiz: 'Game',
     next_question: 'Next question',
     end_game: 'Finish game',
+    won_points: 'Won points',
+    total_points: 'Total points',
+    your_level: 'Your level',
 
     //Tribes data
     tribes_title: 'Tribes',
@@ -108,6 +111,13 @@ var translations_en = {
 
     //About Tribual
     what_is_euroku: 'What is Euroku?',
+    sponsor: 'Sponsor',
+    paragraph_1: 'EN-----kakakakakkakakakakaka',
+    paragraph_2: 'EN-----kakakakakkakakakakaka',
+    paragraph_3: 'EN------kakakakakkakakakakaka',
+    paragraph_requirements_text: 'EN-----kakakakakkakakakakaka',
+    requirement_one: 'Minimun 1GB RAM Memory',
+    requirement_two: 'Android 4.X minimun',
 
     //Menu
 

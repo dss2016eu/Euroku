@@ -80,13 +80,16 @@ var translations_es = {
     game_results_title: 'Resultados de la partida',
     source_text: 'Fuente',
 
-    //Play game texts
+    //Play / Result game texts
 
-    correct_answer: '¡¡Respuesta correcta!!',
-    incorrect_answer: '¡¡Respuesta incorrecta!!',
+    correct_answer: 'Respuesta correcta:',
+    incorrect_answer: 'Respuesta incorrecta:',
     play_quiz: 'Partida',
     next_question: 'Siguiente pregunta',
     end_game: 'Finalizar partida',
+    won_points: 'Puntos ganados',
+    total_points: 'Puntos totales',
+    your_level: 'Tu nivel',
 
     //Tribes data
     tribes_title: 'Tribus',
@@ -107,6 +110,13 @@ var translations_es = {
 
     //About Tribual
     what_is_euroku: '¿Qué es Euroku?',
+    sponsor: 'Patrocinador',
+    paragraph_1: 'ES-----kakakakakkakakakakaka',
+    paragraph_2: 'ES-----kakakakakkakakakakaka-----kakakakakkakakakakaka',
+    paragraph_3: 'ES------kakakakakkakakakakaka',
+    paragraph_requirements_text: 'ES-----kakakakakkakakakakaka',
+    requirement_one: 'Mínimo 1GB de Memoria RAM',
+    requirement_two: 'Mínimo Android 4.X o superiores',
 
     //Menu
 

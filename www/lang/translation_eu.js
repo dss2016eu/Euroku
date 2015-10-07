@@ -79,13 +79,16 @@ var translations_eu = {
     game_results_title: 'Partiden emaitzak',
     source_text: 'Iturria',
 
-    //Play game texts
+    //Play / Result game texts
 
-    correct_answer: 'Erantzun zuzena!!',
-    incorrect_answer: 'Erantzun okerra!!',
+    correct_answer: 'Erantzun zuzena:',
+    incorrect_answer: 'Erantzun okerra:',
     play_quiz: 'Partida',
     next_question: 'Hurrengo galdera',
     end_game: 'Amaitu partida',
+    won_points: 'Irabazitako puntuak',
+    total_points: 'Puntuak guztira',
+    your_level: 'Zure Maila',
 
     //Tribes data
     tribes_title: 'Tribuak',
@@ -106,6 +109,13 @@ var translations_eu = {
 
     //About Tribual
     what_is_euroku: 'Zer da Euroku?',
+    sponsor: 'Babeslea',
+    paragraph_1: 'Eus-----kakakakakkakakakakaka',
+    paragraph_2: 'Eus-----kakakakakkakakakakaka',
+    paragraph_3: 'Eus------kakakakakkakakakakaka',
+    paragraph_requirements_text: 'Eus-----kakakakakkakakakakaka',
+    requirement_one: 'Gutxienez 1GB RAM Memoria',
+    requirement_two: 'Android 4.X gutxienez',
 
     //Menu
 
