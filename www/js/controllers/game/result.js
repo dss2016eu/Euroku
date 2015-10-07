@@ -129,7 +129,7 @@ angular.module('euroku.result', [])
 
   $scope.morePlay = function ()
   {
-    $state.go('app.play');
+    $state.go('app.quiz');
     $ionicHistory.nextViewOptions({
               disableBack: true
     });
