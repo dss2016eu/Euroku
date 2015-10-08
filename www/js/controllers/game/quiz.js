@@ -14,7 +14,11 @@ angular.module('euroku.quiz', [])
 
 .controller('QuizCtrl', function($scope, $http, $ionicLoading, $ionicHistory,
 									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, URL_LOCALHOST, $timeout, $rootScope) {
-$rootScope.menu_show= false;
+
+  $scope.loading = true;
+
+
+  $rootScope.menu_show= false;
   $scope.orders = randomAnswersOrders (1);
   console.log($scope.orders);
 
@@ -57,7 +61,7 @@ $rootScope.menu_show= false;
 
   $scope.playvideo = false;
 
-  $scope.loading = false;
+  //$scope.loading = false;
 
 
   $ionicLoading.show();
@@ -67,7 +71,7 @@ $rootScope.menu_show= false;
 
 
   $ionicLoading.hide();
-        $scope.loading = true;
+        //$scope.loading = true;
     /*var req = {
        method: 'GET',
        url: $scope.localhost+'/euskalkitegia/api/v1/getquestion?device_hash='+$scope.deviceid,
