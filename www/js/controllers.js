@@ -162,6 +162,13 @@ $ionicSideMenuDelegate.canDragContent(false);
 
 
 })
+
+.controller('SettingsCtrl', function($scope, $ionicHistory, $state) {
+  $scope.answer_correct = 6;
+  $scope.total_answer = 16;
+
+  $scope.progress = ($scope.answer_correct * 100) / $scope.total_answer;
+})
 .controller('WhatIsCtrl', function($scope, $ionicHistory, $state) {
   $scope.morePlay = function ()
   {
