@@ -1,11 +1,53 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup) {
 
   if (window.localStorage.getItem('lang') === null)
   {
     $translate.use('es');
+    window.localStorage.setItem('lang', 'es');
   }
+
+  $rootScope.goToPlay = function()
+  {
+    $scope.selectlang = window.localStorage.getItem('lang');
+    if ($scope.selectlang === 'eu')
+    {
+      $scope.popup_title = translations_eu.popup_title;
+      $scope.popup_description = translations_eu.popup_description;
+    }
+    else if ($scope.selectlang === 'es')
+    {
+       $scope.popup_title = translations_es.popup_title;
+      $scope.popup_description = translations_es.popup_description;
+    }
+    else if ($scope.selectlang === 'en')
+    {
+       $scope.popup_title = translations_en.popup_title;
+      $scope.popup_description = translations_en.popup_description;
+    }
+    if (window.localStorage.getItem('select_language') !== '1')
+    {
+      var alertPopup = $ionicPopup.show({
+             title: $scope.popup_title,
+             buttons: [
+                          {
+                          text: '<b>OK</b>',
+                          type: 'button-dark',
+                              onTap: function(e) {
+                                $rootScope.optionsLanguage();
+                              }
+                          }
+                      ],
+             template: '<h3 class="center">' + $scope.popup_description + '</h3>'
+      });
+    }
+    else
+    {
+      $state.go('app.quiz');
+    }
+
+  };
   $rootScope.optionsLanguage = function()
   {
     // Show the action sheet
