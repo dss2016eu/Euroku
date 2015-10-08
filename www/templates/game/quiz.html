@@ -22,9 +22,9 @@
       <div class="border">
 
         <h3 ng-bind-html="question.title"></h3>
-        <!--<div ng-show="containimage [0]">
-          <img src="{{images [$index]}}" alt = ""/>
-        </div>-->
+        <div ng-show="show_image">
+          <img src="{{question.img}}" alt = ""/>
+        </div>
 
       </div>
     <h4 class="points" ng-show="loading"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
