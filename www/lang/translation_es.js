@@ -49,7 +49,7 @@ var translations_es = {
     take_photo_menu: 'Saca una foto',
 
     //Languages
-    language: 'Lenguaje',
+    language: 'Idioma',
     lang_en: 'English',
     lang_es: 'Español',
     lang_eu: 'Euskera',
