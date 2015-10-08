@@ -1,0 +1,56 @@
+<ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>' cache-view="false" hide-back-button="true">
+  <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+      <button class="button button-clear button-icon ion-navicon"
+             menu-toggle="left">
+          </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+   <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="https://eltrajedelosdomingos.files.wordpress.com/2008/06/donostia-sansebastian-2016.jpg">
+    <h2>Euroku User</h2>
+    <p>Progress: {{answer_correct}} / {{total_answer}} ({{progress}}%)</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="https://eltrajedelosdomingos.files.wordpress.com/2008/06/donostia-sansebastian-2016.jpg">
+    <p>
+      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+      the content is from a card-body consisting of an image and paragraph text. The footer
+      consists of tabs, icons aligned left, within the card-footer.
+    </p>
+    <!--<p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>-->
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <!--<a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>-->
+    <a class="tab-item" ng-click="optionsLanguage()">
+      <i class="icon ion-earth"></i>
+      {{'language' | translate}}
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      {{'share_title' | translate}}
+    </a>
+  </div>
+
+</div>
+  </ion-content>
+</ion-view>
+
