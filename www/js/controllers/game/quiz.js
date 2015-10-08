@@ -21,7 +21,20 @@ $rootScope.menu_show= false;
   console.log(URL_LOCALHOST);
   $ionicSideMenuDelegate.canDragContent(false);
 
-  var irudia = "";
+
+
+  var random_question = getRandomInt(1,2);
+
+  if (random_question === 1)
+  {
+    var irudia = "";
+    $scope.show_image = false;
+  }
+  else
+  {
+    var irudia = "http://dss2016.eu/media/com_ohanah/attachments/931941142-Donostia2016_Cosmopotica_.jpg";
+    $scope.show_image = true;
+  }
 
   $scope.datua = '{"zuzena": "Legutio (Araba)", "bideo_helbidea": "http://bideoak.ahotsak.com/LEG030/leg030_009.flv", "img": "' + irudia + '", ' +
               '"jatorria": "http://ahotsak.eus/legutio/pasarteak/leg-030-009/", "title": "Zein herritakoa da pasarte hau?", '+
