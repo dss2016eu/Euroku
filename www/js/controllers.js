@@ -1,11 +1,16 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
   if (window.localStorage.getItem('lang') === null)
   {
     $translate.use('es');
     window.localStorage.setItem('lang', 'es');
+  }
+
+  $rootScope.shareApp = function()
+  {
+    //$cordovaSocialSharing.share("#Donostia2016" + $scope.news.title, "Donostia2016", /*IMG*/, /*URL*/);
   }
 
   $rootScope.goToPlay = function()
@@ -89,38 +94,7 @@ angular.module('euroku.controllers', [])
     window.localStorage.setItem('select_language', '1');
   };
 
-  // Form data for the login modal
-  $scope.loginData = {};
-
   $rootScope.menu_show = false;
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/user/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
 })
 
 .controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window, $rootScope) {
@@ -206,7 +180,7 @@ $ionicSideMenuDelegate.canDragContent(false);
 })
 
 .controller('SettingsCtrl', function($scope, $ionicHistory, $state) {
-  $scope.answer_correct = 6;
+  $scope.answer_correct = getRandomInt(1,15);
   $scope.total_answer = 16;
 
   $scope.progress = ($scope.answer_correct * 100) / $scope.total_answer;
