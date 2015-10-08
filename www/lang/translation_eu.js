@@ -124,6 +124,11 @@ var translations_eu = {
     share_title: 'Elkarbanatu',
     change_language: 'Aldatuz hizkuntzaz',
 
+    //Pop up message components
+
+    popup_title: 'Aukeratu hizkuntza',
+    popup_description: 'Eurokun jokatzen hasi ahal izateko lehenbizi hizkuntza aukeratu beharko duzu',
+
     //Errors messages
     login_no_correct: 'Saioa hasteko sartutako datuak ez dira zuzenak. Saiatu berriro mesedez',
     error_no_ranking: 'Errorea suertatu da sailkapenaren eskaera egitean. Saiatu berriro beranduago mesedez',

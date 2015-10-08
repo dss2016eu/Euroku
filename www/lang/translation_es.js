@@ -125,6 +125,11 @@ var translations_es = {
     share_title: 'Compartir',
     change_language: 'Cambiar de idioma',
 
+    //Pop up message components
+
+    popup_title: 'Selecciona idioma',
+    popup_description: 'Debes de seleccionar un idioma para poder empezar a jugar en Euroku',
+
     //Errors messages
     login_no_correct: 'Los datos de inicio de sesión son incorrectos. Por favor, inténtalo de nuevo',
     error_no_ranking: 'Error al realizar petición para obtener clasificación. Por favor, inténtalo más tarde',

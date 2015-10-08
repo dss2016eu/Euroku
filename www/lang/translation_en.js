@@ -126,6 +126,11 @@ var translations_en = {
     share_title: 'Share',
     change_language: 'Change Language',
 
+    //Pop up message components
+
+    popup_title: 'Select language',
+    popup_description: 'To start play in Euroku you must select language',
+
     //Errors messages
     login_no_correct: 'The data log is incorrect. Please try again',
     error_no_ranking : ' Error performing request for classification. Please try again later ',
