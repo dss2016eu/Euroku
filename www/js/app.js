@@ -155,6 +155,16 @@ angular.module('euroku', ['ionic',
       }
     })
 
+  .state('app.settings', {
+      url: '/settings',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/user/settings.html',
+          controller: 'SettingsCtrl'
+        }
+      }
+    })
+
   .state('app.browse', {
       url: '/browse',
       views: {
