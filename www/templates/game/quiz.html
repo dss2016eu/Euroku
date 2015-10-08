@@ -15,8 +15,8 @@
 
     </div>
     <h3 class="question"> {{question.title}} </h3>-->
-
-    <div class="question_title">
+    <div ng-show="loading">
+      <div class="question_title">
         <h2>{{question.qtype.title}}</h2>
       </div>
       <div class="border">
@@ -27,33 +27,34 @@
         </div>
 
       </div>
-    <h4 class="points" ng-show="loading"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
-    <div class="answers" ng-show="loading">
+      <h4 class="points"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
+      <div class="answers">
 
-        <ion-radio class="item_ans"
+          <ion-radio class="item_ans"
+              ng-model="choice"
+              ng-change = "checkAnswer (orders[0] [0])"
+              value="{{orders[0] [0]}}"
+              ng-disabled="disabled">
+                {{answers [orders[0] [0] -1]}} <!-- - {{orders[0] [0] -1}}-->
+            </ion-radio>
+          <ion-radio
+            class="item_ans"
             ng-model="choice"
-            ng-change = "checkAnswer (orders[0] [0])"
-            value="{{orders[0] [0]}}"
+            ng-change = "checkAnswer (orders[0] [1])"
+            value="{{orders [0] [1]}}"
             ng-disabled="disabled">
-              {{answers [orders[0] [0] -1]}} <!-- - {{orders[0] [0] -1}}-->
+              {{answers [orders[0] [1] -1]}} <!-- - {{orders[0] [1] -1}}-->
           </ion-radio>
-        <ion-radio
+          <ion-radio
           class="item_ans"
-          ng-model="choice"
-          ng-change = "checkAnswer (orders[0] [1])"
-          value="{{orders [0] [1]}}"
-          ng-disabled="disabled">
-            {{answers [orders[0] [1] -1]}} <!-- - {{orders[0] [1] -1}}-->
-        </ion-radio>
-        <ion-radio
-        class="item_ans"
-          ng-model="choice"
-          ng-change="checkAnswer (orders[0] [2])"
-          ng-disabled="disabled"
-          value="{{orders [0][2]}}">
-            {{answers [orders[0] [2] -1]}} <!-- - {{orders[0] [2] -1}}-->
-        </ion-radio>
+            ng-model="choice"
+            ng-change="checkAnswer (orders[0] [2])"
+            ng-disabled="disabled"
+            value="{{orders [0][2]}}">
+              {{answers [orders[0] [2] -1]}} <!-- - {{orders[0] [2] -1}}-->
+          </ion-radio>
 
+      </div>
     </div>
   </ion-content>
 </ion-view>
