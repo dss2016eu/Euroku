@@ -1,6 +1,6 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
+.controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
   if (window.localStorage.getItem('lang') === null)
   {
@@ -8,29 +8,34 @@ angular.module('euroku.controllers', [])
     window.localStorage.setItem('lang', 'es');
   }
 
+  $scope.selectlang = window.localStorage.getItem('lang');
+  if ($scope.selectlang === 'eu')
+  {
+    $scope.popup_title = translations_eu.popup_title;
+    $scope.popup_description = translations_eu.popup_description;
+    $scope.share_text = translations_eu.share_social_text;
+  }
+  else if ($scope.selectlang === 'es')
+  {
+    $scope.popup_title = translations_es.popup_title;
+    $scope.popup_description = translations_es.popup_description;
+    $scope.share_text = translations_es.share_social_text;
+  }
+  else if ($scope.selectlang === 'en')
+  {
+    $scope.popup_title = translations_en.popup_title;
+    $scope.popup_description = translations_en.popup_description;
+    $scope.share_text = translations_en.share_social_text;
+  }
+
   $rootScope.shareApp = function()
   {
-    //$cordovaSocialSharing.share("#Donostia2016" + $scope.news.title, "Donostia2016", /*IMG*/, /*URL*/);
+
+    $cordovaSocialSharing.share("#Donostia2016 " + $scope.share_text, "Donostia2016", "img/erokulogoa02.png", "http://dss2016.eu/eu/");
   }
 
   $rootScope.goToPlay = function()
   {
-    $scope.selectlang = window.localStorage.getItem('lang');
-    if ($scope.selectlang === 'eu')
-    {
-      $scope.popup_title = translations_eu.popup_title;
-      $scope.popup_description = translations_eu.popup_description;
-    }
-    else if ($scope.selectlang === 'es')
-    {
-       $scope.popup_title = translations_es.popup_title;
-      $scope.popup_description = translations_es.popup_description;
-    }
-    else if ($scope.selectlang === 'en')
-    {
-       $scope.popup_title = translations_en.popup_title;
-      $scope.popup_description = translations_en.popup_description;
-    }
     if (window.localStorage.getItem('select_language') !== '1')
     {
       var alertPopup = $ionicPopup.show({
@@ -92,34 +97,14 @@ angular.module('euroku.controllers', [])
     window.localStorage.setItem('lang', key);
     console.log(window.localStorage.getItem('lang'));
     window.localStorage.setItem('select_language', '1');
+    $state.go('app.main');
+    $ionicHistory.nextViewOptions({
+              disableBack: true
+    });
+
   };
 
   $rootScope.menu_show = false;
-})
-
-.controller('PlaylistsCtrl', function($scope, $translate, $ionicPlatform, $window, $rootScope) {
- // $rootScope.menu_show = true;
-  $scope.$on('$ionicView.afterEnter', function(){
-
-    $rootScope.menu_show = true;
-
-    if (window.localStorage.getItem('lang') === null)
-    {
-      window.localStorage.setItem('lang', 'es');
-    }
-    console.log(window.localStorage.getItem('lang'));
-    $translate.use(window.localStorage.getItem('lang'));
-    console.log("49 Playlist");
-  });
-
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory)
@@ -154,29 +139,6 @@ angular.module('euroku.controllers', [])
     });
     $state.go('app.quiz');
   };
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams, $translate, $state, $ionicHistory, $ionicSideMenuDelegate) {
-
-$ionicSideMenuDelegate.canDragContent(false);
-  $translate.use(window.localStorage.getItem('lang'));
-  $scope.changeLanguage = function (key) {
-    $translate.use(key);
-    window.localStorage.setItem('lang', key);
-    console.log(window.localStorage.getItem('lang'));
-    window.localStorage.setItem('change_language', "yes");
-  };
-
-  $scope.returnToMain = function ()
-  {
-    $ionicHistory.nextViewOptions({
-      disableAnimate: true,
-      disableBack: true
-    });
-    $state.go('app.playlists');
-  };
-
-
 })
 
 .controller('SettingsCtrl', function($scope, $ionicHistory, $state) {
