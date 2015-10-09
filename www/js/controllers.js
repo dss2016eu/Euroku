@@ -180,7 +180,7 @@ $ionicSideMenuDelegate.canDragContent(false);
 })
 
 .controller('SettingsCtrl', function($scope, $ionicHistory, $state) {
-  $scope.answer_correct = getRandomInt(1,15);
+  $scope.answer_correct = getRandomInt(1,16); //get a number in range 1-16
   $scope.total_answer = 16;
 
   $scope.progress = ($scope.answer_correct * 100) / $scope.total_answer;
