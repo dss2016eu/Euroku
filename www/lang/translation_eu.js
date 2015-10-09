@@ -124,6 +124,9 @@ var translations_eu = {
     share_title: 'Elkarbanatu',
     change_language: 'Aldatuz hizkuntzaz',
 
+    //Share messages
+    share_social_text: 'Euroku jeistera animatzen zaitut',
+
     //Pop up message components
 
     popup_title: 'Aukeratu hizkuntza',

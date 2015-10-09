@@ -126,6 +126,9 @@ var translations_en = {
     share_title: 'Share',
     change_language: 'Change Language',
 
+    //Share messages
+    share_social_text: 'Share it with your friends!',
+
     //Pop up message components
 
     popup_title: 'Select language',

@@ -125,6 +125,9 @@ var translations_es = {
     share_title: 'Compartir',
     change_language: 'Cambiar de idioma',
 
+    //Share messages
+    share_social_text: 'Te animo a descargar Euroku ;)',
+
     //Pop up message components
 
     popup_title: 'Selecciona idioma',
