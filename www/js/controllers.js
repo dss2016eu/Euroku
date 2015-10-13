@@ -107,7 +107,7 @@ angular.module('euroku.controllers', [])
   $rootScope.menu_show = false;
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory)
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate)
 {
   //$ionicSideMenuDelegate.canDragContent(false);
   $rootScope.menu_show = true;
@@ -115,19 +115,25 @@ angular.module('euroku.controllers', [])
   if (window.localStorage.getItem('select_language') === '1')
   {
     $scope.show_play_button = true;
+    $rootScope.menu_show = true;
+    $ionicSideMenuDelegate.canDragContent(true);
   }
   else
   {
     $scope.show_play_button = false;
+    $rootScope.menu_show = false;
+    $ionicSideMenuDelegate.canDragContent(false);
   }
 
-  $scope.goToMainMenuLayout = function(key)
+  $scope.selectLanguageToStart = function(key)
   {
     $translate.use(key);
     window.localStorage.setItem('lang', key);
     console.log(window.localStorage.getItem('lang'));
     window.localStorage.setItem('select_language', '1');
     $scope.show_play_button = true;
+    $rootScope.menu_show = true;
+    $ionicSideMenuDelegate.canDragContent(true);
     //$state.go('app.mainmenu');
   };
 
