@@ -124,6 +124,7 @@ var translations_es = {
     back_text: 'Atrás',
     share_title: 'Compartir',
     change_language: 'Cambiar de idioma',
+    trophy_text: 'Premios',
 
     //Share messages
     share_social_text: 'Te animo a descargar Euroku ;)',

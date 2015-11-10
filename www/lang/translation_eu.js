@@ -123,6 +123,7 @@ var translations_eu = {
     back_text: 'Atzera',
     share_title: 'Elkarbanatu',
     change_language: 'Aldatuz hizkuntzaz',
+    trophy_text: 'Saria',
 
     //Share messages
     share_social_text: 'Euroku jeistera animatzen zaitut',

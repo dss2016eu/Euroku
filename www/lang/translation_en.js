@@ -125,6 +125,7 @@ var translations_en = {
     back_text: 'Back',
     share_title: 'Share',
     change_language: 'Change Language',
+    trophy_text: 'Trophy',
 
     //Share messages
     share_social_text: 'Share it with your friends!',
