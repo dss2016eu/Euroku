@@ -1,6 +1,6 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $rootScope, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
+.controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $rootScope, $timeout, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
   if (window.localStorage.getItem('lang') === null)
   {
@@ -105,6 +105,46 @@ angular.module('euroku.controllers', [])
   };
 
   $rootScope.menu_show = false;
+
+
+
+  /****************************************************************************
+    CHRONOMETER
+  *****************************************************************************/
+
+  $scope.counter = 10;
+
+    var mytimeout = null; // the current timeoutID
+
+    // actual timer method, counts down every second, stops on zero
+    $scope.onTimeout = function() {
+        if($scope.counter ===  0) {
+            $scope.$broadcast('timer-stopped', 0);
+            $timeout.cancel(mytimeout);
+            return;
+        }
+        $scope.counter--;
+        console.log($scope.counter);
+        mytimeout = $timeout($scope.onTimeout, 1000);
+    };
+
+    $scope.startTimer = function() {
+        mytimeout = $timeout($scope.onTimeout, 1000);
+    };
+
+    // stops and resets the current timer
+    $scope.stopTimer = function() {
+        $scope.$broadcast('timer-stopped', $scope.counter);
+        $scope.counter = 10;
+        $timeout.cancel(mytimeout);
+    };
+
+    // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
+    $scope.$on('timer-stopped', function(event, remaining) {
+        if(remaining === 0) {
+            console.log('your time ran out!');
+        }
+    });
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate)

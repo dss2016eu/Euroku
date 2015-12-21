@@ -19,32 +19,12 @@ angular.module('euroku.quiz', [])
 
 
   $rootScope.menu_show= false;
-  $scope.orders = randomAnswersOrders (1);
+
   console.log($scope.orders);
   $ionicSideMenuDelegate.canDragContent(false);
 
-  $scope.tribualtime = '00:10:00';
+  $scope.tribualtime = '00:10';
 
-
-
-  var random_question = getRandomInt(1,2);
-
-  if (random_question === 1)
-  {
-    var irudia = "";
-    $scope.show_image = false;
-  }
-  else
-  {
-    var irudia = "http://dss2016.eu/media/com_ohanah/attachments/931941142-Donostia2016_Cosmopotica_.jpg";
-    $scope.show_image = true;
-  }
-
-  $scope.startTime = function ()
-  {
-    console.log("Chrono Start");
-    chronoStart();
-  };
 
 
 
