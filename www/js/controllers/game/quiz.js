@@ -13,7 +13,7 @@
 angular.module('euroku.quiz', [])
 
 .controller('QuizCtrl', function($scope, $http, $ionicLoading, $ionicHistory,
-									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, URL_LOCALHOST, $timeout, $rootScope) {
+									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, questionsServices, $timeout, $rootScope) {
 
   $scope.loading = true;
 
@@ -21,9 +21,9 @@ angular.module('euroku.quiz', [])
   $rootScope.menu_show= false;
   $scope.orders = randomAnswersOrders (1);
   console.log($scope.orders);
-
-  console.log(URL_LOCALHOST);
   $ionicSideMenuDelegate.canDragContent(false);
+
+  $scope.tribualtime = '00:10:00';
 
 
 
@@ -40,84 +40,12 @@ angular.module('euroku.quiz', [])
     $scope.show_image = true;
   }
 
-  $scope.datua = '{"zuzena": "Legutio (Araba)", "bideo_helbidea": "http://bideoak.ahotsak.com/LEG030/leg030_009.flv", "img": "' + irudia + '", ' +
-              '"jatorria": "http://ahotsak.eus/legutio/pasarteak/leg-030-009/", "title": "Zein herritakoa da pasarte hau?", '+
-              '"okerra2": "Itzaltzu (Nafarroa)", "okerra1": "Elgorriaga (Nafarroa)", "zailtasuna": 1070, "id": 18959, "puntuak": 1070}';
+  $scope.startTime = function ()
+  {
+    console.log("Chrono Start");
+    chronoStart();
+  };
 
-  $scope.datua = JSON.parse($scope.datua);
-
-  console.log($scope.datua);
-  $scope.answers = [$scope.datua.zuzena, $scope.datua.okerra1, $scope.datua.okerra2];
-  $scope.question = { id: $scope.datua.id,
-                      title: $scope.datua.title,
-                      answer1: $scope.answers [0],
-                      answer2: $scope.answers [1],
-                      answer3: $scope.answers [2],
-                      difficult: $scope.datua.zailtasuna,
-                      img: $scope.datua.img,
-                      source: $scope.datua.jatorria};
-
-  console.log($scope.question.difficult);
-
-  $scope.playvideo = false;
-
-  //$scope.loading = false;
-
-
-  $ionicLoading.show();
-
-
-
-
-
-  $ionicLoading.hide();
-        //$scope.loading = true;
-    /*var req = {
-       method: 'GET',
-       url: $scope.localhost+'/euskalkitegia/api/v1/getquestion?device_hash='+$scope.deviceid,
-       headers: {
-         'Content-Type': 'application/json'
-       }
-    };
-    $http(req).success (function(data){
-      $scope.datua = data;
-      console.log(data);
-
-    }).error(function(){
-
-            $ionicLoading.hide();
-            $scope.loading = false;
-
-            //If error---> show 'main' layout
-            $state.go('app.main');
-            window.localStorage.setItem ('error', 'Partidaren galderaren informazioa jasotzean '+
-              'ezusteko errorea eman da. Barkatu eragozpenak. Saiatu berriro mesedez ;)');
-
-    })
-    .then(function() {
-      $ionicLoading.hide();
-        console.log($scope.datua);
-        //window.location.reload(true);
-        $scope.answers = [$scope.datua.zuzena, $scope.datua.okerra1, $scope.datua.okerra2];
-
-        console.log($scope.datua.bideo_helbidea.replace("flv", "mp4"));
-
-        $scope.question = { id: $scope.datua.id,
-                                              title: $scope.datua.title,
-                                              answer1: $scope.answers [0],
-                                              answer2: $scope.answers [1],
-                                              answer3: $scope.answers [2],
-                                              difficult: $scope.datua.zailtasuna,
-                                              video: $scope.datua.bideo_helbidea.replace("flv", "mp4"),
-                                              source: $scope.datua.jatorria};
-
-
-        console.log($scope.question);
-
-        $ionicLoading.hide();
-        $scope.loading = true;
-
-    });*/
 
 
     $scope.showVideo = function ()
@@ -126,14 +54,25 @@ angular.module('euroku.quiz', [])
       $scope.video = $scope.question.video;
       console.log('$scope.playvideo: '+$scope.playvideo );
     };
-    $scope.checkAnswer = function (value)
+    $scope.sendSelection = function (answer)
     {
-      console.log(value);
+
+      var params = {device_id: 1, question_id: $scope.question.id, answer: 1 };
+
+      console.log(params);
 
       $scope.disabled = true;
 
-      console.log("Response: " + $scope.answers[value-1]);
-      console.log("Correct: " + $scope.question.answer1);
+       questionsServices.setQuestionRequest(params)
+        .then(function(resp)
+        {
+          console.log(resp);
+        },
+        function(error)
+        {
+          console.error(error);
+        });
+
 
       if ($scope.datua.zuzena === $scope.answers[value-1])
       {
@@ -156,6 +95,20 @@ angular.module('euroku.quiz', [])
 
       }, 1000);
     };
+
+    questionsServices.getQuestion()
+        .then(function(resp)
+        {
+          console.log(resp);
+
+          $scope.question = resp.data;
+          console.log($scope.question);
+          //console.log($scope.question);
+        },
+        function(error)
+        {
+          console.error(error);
+        });
 
 });
 
