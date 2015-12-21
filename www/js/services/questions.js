@@ -18,7 +18,13 @@ angular.module('euroku.services.questions', [])
         {
           game_id = "&game_id=" + game_id;
         }
+        else if (game_id === undefined)
+        {
+          game_id = "";
+        }
         var device_id = "1";
+
+        console.log(URL_LOCALHOST+QUESTIONS+"?device_id=" + device_id + game_id);
 
         return $http.get(URL_LOCALHOST+QUESTIONS+"?device_id=" + device_id + game_id).success(
 
