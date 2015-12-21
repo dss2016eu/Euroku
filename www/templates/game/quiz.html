@@ -1,6 +1,6 @@
 <ion-view view-title="" cache-view="false" hide-back-button="true">
   <ion-nav-buttons side="right">
-  	<b><span id="chronotime">0:00:00:00</span></b>
+    <b><span id="chronotime" ng-model="tribualtime">00:00</span></b>
   </ion-nav-buttons>
   <ion-content>
     <!--<div class="question_title">
@@ -15,9 +15,11 @@
 
     </div>
     <h3 class="question"> {{question.title}} </h3>-->
+
+    <button ng-click="startTime()">Test</button>
     <div ng-show="loading">
       <div class="question_title">
-        <h2>{{question.qtype.title}}</h2>
+        <h2></h2>
       </div>
       <div class="border">
 
@@ -27,32 +29,29 @@
         </div>
 
       </div>
-      <h4 class="points"><span>Puntu jokoan: </span>{{question.difficult}}</h4>
+      <h4 class="points"><span>Puntu jokoan: </span></h4>
       <div class="answers">
 
-          <ion-radio class="item_ans"
+         <!-- <ion-radio class="item_ans"
               ng-model="choice"
-              ng-change = "checkAnswer (orders[0] [0])"
-              value="{{orders[0] [0]}}"
+              value="1"
               ng-disabled="disabled">
-                {{answers [orders[0] [0] -1]}} <!-- - {{orders[0] [0] -1}}-->
+              {{question."1"}}
             </ion-radio>
           <ion-radio
             class="item_ans"
             ng-model="choice"
-            ng-change = "checkAnswer (orders[0] [1])"
-            value="{{orders [0] [1]}}"
+            value="2"
             ng-disabled="disabled">
-              {{answers [orders[0] [1] -1]}} <!-- - {{orders[0] [1] -1}}-->
+              {{question."2"}}
           </ion-radio>
           <ion-radio
           class="item_ans"
             ng-model="choice"
-            ng-change="checkAnswer (orders[0] [2])"
             ng-disabled="disabled"
-            value="{{orders [0][2]}}">
-              {{answers [orders[0] [2] -1]}} <!-- - {{orders[0] [2] -1}}-->
-          </ion-radio>
+            value="3">
+              {{question."3"}}
+          </ion-radio>-->
 
       </div>
     </div>
