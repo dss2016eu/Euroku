@@ -9,6 +9,7 @@ angular.module('euroku', ['ionic',
                           'euroku.result',
                           'euroku.directives',
                           'euroku.constants',
+                          'euroku.services.questions',
                           'pascalprecht.translate',
                           'ngMessages'])
 
@@ -26,6 +27,13 @@ angular.module('euroku', ['ionic',
       StatusBar.styleDefault();
     }
   });
+
+  console.log(window.localStorage.getItem('device_id'));
+
+  if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
+  {
+      window.localStorage.setItem ('device_id', 1);
+  }
 
   if (window.localStorage.getItem('lang') === null)
   {
@@ -46,6 +54,7 @@ angular.module('euroku', ['ionic',
   {
     console.log(window.localStorage.getItem('lang'));
   }
+
 })
 
 
