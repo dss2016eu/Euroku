@@ -27,7 +27,9 @@ function chrono(){
   else if(msec < 100){
     msec = '0' +msec;
   }
-  document.getElementById('chronotime').innerHTML = hr + ':' + min + ':' + sec + ':' + msec;
+
+  document.getElementById('chronotime').innerHTML = hr + ':' + min + ':' + sec;
+  document.getElementById('chronotime').innerHTML = min + ':' + sec;
   timerID = setTimeout('chrono()', 10);
 
 }
