@@ -1,6 +1,6 @@
 <ion-view view-title="" cache-view="false" hide-back-button="true">
   <ion-nav-buttons side="right">
-    <b><span id="chronotime" ng-model="tribualtime">00:00</span></b>
+    <b><span id="chronotime" ng-model="tribualtime">00:10</span></b>
   </ion-nav-buttons>
   <ion-content>
     <!--<div class="question_title">
@@ -29,29 +29,32 @@
         </div>
 
       </div>
-      <h4 class="points"><span>Puntu jokoan: </span></h4>
+      <h4 class="points"><span>1/16</span></h4>
       <div class="answers">
 
-         <!-- <ion-radio class="item_ans"
+          <ion-radio class="item_ans"
               ng-model="choice"
               value="1"
+              ng-click="sendOption(1)"
               ng-disabled="disabled">
-              {{question."1"}}
+              {{question.answer_one}}
             </ion-radio>
           <ion-radio
             class="item_ans"
             ng-model="choice"
+            ng-click="sendOption(2)"
             value="2"
             ng-disabled="disabled">
-              {{question."2"}}
+              {{question.answer_two}}
           </ion-radio>
           <ion-radio
           class="item_ans"
             ng-model="choice"
             ng-disabled="disabled"
+            ng-click="sendOption(3)"
             value="3">
-              {{question."3"}}
-          </ion-radio>-->
+              {{question.answer_three}}
+          </ion-radio>
 
       </div>
     </div>
