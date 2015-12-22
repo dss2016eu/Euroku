@@ -19,24 +19,42 @@ angular.module('euroku.result', [])
          });
   };
 
-  $scope.sendSelection = function (answer)
+  $scope.sendSelection = function ()
   {
 
-      var params = {device_id: 1, question_id: $scope.question.id, answer: 1 };
+      var params = {
+                      device_id: 1,
+                      question_id: $scope.question_id,
+                      game_id: $scope.game_id,
+                      answer: $scope.user_select_option
+                    };
 
       console.log(params);
 
       $scope.disabled = true;
 
-       /*questionsServices.setQuestionRequest(params)
-        .then(function(resp)
-        {
-          console.log(resp);
-        },
-        function(error)
-        {
-          console.error(error);
-        });*/
+
+      $scope.result = {
+                        price: false,
+                        price_desc: "Sariaren deskribapena",
+                        price_key: "DSS2016BOLI_1",
+                        correct: false,
+                        provider: "",
+                        url: "http://codesyntax.com",
+                        atribution: "Wikipedia"
+                      };
+      console.log($scope.result);
+
+
+    /*questionsServices.setQuestionRequest(params)
+      .then(function(resp)
+      {
+        console.log(resp);
+      },
+      function(error)
+      {
+        console.error(error);
+    });*/
 
   };
   $scope.user_select_option = $stateParams.choose;
@@ -44,6 +62,8 @@ angular.module('euroku.result', [])
   $scope.game_id = $stateParams.game_id;
 
   console.log($scope.user_select_option + "      " + $stateParams.game_id + "      " + $stateParams.question_id);
+
+  $scope.sendSelection();
 
   //$scope.showNewLevelChallenge("Euskaltzalea", "Maila berri bat");
 
