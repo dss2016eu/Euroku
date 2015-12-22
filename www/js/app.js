@@ -148,6 +148,16 @@ angular.module('euroku', ['ionic',
       }
     })
 
+  .state('app.prices', {
+      url: '/prices',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/game/prices.html',
+          controller: 'PricesCtrl'
+        }
+      }
+    })
+
   .state('app.settings', {
       url: '/settings',
       views: {
