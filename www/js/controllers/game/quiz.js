@@ -20,21 +20,25 @@ angular.module('euroku.quiz', [])
 
   $rootScope.menu_show= false;
 
-  console.log($scope.orders);
   $ionicSideMenuDelegate.canDragContent(false);
 
-  $scope.tribualtime = '00:10';
+  $scope.sendOption = function (option)
+  {
+    console.log(option);
+    $scope.stopTimer();
+    $state.go('app.result', { 'choose_option': option});
+    $ionicHistory.nextViewOptions({
+      disableBack: true
+    });
+  };
 
-
-
-
-    $scope.showVideo = function ()
-    {
-      window.open($scope.question.video, '_blank', 'location=yes');
-      $scope.video = $scope.question.video;
-      console.log('$scope.playvideo: '+$scope.playvideo );
-    };
-    $scope.sendSelection = function (answer)
+  $scope.showVideo = function ()
+  {
+    window.open($scope.question.video, '_blank', 'location=yes');
+    $scope.video = $scope.question.video;
+    console.log('$scope.playvideo: '+$scope.playvideo );
+  };
+    /*$scope.sendSelection = function (answer)
     {
 
       var params = {device_id: 1, question_id: $scope.question.id, answer: 1 };
@@ -65,7 +69,7 @@ angular.module('euroku.quiz', [])
             id: $scope.question.id,
             correct: $scope.question.answer1,
             points: $scope.question.difficult
-        };*/
+        };
 
         //params
         $state.go('app.result');
@@ -74,7 +78,7 @@ angular.module('euroku.quiz', [])
         });
 
       }, 1000);
-    };
+    };*/
 
     questionsServices.getQuestion()
         .then(function(resp)
@@ -87,7 +91,17 @@ angular.module('euroku.quiz', [])
         },
         function(error)
         {
-          console.error(error);
+          console.error("Errorea");
+
+          $scope.question = {
+                              answer_one: "A erantzuna",
+                              answer_two: "B erantzuna",
+                              answer_three: "C erantzuna",
+                              title: "Euroku",
+                              photo: "",
+                              id: 10
+                            };
+                            console.log($scope.question);
         });
 
 });
