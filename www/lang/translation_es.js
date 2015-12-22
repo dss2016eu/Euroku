@@ -108,7 +108,7 @@ var translations_es = {
     time_avg: 'Tiempo: ',
     ok_avg: 'Acertadas',
 
-    //About Tribual
+    //About Euroku
     what_is_euroku: '¿Qué es Euroku?',
     sponsor: 'Patrocinador',
     paragraph_1: 'ES-----kakakakakkakakakakaka',

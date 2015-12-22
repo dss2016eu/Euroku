@@ -107,7 +107,7 @@ var translations_eu = {
     time_avg: 'Denbora: ',
     ok_avg: 'Asmatutakoak',
 
-    //About Tribual
+    //About Euroku
     what_is_euroku: 'Zer da Euroku?',
     sponsor: 'Babeslea',
     paragraph_1: 'Eus-----kakakakakkakakakakaka',
