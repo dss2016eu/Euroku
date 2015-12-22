@@ -19,6 +19,32 @@ angular.module('euroku.result', [])
          });
   };
 
+  $scope.sendSelection = function (answer)
+  {
+
+      var params = {device_id: 1, question_id: $scope.question.id, answer: 1 };
+
+      console.log(params);
+
+      $scope.disabled = true;
+
+       /*questionsServices.setQuestionRequest(params)
+        .then(function(resp)
+        {
+          console.log(resp);
+        },
+        function(error)
+        {
+          console.error(error);
+        });*/
+
+  };
+  $scope.user_select_option = $stateParams.choose;
+  $scope.question_id = $stateParams.question_id;
+  $scope.game_id = $stateParams.game_id;
+
+  console.log($scope.user_select_option + "      " + $stateParams.game_id + "      " + $stateParams.question_id);
+
   //$scope.showNewLevelChallenge("Euskaltzalea", "Maila berri bat");
 
   //Erantzuna zuzena den ala ez jakiteko
