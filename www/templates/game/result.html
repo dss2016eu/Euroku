@@ -12,14 +12,14 @@
   </ion-nav-bar>
   <ion-content>
     <div class="row erantzuna">
-    <div class="col col-25"><img class="icons" src="img/{{image}}.png" width="100%" height="100%"/></div>
+    <div class="col col-25"><img class="icons" src="img/{{result.correct}}.png" width="100%" height="100%"/></div>
     <div class="col">
       <h2>{{result.title}}</h2>
       <p class="erantzun_text">{{result.text}}</p>
-      <p class="text"><span>{{"correct_answer" | translate}}</span> {{correct}}</p>
+      <p class="text"><span>{{"correct_answer" | translate}}</span> {{result.correct}}</p>
       <button class="button button-clear button-calm"
-          ng-click="moreInfo()">
-          Informazio +: www.ahotsak.eus
+          ng-click="moreInfo('')">
+          Info +: {{result.url}}
       </button>
     </div>
 
