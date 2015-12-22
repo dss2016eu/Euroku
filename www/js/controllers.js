@@ -147,7 +147,10 @@ angular.module('euroku.controllers', [])
             console.log('your time ran out!');
             document.getElementById('chronotime').innerHTML = "Denbora amaituta!";
             $scope.counter = 10;
-            $state.go('app.main');
+            $state.go('app.result', { 'choose_option': -1});
+            $ionicHistory.nextViewOptions({
+              disableBack: true
+            });
         }
     });
 })
