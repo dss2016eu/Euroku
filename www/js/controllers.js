@@ -191,4 +191,9 @@ angular.module('euroku.controllers', [])
             window.open(url, '_blank', 'location=yes');
         }
     };
+})
+
+.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate) {
+  $rootScope.menu_show = true;
+  $ionicSideMenuDelegate.canDragContent(true);
 });
