@@ -87,6 +87,8 @@ angular.module('euroku.quiz', [])
 
           $scope.question = resp.data;
           console.log($scope.question);
+
+          $scope.startTimer();
           //console.log($scope.question);
         },
         function(error)
@@ -102,6 +104,7 @@ angular.module('euroku.quiz', [])
                               id: 10
                             };
                             console.log($scope.question);
+                            $scope.startTimer();
         });
 
 });
