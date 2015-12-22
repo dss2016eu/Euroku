@@ -106,53 +106,6 @@ angular.module('euroku.controllers', [])
 
   $rootScope.menu_show = false;
 
-
-
-  /****************************************************************************
-    CHRONOMETER
-  *****************************************************************************/
-
-  $scope.counter = 10;
-
-  var mytimeout = null; // the current timeoutID
-
-  // actual timer method, counts down every second, stops on zero
-  $scope.onTimeout = function() {
-      if($scope.counter ===  0) {
-          $scope.$broadcast('timer-stopped', 0);
-          $timeout.cancel(mytimeout);
-          return;
-      }
-      $scope.counter--;
-      console.log($scope.counter);
-
-      document.getElementById('chronotime').innerHTML = "00:0" + $scope.counter;
-      mytimeout = $timeout($scope.onTimeout, 1000);
-  };
-
-    $scope.startTimer = function() {
-        mytimeout = $timeout($scope.onTimeout, 1000);
-    };
-
-    // stops and resets the current timer
-    $scope.stopTimer = function() {
-        $scope.$broadcast('timer-stopped', $scope.counter);
-        $scope.counter = 10;
-        $timeout.cancel(mytimeout);
-    };
-
-    // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
-    $scope.$on('timer-stopped', function(event, remaining) {
-        if(remaining === 0) {
-            console.log('your time ran out!');
-            document.getElementById('chronotime').innerHTML = "Denbora amaituta!";
-            $scope.counter = 10;
-            $state.go('app.result', { 'choose_option': -1});
-            $ionicHistory.nextViewOptions({
-              disableBack: true
-            });
-        }
-    });
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate)
