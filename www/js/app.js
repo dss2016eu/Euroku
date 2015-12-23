@@ -2,6 +2,8 @@
 angular.module('euroku', ['ionic',
                           'ngCordova' ,
                           'euroku.controllers',
+                          'euroku.profile',
+                          'euroku.prices',
                           'euroku.register',
                           'euroku.login',
                           'euroku.mainmenu',
@@ -11,6 +13,7 @@ angular.module('euroku', ['ionic',
                           'euroku.constants',
                           'euroku.services.questions',
                           'euroku.services.prices',
+                          'euroku.services.profile',
                           'pascalprecht.translate',
                           'ngMessages'])
 
