@@ -14,7 +14,7 @@
 
   <div class="item item-avatar">
     <img src="https://eltrajedelosdomingos.files.wordpress.com/2008/06/donostia-sansebastian-2016.jpg">
-    <h2>Euroku User</h2>
+    <h2>Euroku User ({{profile.language}})</h2>
     <p>Progress: {{answer_correct}} / {{total_answer}} ({{progress}}%)</p>
   </div>
 
@@ -29,27 +29,9 @@
       <a href="#" class="subdued">1 Like</a>
       <a href="#" class="subdued">5 Comments</a>
     </p>-->
+    <button class="button button-block button-dark">{{'save' | translate}}</button>
   </div>
-
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <!--<a class="tab-item" href="#">
-      <i class="icon ion-thumbsup"></i>
-      Like
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-chatbox"></i>
-      Comment
-    </a>-->
-    <a class="tab-item" ng-click="optionsLanguage()">
-      <i class="icon ion-earth"></i>
-      {{'language' | translate}}
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      {{'share_title' | translate}}
-    </a>
-  </div>
-
+<br/>
 </div>
   </ion-content>
 </ion-view>
