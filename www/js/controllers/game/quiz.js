@@ -155,9 +155,7 @@ angular.module('euroku.quiz', [])
           console.error("Errorea");
 
           $scope.question = {
-                              answer_one: "A erantzuna",
-                              answer_two: "B erantzuna",
-                              answer_three: "C erantzuna",
+                              answers: ["A erantzuna", "B erantzuna", "C erantzuna"],
                               title: "Euroku (Question)",
                               photo: "",
                               game_id: 25,
