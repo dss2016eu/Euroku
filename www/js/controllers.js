@@ -148,12 +148,6 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('SettingsCtrl', function($scope, $ionicHistory, $state) {
-  $scope.answer_correct = getRandomInt(1,16); //get a number in range 1-16
-  $scope.total_answer = 16;
-
-  $scope.progress = ($scope.answer_correct * 100) / $scope.total_answer;
-})
 .controller('WhatIsCtrl', function($scope, $ionicHistory, $state) {
   $scope.morePlay = function ()
   {
@@ -191,9 +185,4 @@ angular.module('euroku.controllers', [])
             window.open(url, '_blank', 'location=yes');
         }
     };
-})
-
-.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate) {
-  $rootScope.menu_show = true;
-  $ionicSideMenuDelegate.canDragContent(true);
 });
