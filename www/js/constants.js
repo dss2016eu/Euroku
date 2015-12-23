@@ -15,4 +15,5 @@ angular.module('euroku.constants', [])
                         list: "api/1.0/prices",
                         detail_item: "api/1.0/price/",
                         public_list: "api/1.0/prices/public"
-                    });
+                    })
+;
