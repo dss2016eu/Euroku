@@ -10,6 +10,7 @@ angular.module('euroku', ['ionic',
                           'euroku.directives',
                           'euroku.constants',
                           'euroku.services.questions',
+                          'euroku.services.prices',
                           'pascalprecht.translate',
                           'ngMessages'])
 
