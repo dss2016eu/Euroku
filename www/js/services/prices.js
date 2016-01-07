@@ -31,10 +31,10 @@ angular.module('euroku.services.prices', [])
             }
         );
       },
-      getPriceDetails : function ()
+      getPriceDetails : function (price_key)
       {
 
-        var price_key = "1";
+        //var price_key = "1";
 
         /********************************************************
         Load device id from local Storage
