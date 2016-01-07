@@ -27,4 +27,7 @@ angular.module('euroku.profile', [])
                             };
           console.log($scope.question);
         });
+
+
+
 });
