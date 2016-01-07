@@ -1,6 +1,6 @@
 angular.module('euroku.result', [])
 
-.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout) {
+.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout, questionsServices) {
   console.log($stateParams.response);
 
   $scope.play = '';
@@ -45,18 +45,20 @@ angular.module('euroku.result', [])
                       };
       console.log($scope.result);
 
-
-    /*questionsServices.setQuestionRequest(params)
-      .then(function(resp)
-      {
-        console.log(resp);
-      },
-      function(error)
-      {
-        console.error(error);
-    });*/
+      //Send data to get new data to next game or finish game
+      questionsServices.setQuestionRequest(params)
+        .then(function(resp)
+        {
+          console.log("52: " + resp);
+        },
+        function(error)
+        {
+          console.error(error);
+      });
 
   };
+
+
   $scope.user_select_option = $stateParams.choose;
   $scope.question_id = $stateParams.question_id;
   $scope.game_id = $stateParams.game_id;
@@ -65,84 +67,7 @@ angular.module('euroku.result', [])
 
   $scope.sendSelection();
 
-  //$scope.showNewLevelChallenge("Euskaltzalea", "Maila berri bat");
 
-  //Erantzuna zuzena den ala ez jakiteko
-  /*$scope.response = $stateParams.response;
-  $scope.questionid = $stateParams.id;
-
-  if ($scope.response === "1")
-  {
-      $scope.response = 1;
-  }
-  else
-  {
-      $scope.response = 0;
-  }
-
-  //Eskaera egingo den helbidea
-  /*$scope.localhost = "http://www.ahotsak.eus/euskalkitegia/api/v1/setquestion";
-
-
-  var url = $scope.localhost;
-
-  $scope.params = 'device_hash='+ window.localStorage.getItem('device_id')
-                      +'&galdera_id='+$scope.questionid
-                      +'&response='+$scope.response;
-
-  console.log('Params: '+ $scope.params);
-
-  $http.post(url, $scope.params).
-                  success(function(data) {
-          $scope.play = data;
-
-
-
-  }).error(function(data, status) {
-    console.log('Error:' + status);
-    window.localStorage.setItem ('error', 'Emaitzak jasotzean ezusteko errore bat eman da. Barkatu eragozpenak. Saiatu berriro');
-    $state.go('app.main');
-
-  }).then(function() {
-      console.log($scope.play);
-
-      $scope.correct = $stateParams.correct;
-      $scope.winpoints = $stateParams.points;
-
-      var myEl = angular.element( document.querySelector( '.erantzuna' ) );
-      if ($scope.response === 0)
-      {
-        $scope.result = {title: "Oh, oh...", text: "Huts egin duzu!!"};
-        $scope.image= "fail";
-        $scope.winpoints = 0;
-
-        myEl.addClass('ko_response');
-      }
-      else
-      {
-        $scope.result = {title: "Zorionak!!", text: "Asmatu duzu!!"};
-        $scope.image= "correct";
-        myEl.addClass('ok_response');
-      }
-
-      console.log("Zure maila: " + $scope.play.zure_maila);
-
-      //Show level image depending your play level
-      $scope.showNivelImage($scope.play.zure_maila);
-
-      console.log("Puntuak: " + $scope.play.puntuak);
-      console.log("Lortutako erronka: " + $scope.play.lortutako_erronka);
-      console.log("Erronka puntuak behar direnak: " + $scope.play.hurrengo_erronkarako_puntuak);
-      console.log("Splash: " + $scope.play.splash);
-
-      //$scope.play.splash = true;
-
-      if ($scope.play.splash === "1")
-      {
-          $scope.showNewLevelChallenge($scope.play.zure_maila, $scope.play.lortutako_erronka);
-      }
-
-  });*/
 
   $scope.showNivelImage = function (maila)
   {
