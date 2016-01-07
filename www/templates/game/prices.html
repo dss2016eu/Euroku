@@ -13,18 +13,20 @@
       <div class="item item-divider">
         {{'active_trophy_title' | translate}}
       </div>
-      <a class="item item-avatar" href="#" ng-repeat="price in prices" ng-if="price.active == true">
+      <a class="item item-avatar" href="#" ng-repeat="price in user_prices" ng-if="price.calimed == true">
         <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
         <h2>{{price.title}}</h2>
-        <p>{{price.description}}</p>
+        <p>{{price.amount}}</p>
+        <p>{{price.enddate}}</p>
       </a>
       <div class="item item-divider">
         {{'disactive_trophy_title' | translate}}
       </div>
-      <a class="item item-avatar" href="#" ng-repeat="price in prices" ng-if="price.active == false">
+      <a class="item item-avatar" href="#" ng-repeat="price in user_prices" ng-if="price.calimed == false">
         <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
         <h2>{{price.title}}</h2>
-        <p>{{price.description}}</p>
+        <p>{{price.amount}}</p>
+        <p>{{price.enddate}}</p>
       </a>
     </div>
   </ion-content>
