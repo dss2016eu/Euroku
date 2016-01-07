@@ -72,6 +72,11 @@ angular.module('euroku', ['ionic',
   $translateProvider.useSanitizeValueStrategy('escaped');
 })
 
+.config(function($httpProvider) {
+    $httpProvider.defaults.headers.post  = { 'Accept': 'application/json',
+                                            'Content-Type': 'application/json'};
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
