@@ -127,6 +127,11 @@ var translations_en = {
     change_language: 'Change Language',
     trophy_text: 'Trophy',
 
+    //Prices
+
+    active_trophy_title: 'Prizes available',
+    disactive_trophy_title: 'Prizes not available',
+
     //Share messages
     share_social_text: 'Share it with your friends!',
 

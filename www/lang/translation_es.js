@@ -126,6 +126,11 @@ var translations_es = {
     change_language: 'Cambiar de idioma',
     trophy_text: 'Premios',
 
+    //Prices
+
+    active_trophy_title: 'Premios disponibles',
+    disactive_trophy_title: 'Premios no disponibles',
+
     //Share messages
     share_social_text: 'Te animo a descargar Euroku ;)',
 

@@ -125,6 +125,11 @@ var translations_eu = {
     change_language: 'Aldatuz hizkuntzaz',
     trophy_text: 'Saria',
 
+    //Prices
+
+    active_trophy_title: 'Eskuragarri dauden sariak',
+    disactive_trophy_title: 'Eskuragarri egon diren sariak',
+
     //Share messages
     share_social_text: 'Euroku jeistera animatzen zaitut',
 
