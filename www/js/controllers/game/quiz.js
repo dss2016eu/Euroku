@@ -155,14 +155,14 @@ angular.module('euroku.quiz', [])
           console.error("Errorea");
 
           $scope.question = {
-                              answers: ["A erantzuna", "B erantzuna", "C erantzuna"],
-                              title: "Euroku (Question)",
+                              answers: ["Irazi", "Areriotu", "Zarratu"],
+                              title: "'Etsaitu' Bizkaian",
                               photo: "",
-                              game_id: 25,
-                              id: 10
+                              game_id: 130,
+                              id: 129
                             };
-                            console.log($scope.question);
-                            $scope.startTimer($scope.question);
+          console.log($scope.question);
+          $scope.startTimer($scope.question);
         });
 
 });
