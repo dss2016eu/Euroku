@@ -6,8 +6,27 @@
         </button>
     </ion-nav-buttons>-->
   <ion-content class="has-header white">
-    <h1>{{'trophy_text' | translate}}</h1>
-    <p>{{menu_show}}</p>
+    <!--<h1>{{'trophy_text' | translate}}</h1>
+    <p>{{menu_show}}</p>-->
+
+    <div class="list">
+      <div class="item item-divider">
+        {{'active_trophy_title' | translate}}
+      </div>
+      <a class="item item-avatar" href="#" ng-repeat="price in prices" ng-if="price.active == true">
+        <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
+        <h2>{{price.title}}</h2>
+        <p>{{price.description}}</p>
+      </a>
+      <div class="item item-divider">
+        {{'disactive_trophy_title' | translate}}
+      </div>
+      <a class="item item-avatar" href="#" ng-repeat="price in prices" ng-if="price.active == false">
+        <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
+        <h2>{{price.title}}</h2>
+        <p>{{price.description}}</p>
+      </a>
+    </div>
   </ion-content>
 </ion-view>
 
