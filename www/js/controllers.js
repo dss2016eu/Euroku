@@ -2,6 +2,12 @@ angular.module('euroku.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
+  $scope.getRandomBoolean = function()
+  {
+    return parseInt(Math.random() * 2) ?  true : false;
+  };
+
+
   if (window.localStorage.getItem('lang') === null)
   {
     $translate.use('es');
@@ -185,4 +191,6 @@ angular.module('euroku.controllers', [])
             window.open(url, '_blank', 'location=yes');
         }
     };
+
+
 });
