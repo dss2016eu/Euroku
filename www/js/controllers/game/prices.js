@@ -16,6 +16,7 @@ angular.module('euroku.prices', [])
   $rootScope.menu_show = true;
   $ionicSideMenuDelegate.canDragContent(true);
 
+  //Erabiltzailearen sariak
   pricesServices.getUserListPrices()
         .then(function(resp)
       {
@@ -26,7 +27,8 @@ angular.module('euroku.prices', [])
         console.error(error);
   });
 
-  pricesServices.getPriceDetails()
+  //Lortutako sariaren xehetasunak
+  pricesServices.getPriceDetails("DSS2016BOLI_1")
     .then (function(resp)
       {
         console.log("52: " + resp);
@@ -36,7 +38,7 @@ angular.module('euroku.prices', [])
         console.error(error);
   });
 
-
+  //Dauden sari guztien zerrenda
     pricesServices.getPublicPriceList()
     .then (function(resp)
       {
@@ -45,47 +47,48 @@ angular.module('euroku.prices', [])
       function(error)
       {
         console.error(error);
-  });
-
-      $scope.prices = [
+        $scope.user_prices = [
                         {
-                          description: "Price description...",
+                          amount: "Price description...",
                           title: "Boligrafoa",
-                          photo: "",
-                          active: true,
-                          id: 129
+                          enddate: "2016-02-25",
+                          key: "AJUEH2910",
+                          calimed: true
                         },
                         {
-                          description: "Price description...",
-                          title: "Kursaal Sarrerak",
-                          photo: "",
-                          active: false,
-                          id: 130
+                          amount: "Price description...",
+                          title: "Boligrafoa",
+                          enddate: "2016-02-10",
+                          key: "AJUEH2110",
+                          calimed: true
                         },
                         {
-                          description: "Sarrerak hitzaldirako",
-                          title: "Tokialdatu / Desplazamiento",
-                          photo: "",
-                          active: false,
-                          id: 136
+                          amount: "Sarrerak hitzaldirako",
+                          title: "Tokialdia / Desplazamiento",
+                          enddate: "2016-01-25",
+                          key: "ALOEH2910",
+                          calimed: true
                         },
                         {
-                          description: "Potentzia handiko linternak eskuan hartuta, 30 bat pertsonako...",
-                          title: "Argi-gerrilla",
-                          photo: "",
-                          active: true,
-                          id: 131
+                          amount: "Potentzia handiko linternak eskuan hartuta, 30 bat pertsonako...",
+                          title: "Argi gerrilla",
+                          enddate: "2016-02-25",
+                          key: "AJUEJ0910",
+                          calimed: false
                         },
                         {
-                          description: "Price description...",
+                          amount: "Price description...",
                           title: "Feministaldia",
-                          photo: "",
-                          active: true,
-                          id: 133
+                          enddate: "2016-03-30",
+                          calimed: false,
+                          key: "AJDHEWU920"
                         }
                     ];
 
-    console.log($scope.prices);
+        console.log($scope.user_prices);
+  });
+
+
 
 });
 
