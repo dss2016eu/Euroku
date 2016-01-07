@@ -1,7 +1,7 @@
 angular.module('euroku.result', [])
 
 .controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout, questionsServices) {
-  console.log($stateParams.response);
+  console.log($stateParams.choose);
 
   $scope.play = '';
   $scope.loading = false;
@@ -19,6 +19,8 @@ angular.module('euroku.result', [])
          });
   };
 
+
+
   $scope.sendSelection = function ()
   {
 
@@ -34,11 +36,13 @@ angular.module('euroku.result', [])
       $scope.disabled = true;
 
 
+
       $scope.result = {
+                        game_id: "",
                         price: false,
                         price_desc: "Sariaren deskribapena",
                         price_key: "DSS2016BOLI_1",
-                        correct: false,
+                        correct: $scope.getRandomBoolean(),
                         provider: "",
                         url: "http://codesyntax.com",
                         atribution: "Wikipedia"

@@ -73,10 +73,8 @@ angular.module('euroku.quiz', [])
             console.log('your time ran out!');
             $rootScope.show_time = "00:10";
             $rootScope.counter = 10;
-            $state.go('app.result', { choose: -1, game_id: $scope.question_game.game_id, question_id: $scope.question_game.id});
-            $ionicHistory.nextViewOptions({
-              disableBack: true
-            });
+            //Send -1 if time end...
+            $scope.sendOption(-1);
         }
     });
 
