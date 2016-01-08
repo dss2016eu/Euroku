@@ -131,6 +131,10 @@ var translations_en = {
 
     active_trophy_title: 'Prizes available',
     disactive_trophy_title: 'Prizes not available',
+    ok_text_popup: 'OK',
+    template_title: 'Congrats! You got a new award!',
+    template_msg_1: '<br/>Use the following code when accepting the award: <b>',
+    template_msg_2: '<p>You will see your winnings in the <b>"Awards"</b></p>',
 
     //Share messages
     share_social_text: 'Share it with your friends!',

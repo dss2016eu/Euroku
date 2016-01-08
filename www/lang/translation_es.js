@@ -130,6 +130,10 @@ var translations_es = {
 
     active_trophy_title: 'Premios disponibles',
     disactive_trophy_title: 'Premios no disponibles',
+    ok_text_popup: 'OK',
+    template_title: '¡Felicidades! ¡Has conseguido un nuevo premio!',
+    template_msg_1: '<br/>Utiliza el siguiente código cuando vayas a recoger el premio: <b>',
+    template_msg_2: '<p>Podrás consultar todos los premios conseguidos en "Premios"</p>',
 
     //Share messages
     share_social_text: 'Te animo a descargar Euroku ;)',

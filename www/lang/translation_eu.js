@@ -129,6 +129,10 @@ var translations_eu = {
 
     active_trophy_title: 'Eskuragarri dauden sariak',
     disactive_trophy_title: 'Eskuragarri egon diren sariak',
+    ok_text_popup: 'ADOS',
+    template_title: 'Zorionak! Sari berri bat lortu duzu!',
+    template_msg_1: '<br/>Erabili hurrengo kodea saria jasotzerako orduan: <b>',
+    template_msg_2: '<p>Zure sariak <b>"Sariak"</b> menu aukeran ikusi ahal dituzu</p>',
 
     //Share messages
     share_social_text: 'Euroku jeistera animatzen zaitut',
