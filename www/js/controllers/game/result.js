@@ -63,7 +63,7 @@ angular.module('euroku.result', [])
 
 
 
-      $scope.result = {
+      /*$scope.result = {
                         game_id: "",
                         price: $scope.getRandomBoolean(),
                         price_desc: "Sariaren deskribapena",
@@ -72,15 +72,10 @@ angular.module('euroku.result', [])
                         provider: "",
                         url: "http://codesyntax.com",
                         atribution: "Wikipedia"
-                      };
-      console.log($scope.result);
+                      };*/
 
-      console.log("Saria? " + $scope.result.price);
 
-      if ($scope.result.price === true)
-      {
-        $scope.showNewPrice($scope.result.price_desc, $scope.result.price_key);
-      }
+
 
       //Send data to get new data to next game or finish game (Disable temporaly)
       questionsServices.setQuestionRequest(params)
@@ -89,26 +84,21 @@ angular.module('euroku.result', [])
           $scope.result = resp.data;
           console.log("52: " + resp.data.correct);
 
- /*"game_id": "",
-         "price": "",
-         "price_desc": "",
-         "price_key": "",
-         "correct": true,
-         "provider": "twitter.com",
-         "url": "https://twitter.com/elonmusk/status/679137936416329728",
-         "attribution": "@elonmusk",*/
-
-        if ($scope.result.correct === true)
-        {
-          console.log($scope.result.game_id);
-          window.localStorage.setItem("game_id", $scope.result.game_id);
-        }
-        else
-        {
-          window.localStorage.setItem("game_id", "");
-        }
-
-
+          if ($scope.result.correct === true)
+          {
+            console.log($scope.result.game_id);
+            window.localStorage.setItem("game_id", $scope.result.game_id);
+          }
+          else
+          {
+            window.localStorage.setItem("game_id", "");
+          }
+          console.log("Saria? " + $scope.result.price);
+          if ($scope.result.price === true)
+          {
+            $scope.showNewPrice($scope.result.price_desc, $scope.result.price_key);
+            window.localStorage.setItem("game_id", "");
+          }
         },
         function(error)
         {
