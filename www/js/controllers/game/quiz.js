@@ -121,12 +121,15 @@ angular.module('euroku.quiz', [])
                       title: "'Etsaitu' Bizkaian",
                       photo: "",
                       game_id: 130,
-                      id: 129
+                      id: 129,
+                      round: 1,
+                      rounds: 2
                       };
     console.log($scope.question);
     $scope.startTimer($scope.question);
     $ionicLoading.hide();
     $scope.loading = true;
+    window.localStorage.setItem("game_id", "");
   });
 
 });
