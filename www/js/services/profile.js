@@ -51,6 +51,7 @@ angular.module('euroku.services.profile', [])
             function(data) {
               return data;
             }
+
         );
       }
       //gehiago gehitu daitezke...
