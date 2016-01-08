@@ -305,8 +305,8 @@ img.displayed {
 ####################################################################*/
 
 .popup-head, .popup-buttons .button, .popup-buttons .button:link{
-  background: black;
-  border-color: black;
+  background: #459fdc !important;
+  border-color: #459fdc !important;
 }
 
 .popup-title
