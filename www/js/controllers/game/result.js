@@ -49,8 +49,8 @@ angular.module('euroku.result', [])
                       };
       console.log($scope.result);
 
-      //Send data to get new data to next game or finish game
-      questionsServices.setQuestionRequest(params)
+      //Send data to get new data to next game or finish game (Disable temporaly)
+      /*questionsServices.setQuestionRequest(params)
         .then(function(resp)
         {
           console.log("52: " + resp);
@@ -58,7 +58,7 @@ angular.module('euroku.result', [])
         function(error)
         {
           console.error(error);
-      });
+      });*/
 
   };
 
@@ -113,7 +113,7 @@ angular.module('euroku.result', [])
 
   $scope.moreInfo = function ()
   {
-    var url = 'http://ahotsak.eus';
+    var url = $scope.result.url;
     if($scope.platform === "android")
     {
         window.open(url, '_system', 'location=no');
