@@ -33,6 +33,14 @@ angular.module('euroku.services.profile', [])
       },
       setDetails: function(lang_code)
       {
+        var device_id = window.localStorage.getItem('device_id');
+
+        console.log(device_id);
+
+        //Provisional
+
+        device_id = "1";
+
         var params = {language: lang_code, device_id: device_id};
 
         console.log(params);
