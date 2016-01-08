@@ -28,7 +28,7 @@ angular.module('euroku.prices', [])
   });
 
   //Lortutako sariaren xehetasunak
-  pricesServices.getPriceDetails("DSS2016BOLI_1")
+  /*pricesServices.getPriceDetails("DSS2016BOLI_1")
     .then (function(resp)
       {
         console.log("52: " + resp);
@@ -36,13 +36,27 @@ angular.module('euroku.prices', [])
       function(error)
       {
         console.error(error);
-  });
+  });*/
 
   //Dauden sari guztien zerrenda
     pricesServices.getPublicPriceList()
     .then (function(resp)
       {
-        console.log("52: " + resp);
+        console.log("52: " + resp.data[0].amount);
+
+        $scope.user_prices = [];
+
+        for (var i = 0; i < resp.data.length; i++)
+        {
+          var prices = {
+                        amount: resp.data[i].amount,
+                        title: resp.data[i].title,
+                        enddate: resp.data[i].enddate
+                      };
+          $scope.user_prices.push(prices);
+        }
+        console.log($scope.user_prices);
+
       },
       function(error)
       {
