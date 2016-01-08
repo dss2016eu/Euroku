@@ -6,18 +6,44 @@ angular.module('euroku.result', [])
   $scope.play = '';
   $scope.loading = false;
 
-  $scope.showNewLevelChallenge = function (maila, title)
+  $scope.showNewPrice = function (desc, key)
   {
-    console.log("irudi maila: " + $scope.img_maila);
+
+    //load translate text to make popup layout with price data
+    var language = window.localStorage.getItem('lang');
+    if (language === "eu")
+    {
+      $scope.popup_title = translations_eu.template_title;
+      $scope.template_msg_1 = translations_eu.template_msg_1;
+      $scope.template_msg_2 = translations_eu.template_msg_2;
+    }
+    else if (language === "es")
+    {
+      $scope.popup_title = translations_es.template_title;
+      $scope.template_msg_1 = translations_es.template_msg_1;
+      $scope.template_msg_2 = translations_es.template_msg_2;
+    }
+    else
+    {
+      $scope.popup_title = translations_en.template_title;
+      $scope.template_msg_1 = translations_en.template_msg_1;
+      $scope.template_msg_2 = translations_en.template_msg_2;
+    }
+
+
+    //console.log("irudi maila: " + $scope.img_maila);
     var alertPopup = $ionicPopup.alert({
-           title: "Zorionak! Maila berria!",
+           title: $scope.popup_title,
            buttons: [{ text: 'ADOS', type: 'button-dark'}],
-           template: '<img class="center" width="100%" src="' + $scope.img_maila + '"/>'
+           template: '<p><b>' + desc.toUpperCase() + ':</b><br/>' + $scope.template_msg_1 + key + '</b></p>' +
+                      $scope.template_msg_2
           });
          alertPopup.then(function(res) {
            console.log('Erronka aktibatua...');
          });
   };
+
+  //Inside template popup '<img class="center" width="100%" src="' + $scope.img_maila + '"/>'
 
 
 
@@ -39,7 +65,7 @@ angular.module('euroku.result', [])
 
       $scope.result = {
                         game_id: "",
-                        price: false,
+                        price: $scope.getRandomBoolean(),
                         price_desc: "Sariaren deskribapena",
                         price_key: "DSS2016BOLI_1",
                         correct: $scope.getRandomBoolean(),
@@ -49,16 +75,45 @@ angular.module('euroku.result', [])
                       };
       console.log($scope.result);
 
+      console.log("Saria? " + $scope.result.price);
+
+      if ($scope.result.price === true)
+      {
+        $scope.showNewPrice($scope.result.price_desc, $scope.result.price_key);
+      }
+
       //Send data to get new data to next game or finish game (Disable temporaly)
-      /*questionsServices.setQuestionRequest(params)
+      questionsServices.setQuestionRequest(params)
         .then(function(resp)
         {
-          console.log("52: " + resp);
+          $scope.result = resp.data;
+          console.log("52: " + resp.data.correct);
+
+ /*"game_id": "",
+         "price": "",
+         "price_desc": "",
+         "price_key": "",
+         "correct": true,
+         "provider": "twitter.com",
+         "url": "https://twitter.com/elonmusk/status/679137936416329728",
+         "attribution": "@elonmusk",*/
+
+        if ($scope.result.correct === true)
+        {
+          console.log($scope.result.game_id);
+          window.localStorage.setItem("game_id", $scope.result.game_id);
+        }
+        else
+        {
+          window.localStorage.setItem("game_id", "");
+        }
+
+
         },
         function(error)
         {
           console.error(error);
-      });*/
+      });
 
   };
 
