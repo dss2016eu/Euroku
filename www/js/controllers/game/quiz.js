@@ -97,6 +97,7 @@ angular.module('euroku.quiz', [])
   };
   $ionicLoading.show();
 
+
   questionsServices.getQuestion()
           .then(function(resp)
   {
