@@ -12,8 +12,12 @@ angular.module('euroku.services.questions', [])
 .service('questionsServices', function questionsServices($http, URL_LOCALHOST, QUESTIONS) {
 
     return {
-      getQuestion : function (game_id)
+      getQuestion : function ()
       {
+
+        var game_id = window.localStorage.getItem("game_id");
+
+        console.log("Questions (20): " + game_id);
         if (game_id !== "" && game_id !== undefined)
         {
           game_id = "&game_id=" + game_id;
@@ -36,7 +40,9 @@ angular.module('euroku.services.questions', [])
       },
       setQuestionRequest: function(params)
       {
+        console.log("Questions (39): " + URL_LOCALHOST + QUESTIONS);
 
+        var params = angular.toJson(params);
         return $http.post(URL_LOCALHOST + QUESTIONS, params).success(
 
             function(data) {
