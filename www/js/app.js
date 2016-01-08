@@ -73,7 +73,9 @@ angular.module('euroku', ['ionic',
 })
 
 .config(function($httpProvider) {
-    $httpProvider.defaults.headers.post  = { 'Accept': 'application/json',
+
+    $httpProvider.defaults.headers.post  = {
+                                            'Accept': 'application/json',
                                             'Content-Type': 'application/json'};
 })
 
