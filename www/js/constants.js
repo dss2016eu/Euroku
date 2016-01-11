@@ -2,7 +2,8 @@
 Url Services fitxategia:
 ----------------------------
 
-
+LOCALHOST (Probatarako zerbitzaria): http://eurokuserver.cs/
+EXTERNAL SERVER: http://euroku.korpoweb.com/
 ***********************************************************************************************/
 
 
