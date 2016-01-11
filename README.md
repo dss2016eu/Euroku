@@ -7,6 +7,7 @@
 * Angular Translate (pascalprecht.translate): https://github.com/angular-translate/angular-translate
 * ngMessages (Angular Messages): https://github.com/angular/bower-angular-messages
 * ngCordova: http://ngcordova.com
+* Social Sharing (Edukia partekatzeko): cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
 
 # Formulario balidazioa #
 
