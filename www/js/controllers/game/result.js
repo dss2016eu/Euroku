@@ -64,22 +64,6 @@ angular.module('euroku.result', [])
 
       $scope.disabled = true;
 
-
-
-      /*$scope.result = {
-                        game_id: "",
-                        price: $scope.getRandomBoolean(),
-                        price_desc: "Sariaren deskribapena",
-                        price_key: "DSS2016BOLI_1",
-                        correct: $scope.getRandomBoolean(),
-                        provider: "",
-                        url: "http://codesyntax.com",
-                        atribution: "Wikipedia"
-                      };*/
-
-
-
-
       //Send data to get new data to next game or finish game (Disable temporaly)
       questionsServices.setQuestionRequest(params)
         .then(function(resp)
