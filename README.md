@@ -1,3 +1,7 @@
+#API dokumentazioa#
+
+* http://eurokudok.arno.cs
+
 #Instalaturik dituen moduloak:#
 
 * Angular Translate (pascalprecht.translate): https://github.com/angular-translate/angular-translate
