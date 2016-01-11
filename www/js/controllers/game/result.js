@@ -30,7 +30,10 @@ angular.module('euroku.result', [])
       $scope.template_msg_2 = translations_en.template_msg_2;
     }
 
-
+    if (desc === "")
+    {
+      desc = "Price text to show in popup modal";
+    }
     //console.log("irudi maila: " + $scope.img_maila);
     var alertPopup = $ionicPopup.alert({
            title: $scope.popup_title,
