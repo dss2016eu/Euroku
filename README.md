@@ -4,7 +4,7 @@
 
 2.- Instalatu Cordova eta Ionic: 
 
-$ sudo npm install -g cordova ionic
+    $ sudo npm install -g cordova ionic
 
 3.- Gero, proiektu honen dependentziak bakarrik instalatu
 
