@@ -10,5 +10,10 @@
 
 # Formulario balidazioa #
 
-Ionic-en liburutegiez gain 'Angular Messages" liburutegiak beharko ditugu:
+Ionic-en liburutegiez gain 'Angular Messages" liburutegiak beharko ditugu.
+
+#Aplikazioaren balore konstanteak#
+
+* 'constant.js' fitxategian edukiko dugu aukera editatzeko daudenak eta berriak gehitzeko. Hau, www/constant direktorioaren barruan aurkituko dugu.
+
 
