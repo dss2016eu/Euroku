@@ -6,28 +6,33 @@ angular.module('euroku.result', [])
   $scope.play = '';
   $scope.loading = false;
 
+  //load translate text to make popup layout with price data
+  var language = window.localStorage.getItem('lang');
+
   $scope.showNewPrice = function (desc, key)
   {
 
-    //load translate text to make popup layout with price data
-    var language = window.localStorage.getItem('lang');
+
     if (language === "eu")
     {
       $scope.popup_title = translations_eu.template_title;
       $scope.template_msg_1 = translations_eu.template_msg_1;
       $scope.template_msg_2 = translations_eu.template_msg_2;
+      $scope.ok_text_popup = translations_eu.ok_text_popup;
     }
     else if (language === "es")
     {
       $scope.popup_title = translations_es.template_title;
       $scope.template_msg_1 = translations_es.template_msg_1;
       $scope.template_msg_2 = translations_es.template_msg_2;
+      $scope.ok_text_popup = translations_es.ok_text_popup;
     }
     else
     {
       $scope.popup_title = translations_en.template_title;
       $scope.template_msg_1 = translations_en.template_msg_1;
       $scope.template_msg_2 = translations_en.template_msg_2;
+      $scope.ok_text_popup = translations_en.ok_text_popup;
     }
 
     if (desc === "")
@@ -37,7 +42,7 @@ angular.module('euroku.result', [])
     //console.log("irudi maila: " + $scope.img_maila);
     var alertPopup = $ionicPopup.alert({
            title: $scope.popup_title,
-           buttons: [{ text: 'ADOS', type: 'button-dark'}],
+           buttons: [{ text: $scope.ok_text_popup, type: 'button-dark'}],
            template: '<p><b>' + desc.toUpperCase() + ':</b><br/>' + $scope.template_msg_1 + key + '</b></p>' +
                       $scope.template_msg_2
           });
@@ -89,6 +94,39 @@ angular.module('euroku.result', [])
 
           //Store source url to use to go
           $scope.storeUrls($scope.result);
+
+          //RESULT STATE TEXT:
+
+          if ($scope.result.correct === true)
+          {
+            if (language === "eu")
+            {
+              $scope.correct_text = translations_eu.correct_answer;
+            }
+            else if (language === "es")
+            {
+              $scope.correct_text = translations_es.correct_answer;
+            }
+            else
+            {
+              $scope.correct_text = translations_en.correct_answer;
+            }
+          }
+          else
+          {
+            if (language === "eu")
+            {
+              $scope.correct_text = translations_eu.incorrect_answer;
+            }
+            else if (language === "es")
+            {
+              $scope.correct_text = translations_es.incorrect_answer;
+            }
+            else
+            {
+              $scope.correct_text = translations_en.incorrect_answer;
+            }
+          }
 
         },
         function(error)
