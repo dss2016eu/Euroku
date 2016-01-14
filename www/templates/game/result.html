@@ -18,7 +18,7 @@
       <p class="erantzun_text">{{result.text}}</p>
       <p class="text"><span>{{"correct_answer" | translate}}</span> {{result.correct}}</p>
       <button class="button button-clear button-calm"
-          ng-click="moreInfo('')">
+          ng-click="goToSourceCustom({{url}})">
           Info +: {{result.provider}}
       </button>
     </div>
