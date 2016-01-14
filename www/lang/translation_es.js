@@ -49,6 +49,7 @@ var translations_es = {
     take_photo_menu: 'Saca una foto',
 
     //Languages
+    select_language: 'Seleccione el idioma que desees utilizar:',
     language: 'Idioma',
     lang_en: 'English',
     lang_es: 'Español',
@@ -79,6 +80,7 @@ var translations_es = {
     return_main_menu: 'Otra más',
     game_results_title: 'Resultados de la partida',
     source_text: 'Fuente',
+    source_text_source: 'Fuente de la pregunta y la respuesta: ',
 
     //Play / Result game texts
 
@@ -111,6 +113,8 @@ var translations_es = {
     //About Euroku
     what_is_euroku: '¿Qué es Euroku?',
     sponsor: 'Patrocinador',
+    developer: 'Desarrollador',
+    creator: 'Creador',
     paragraph_1: 'ES-----kakakakakkakakakakaka',
     paragraph_2: 'ES-----kakakakakkakakakakaka-----kakakakakkakakakakaka',
     paragraph_3: 'ES------kakakakakkakakakakaka',

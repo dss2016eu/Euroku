@@ -49,6 +49,7 @@ var translations_eu = {
     take_photo_menu: 'Argazkia atera',
 
    //Languages
+    select_language: 'Aukeratu erabili nahi duzun hizkuntza:',
     language: 'Hizkuntza',
     lang_en: 'English',
     lang_es: 'Español',
@@ -78,6 +79,7 @@ var translations_eu = {
     return_main_menu: 'Beste bat',
     game_results_title: 'Partiden emaitzak',
     source_text: 'Iturria',
+    source_text_source: 'Galdera eta erantzunaren iturria: ',
 
     //Play / Result game texts
 
@@ -110,6 +112,8 @@ var translations_eu = {
     //About Euroku
     what_is_euroku: 'Zer da Euroku?',
     sponsor: 'Babeslea',
+    developer: 'Garatzailea',
+    creator: 'Sortzailea',
     paragraph_1: 'Eus-----kakakakakkakakakakaka',
     paragraph_2: 'Eus-----kakakakakkakakakakaka',
     paragraph_3: 'Eus------kakakakakkakakakakaka',
