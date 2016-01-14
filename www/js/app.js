@@ -140,7 +140,7 @@ angular.module('euroku', ['ionic',
   })
 
   .state('app.result', {
-    url: '/result/:choose/:question_id/:game_id',
+    url: '/result/:choose/:question_id/:game_id/:round/:rounds',
     views: {
       'menuContent': {
         templateUrl: 'templates/game/result.html',
