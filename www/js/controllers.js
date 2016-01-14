@@ -1,6 +1,7 @@
 angular.module('euroku.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
+.controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout,
+                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
   $scope.url = "";
 
@@ -38,7 +39,7 @@ angular.module('euroku.controllers', [])
 
   $rootScope.shareApp = function()
   {
-
+    console.log("SHARE!!!");
     $cordovaSocialSharing.share("#Donostia2016 " + $scope.share_text, "Donostia2016", "img/erokulogoa02.png", "http://dss2016.eu/eu/");
   }
 
