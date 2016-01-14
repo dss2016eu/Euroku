@@ -46,7 +46,7 @@ angular.module('euroku.services.profile', [])
         console.log(params);
 
         console.log(URL_LOCALHOST + PROFILE);
-        return $http.post(URL_LOCALHOST + PROFILE, params).success(
+        return $http.post(URL_LOCALHOST + PROFILE, angular.toJson(params)).success(
 
             function(data) {
               return data;
