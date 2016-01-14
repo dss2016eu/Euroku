@@ -82,7 +82,13 @@ angular.module('euroku.quiz', [])
   {
     $scope.stopTimer();
     console.log(option);
-    $state.go('app.result', { choose: option, game_id: $scope.question_game.game_id, question_id: $scope.question_game.id});
+    $state.go('app.result', {
+                              choose: option,
+                              game_id: $scope.question_game.game_id,
+                              question_id: $scope.question_game.id,
+                              round: $scope.question_game.round,
+                              rounds: $scope.question_game.rounds
+                            });
     $ionicHistory.nextViewOptions({
       disableBack: true
     });
