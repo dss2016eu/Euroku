@@ -136,6 +136,12 @@ var translations_en = {
     template_msg_1: '<br/>Use the following code when accepting the award: <b>',
     template_msg_2: '<p>You will see your winnings in the <b>"Awards"</b></p>',
 
+    //Result states
+
+    correct_answer: "You guessed the question!",
+    inorrect_answer: "You have not successful, try again.",
+    progress: "Progress: ",
+
     //Share messages
     share_social_text: 'Share it with your friends!',
 

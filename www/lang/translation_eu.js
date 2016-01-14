@@ -134,6 +134,12 @@ var translations_eu = {
     template_msg_1: '<br/>Erabili hurrengo kodea saria jasotzerako orduan: <b>',
     template_msg_2: '<p>Zure sariak <b>"Sariak"</b> menu aukeran ikusi ahal dituzu</p>',
 
+    //Result states
+
+    correct_answer: "Galdera asmatu duzu!",
+    inorrect_answer: "Galdera EZ duzu asmatu. Saiatu berriro.",
+    progress: "Aurrerapena: ",
+
     //Share messages
     share_social_text: 'Euroku jeistera animatzen zaitut',
 

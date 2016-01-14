@@ -135,6 +135,12 @@ var translations_es = {
     template_msg_1: '<br/>Utiliza el siguiente código cuando vayas a recoger el premio: <b>',
     template_msg_2: '<p>Podrás consultar todos los premios conseguidos en "Premios"</p>',
 
+    //Result states
+
+    correct_answer: "¡Has acertado!",
+    inorrect_answer: "No has acertado, inténtalo de nuevo.",
+    progress: "Progreso: ",
+
     //Share messages
     share_social_text: 'Te animo a descargar Euroku ;)',
 
