@@ -2,6 +2,8 @@ angular.module('euroku.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout, $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
 
+  $scope.url = "";
+
   $scope.getRandomBoolean = function()
   {
     return parseInt(Math.random() * 2) ?  true : false;
@@ -112,6 +114,34 @@ angular.module('euroku.controllers', [])
 
   $rootScope.menu_show = false;
 
+  $scope.goToSourceCustom = function ()
+  {
+    console.log($scope.url);
+
+    $scope.openBrowser($scope.url);
+  };
+
+  $scope.storeUrls = function (elements)
+  {
+    console.log(elements);
+
+    $scope.url = elements.url;
+    console.log($scope.url);
+
+  };
+
+  $scope.openBrowser = function (url)
+  {
+    if(ionic.Platform.platform() === "android")
+    {
+        window.open(url, '_system', 'location=no');
+    }
+    else
+    {
+        window.open(url, '_blank', 'location=yes');
+    }
+  };
+
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate)
@@ -166,31 +196,26 @@ angular.module('euroku.controllers', [])
 
   };
   $scope.goToSource = function (index)
+  {
+    var url = 'http://www.codesyntax.com';
+    console.log(index+"index...");
+    if (index === 1)
     {
-        var url = 'http://www.codesyntax.com';
-      console.log(index+"index...");
-      if (index === 1)
-      {
-        url = 'http://www.codesyntax.com';
-      }
-      else if (index === 2)
-      {
-        url = 'http://www.ahotsak.eus';
-      }
-      else
-      {
-        url = 'http://www.euskara.euskadi.eus/';
-      }
+      url = 'http://www.codesyntax.com';
+    }
+    else if (index === 2)
+    {
+      url = 'http://www.ahotsak.eus';
+    }
+    else
+    {
+      url = 'http://www.euskara.euskadi.eus/';
+    }
 
-      if($scope.platform === "android")
-        {
-            window.open(url, '_system', 'location=no');
-        }
-        else
-        {
-            window.open(url, '_blank', 'location=yes');
-        }
-    };
+    //Open browser with select url
+    $scope.openBrowser (url);
+
+  };
 
 
 });
