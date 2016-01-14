@@ -10,29 +10,37 @@
       </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content>
-   <div class="list card">
+    <p>{{'select_language' | translate}}</p>
+    <ul class="list">
+      <li class="item item-checkbox">
+         English
+         <label class="checkbox">
+         <input type="checkbox" ng-checked="select_value[0]" ng-click="selectLanguage('en')">
+         </label>
+      </li>
 
-  <div class="item item-avatar">
-    <img src="https://eltrajedelosdomingos.files.wordpress.com/2008/06/donostia-sansebastian-2016.jpg">
-    <h2>Euroku User ({{profile.language}})</h2>
-    <p>Progress: {{answer_correct}} / {{total_answer}} ({{progress}}%)</p>
-  </div>
+      <li class="item item-checkbox">
+         Español
+         <label class="checkbox">
+         <input type="checkbox" ng-checked="select_value[1]" ng-click="selectLanguage('es')">
+         </label>
+      </li>
 
-  <div class="item item-body">
-    <img class="full-image" src="https://eltrajedelosdomingos.files.wordpress.com/2008/06/donostia-sansebastian-2016.jpg">
-    <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
-    </p>
-    <!--<p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>-->
-    <button class="button button-block button-dark" ng-click="savePreferences()">{{'save' | translate}}</button>
-  </div>
-<br/>
-</div>
+      <li class="item item-checkbox">
+         Euskara
+         <label class="checkbox">
+         <input type="checkbox" ng-checked="select_value[2]" ng-click="selectLanguage('eu')">
+         </label>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-80">
+        <button class="button button-block button-dark" ng-click="savePreferences()">{{'save' | translate}}</button>
+      </div>
+     <div class="col"></div>
+    </div>
+
   </ion-content>
 </ion-view>
 
