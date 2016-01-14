@@ -86,6 +86,10 @@ angular.module('euroku.result', [])
             $scope.showNewPrice($scope.result.price_desc, $scope.result.price_key);
             window.localStorage.setItem("game_id", "");
           }
+
+          //Store source url to use to go
+          $scope.storeUrls($scope.result);
+
         },
         function(error)
         {
@@ -98,41 +102,15 @@ angular.module('euroku.result', [])
   $scope.user_select_option = $stateParams.choose;
   $scope.question_id = $stateParams.question_id;
   $scope.game_id = $stateParams.game_id;
+  $scope.round = $stateParams.round;
+  $scope.rounds = $stateParams.rounds;
+
+  $scope.progress = ($scope.round * 100) / $scope.rounds;
+  console.log("Progress: " + $scope.progress);
 
   console.log($scope.user_select_option + "      " + $stateParams.game_id + "      " + $stateParams.question_id);
 
   $scope.sendSelection();
-
-
-
-  $scope.showNivelImage = function (maila)
-  {
-    var levels = ['Poliki, mesedez', 'Ikaslea', 'EGA',
-                  'Irakaslea', 'Euskaltzaina', 'Mitxelena XVI'];
-
-    var images = ['01PolikiMesdez.png', '02Ikaslea.png', '03Ega.png',
-                  '04Irakaslea.png', '05Euskaltzaina.png', '06Mitxelena.png'];
-
-
-    //if (maila == levels [])
-
-
-    console.log("Zure maila: " + maila);
-
-    var found = false;
-
-    for (var i = 0; i < images.length && found == false; i++)
-    {
-      if (maila == levels [i])
-      {
-        $scope.img_maila = 'img/mailak/'+images[i];
-        console.log($scope.img_maila);
-        found = true;
-        var myEl = angular.element( document.querySelector( '.zure_maila_text' ) );
-        myEl.addClass(maila.toLowerCase().replace(" ", "_"));
-      }
-    }
-  };
 
   $scope.morePlay = function ()
   {
@@ -141,19 +119,6 @@ angular.module('euroku.result', [])
               disableBack: true
     });
 
-  };
-
-  $scope.moreInfo = function ()
-  {
-    var url = $scope.result.url;
-    if($scope.platform === "android")
-    {
-        window.open(url, '_system', 'location=no');
-    }
-    else
-    {
-        window.open(url, '_blank', 'location=yes');
-    }
   };
 
 });
