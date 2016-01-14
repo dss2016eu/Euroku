@@ -126,6 +126,11 @@ angular.module('euroku.controllers', [])
   {
     console.log(elements);
 
+    if (elements.error === true)
+    {
+      window.localStorage.setItem("game_id", "");
+    }
+
     $scope.url = elements.url;
     console.log($scope.url);
 
