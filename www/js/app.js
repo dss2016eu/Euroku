@@ -26,10 +26,10 @@ angular.module('euroku', ['ionic',
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
-    if (window.StatusBar) {
+    /*if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
-    }
+    }*/
   });
 
   console.log(window.localStorage.getItem('device_id'));
