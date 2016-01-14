@@ -16,11 +16,12 @@
     <div class="col">
       <h2>{{result.title}}</h2>
       <p class="erantzun_text">{{result.text}}</p>
-      <p class="text"><span>{{"correct_answer" | translate}}</span> {{result.correct}}</p>
-      <button class="button button-clear button-calm"
-          ng-click="goToSourceCustom({{url}})">
+      <p class="text"><span>{{"correct_answer" | translate}}</span> <br/> {{correct_text}}</p>
+      <p ng-if="result.correct" class="text">{{"progress" | translate}} {{round}} / {{rounds}} ({{progress}}) %</p>
+      <!--<button class="button button-clear button-calm"
+          ng-click="goToSourceCustom()">
           Info +: {{result.provider}}
-      </button>
+      </button>-->
     </div>
 
   </div>
@@ -31,7 +32,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <!--<div class="row">
     <div class="col col-50"><img class="player_level" src="{{img_maila}}"/></div>
     <div class="col">
       <p class="irabazi_text">{{"won_points" | translate}}: <span>{{winpoints}}</span></p>
@@ -39,15 +40,19 @@
       <p class="zure_maila_text">{{"your_level" | translate}}: <span>{{play.zure_maila}}</span></p>
     </div>
 
-  </div>
+  </div>-->
   <div class="emaitza_azpi">
     <span class="center">
-        (Hurrengo maila lortzeko <b>{{play.hurrengo_erronkarako_puntuak}}</b> puntu falta dituzu)
+        Jarraitu jokatzen sariak lortzeko!
     </span>
 
     <button  class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
+    <span class="center">
+        Info +:
+    </span>
+    <button  class=" button button-block button-dark" ng-click="goToSourceCustom()">{{result.provider}}</button>
   </div>
-   <div class="row">
+   <!--<div class="row">
       <div class="event_detail_container   cat-11 venue-46" itemscope="" itemtype="http://schema.org/Event">
 
             <a href="/eu/agenda/krzysztof-kieslowski" itemprop="image">
@@ -94,7 +99,7 @@
           </div>
 
             <div style="display:inline" class="event_detail_time">
-        <!-- <div class="date_icon"></div> -->
+        <div class="date_icon"></div>
         <h5 style="display:inline">
 
         <span itemprop="startDate" content="2015-09-02">   </span> <span class="ohanah-time">10:00</span>  <span itemprop="endDate" content="2015-10-24">  </span>  -  <span class="ohanah-time">20:00</span>   </h5>
@@ -104,6 +109,6 @@
 
       <div class="event-spacer"></div>
       </div>
-    </div>
+    </div>-->
   </ion-content>
 </ion-view>
