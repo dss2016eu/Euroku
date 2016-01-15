@@ -3,13 +3,13 @@ Url Services fitxategia:
 ----------------------------
 
 LOCALHOST (Probatarako zerbitzaria): http://eurokuserver.cs/
-EXTERNAL SERVER: http://euroku.korpoweb.com/
+EXTERNAL SERVER: https://euroku.codesyntax.com/
 ***********************************************************************************************/
 
 
 angular.module('euroku.constants', [])
 
-.constant('URL_LOCALHOST', 'http://eurokuserver.cs/')
+.constant('URL_LOCALHOST', 'https://euroku.codesyntax.com/')
 .constant('QUESTIONS', 'api/1.0/galdera')
 .constant('PROFILE', 'api/1.0/profile')
 .constant('PRICES', {
