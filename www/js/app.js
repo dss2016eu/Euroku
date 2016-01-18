@@ -34,11 +34,6 @@ angular.module('euroku', ['ionic',
 
   console.log(window.localStorage.getItem('device_id'));
 
-  if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
-  {
-      window.localStorage.setItem ('device_id', 1);
-  }
-
   if (window.localStorage.getItem('lang') === null)
   {
     if(typeof navigator.globalization !== "undefined") {
