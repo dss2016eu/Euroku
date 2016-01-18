@@ -1,9 +1,9 @@
-/**********************************************************************************************
-Url Services fitxategia:
+/******************************************************************************************************************************************************
+Questions Services fitxategia:
 ----------------------------
-
-
-***********************************************************************************************/
+getQuestion = galdera eman, "game_id" balorea ez badauka partida berria izango da baina "game_id" balorea badaukagu partida jarraitzea dagokigu
+setQuestionRequest = jokatzen ari garen galderaren erantzuna bidaliko da zerbitzarian konprobatu dezan erantzun zuzena den ala ez
+*******************************************************************************************************************************************************/
 
 
 angular.module('euroku.services.questions', [])
@@ -22,11 +22,11 @@ angular.module('euroku.services.questions', [])
         {
           game_id = "&game_id=" + game_id;
         }
-        else if (game_id === undefined)
+        else
         {
           game_id = "";
         }
-        var device_id = "1";
+        var device_id = window.localStorage.getItem('device_id');
 
         console.log(URL_LOCALHOST+QUESTIONS+"?device_id=" + device_id + game_id);
 

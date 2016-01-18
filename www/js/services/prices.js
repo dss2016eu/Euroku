@@ -1,8 +1,9 @@
 /**********************************************************************************************
-Url Services fitxategia:
+Prices Services fitxategia:
 ----------------------------
-
-
+getUserListPrices = erabiltzailearen sariak erakutsi
+getPriceDetails = aukeratutako sari baten xehetasunak
+getPublicPriceList = dauden sarien zerrenda
 ***********************************************************************************************/
 
 
@@ -15,11 +16,11 @@ angular.module('euroku.services.prices', [])
       getUserListPrices : function ()
       {
 
-        var device_id = "1";
-
         /********************************************************
         Load device id from local Storage
         *********************************************************/
+
+        var device_id = window.localStorage.getItem ('device_id');
 
         console.log(URL_LOCALHOST+PRICES.list+"?device_id=" + device_id);
 

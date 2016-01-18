@@ -1,25 +1,38 @@
 /**********************************************************************************************
 Url Services fitxategia:
 ----------------------------
-
-
+getDevideID = erabiltzailearen identifikatzailea lortu zerbitzaritik
+getDetails = erabiltzailearen xehetasunak kargatu zerbitzaritik
+setDetails = erabiltzailearen xehetasunetan egindako aldaketak gorde zerbitzarian
 ***********************************************************************************************/
 
 
 angular.module('euroku.services.profile', [])
 
 
-.service('profileServices', function profileServices($http, URL_LOCALHOST, PROFILE) {
+.service('profileServices', function profileServices($http, URL_LOCALHOST, PROFILE, REGISTER) {
 
     return {
-      getDetails : function ()
+
+      getDevideID : function (lang_code)
       {
 
-        var device_id = "1";
+        console.log(URL_LOCALHOST+REGISTER + "?language=" + lang_code);
 
+        return $http.get(URL_LOCALHOST+REGISTER).success(
+
+            function(resp)
+            {
+              return resp.data;
+            }
+        );
+      },
+      getDetails : function ()
+      {
         /********************************************************
         Load device id and language from local Storage
         *********************************************************/
+        var device_id = window.localStorage.getItem ('device_id');
 
         console.log(URL_LOCALHOST+PROFILE+"?device_id=" + device_id);
 
@@ -33,13 +46,13 @@ angular.module('euroku.services.profile', [])
       },
       setDetails: function(lang_code)
       {
+        /********************************************************
+        Load device id and language from local Storage
+        *********************************************************/
+
         var device_id = window.localStorage.getItem('device_id');
 
         console.log(device_id);
-
-        //Provisional
-
-        device_id = "1";
 
         var params = {language: lang_code, device_id: device_id};
 
