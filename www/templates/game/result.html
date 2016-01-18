@@ -17,7 +17,7 @@
       <h2>{{result.title}}</h2>
       <p class="erantzun_text">{{result.text}}</p>
       <p class="text"><span>{{"correct_answer" | translate}}</span> <br/> {{correct_text}}</p>
-      <p ng-if="result.correct" class="text">{{"progress" | translate}} {{round}} / {{rounds}} ({{progress}}) %</p>
+      <p ng-if="result.correct" class="text">{{"progress" | translate}} {{round}} / {{rounds}} ({{progress}} %)</p>
       <!--<button class="button button-clear button-calm"
           ng-click="goToSourceCustom()">
           Info +: {{result.provider}}
