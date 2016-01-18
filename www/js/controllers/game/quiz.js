@@ -90,6 +90,7 @@ angular.module('euroku.quiz', [])
                               rounds: $scope.question_game.rounds
                             });
     $ionicHistory.nextViewOptions({
+      disableAnimate: true,
       disableBack: true
     });
 
