@@ -1,5 +1,5 @@
 angular.module('euroku.profile', [])
-.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading, $state) {
+.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading, $state, $ionicPopup) {
   $scope.answer_correct = getRandomInt(1,16); //get a number in range 1-16
   $scope.total_answer = 16;
 
@@ -36,6 +36,8 @@ angular.module('euroku.profile', [])
       $scope.language_code = language_code;
     }
   };
+
+
 
   profileServices.getDetails ()
         .then(function(resp)
@@ -87,5 +89,28 @@ angular.module('euroku.profile', [])
     });
 
   };
+
+  /*************************************************************
+    PROVISIONAL
+  ***********************************************************
+ /*var alertPopup = $ionicPopup.alert({
+    title: $scope.popup_title,
+    buttons: [{ text: 'ADOS', type: 'button-dark'}],
+    template: 'Jarri kontaktuan gurekin<div class="row">'+
+                '<div class="col">'+
+                  '<button class="button button-block button-dark" ng-click="savePreferences()">{{"save" | translate}}</button>'+
+                '</div>'+
+              '</div>'+
+              '<div class="row">'+
+                '<div class="col"></div>'+
+                '<div class="col col-80">'+
+                  '<button class="button button-block button-dark" ng-click="savePreferences()">{{"save" | translate}}</button>'+
+                '</div>'+
+               '<div class="col"></div>'+
+              '</div>'
+  });
+  alertPopup.then(function(res) {
+    console.log('OK');
+  });*/
 
 });
