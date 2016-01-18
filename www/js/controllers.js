@@ -1,7 +1,7 @@
 angular.module('euroku.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout,
-                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing) {
+                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing, profileServices) {
 
   $scope.url = "";
 
@@ -110,6 +110,45 @@ angular.module('euroku.controllers', [])
     $ionicHistory.nextViewOptions({
               disableBack: true
     });
+    if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
+    {
+      profileServices.getDevideID(key)
+            .then(function(resp)
+      {
+        console.log(resp);
+        window.localStorage.setItem ('device_id', resp.data.device_id);
+        window.localStorage.setItem ('game_id', "");
+
+      //console.log($scope.question);
+      },
+      function(error)
+      {
+        window.localStorage.setItem ('device_id', 1);
+        window.localStorage.setItem('select_language', '');
+        console.error(error);
+      });
+    }
+    else
+    {
+      $scope.updatePreferences (key);
+    }
+
+  };
+
+  $scope.updatePreferences = function(key)
+  {
+    var language = key;
+    console.log(language);
+
+    profileServices.setDetails(language)
+          .then(function(resp)
+    {
+      console.log("Controller (141): " + resp.data.language);
+    },
+    function(error)
+    {
+      console.error(error);
+    });
 
   };
 
@@ -150,7 +189,7 @@ angular.module('euroku.controllers', [])
 
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate)
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate, profileServices)
 {
   //$ionicSideMenuDelegate.canDragContent(false);
   $rootScope.menu_show = true;
@@ -177,6 +216,13 @@ angular.module('euroku.controllers', [])
     $scope.show_play_button = true;
     $rootScope.menu_show = true;
     $ionicSideMenuDelegate.canDragContent(true);
+    if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
+    {
+
+      console.log("Update to: " + key);
+      $scope.updateLanguage (key);
+
+    }
     //$state.go('app.mainmenu');
   };
 
