@@ -1,5 +1,5 @@
 angular.module('euroku.profile', [])
-.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading) {
+.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading, $state) {
   $scope.answer_correct = getRandomInt(1,16); //get a number in range 1-16
   $scope.total_answer = 16;
 
@@ -15,21 +15,26 @@ angular.module('euroku.profile', [])
     if (language_code === 'en')
     {
       $scope.select_value = [true, false, false];
+      $scope.popup_title = translations_en.data_not_load_correct;
+      $scope.message = translations_en.server_error_msg;
     }
     else if (language_code === 'es')
     {
       $scope.select_value = [false, true, false];
+      $scope.popup_title = translations_es.data_not_load_correct;
+      $scope.message = translations_es.server_error_msg;
     }
     else if (language_code === 'eu')
     {
       $scope.select_value = [false, false, true];
+      $scope.popup_title = translations_eu.data_not_load_correct;
+      $scope.message = translations_eu.server_error_msg;
     }
 
     if ($scope.language_code !== language_code)
     {
       $scope.language_code = language_code;
     }
-
   };
 
   profileServices.getDetails ()
@@ -45,21 +50,25 @@ angular.module('euroku.profile', [])
 
     $scope.selectLanguage($scope.language_code);
 
+    window.localStorage.setItem('lang', $scope.language_code);
     $ionicLoading.hide();
   },
   function(error)
   {
     console.error("Errorea");
 
-    $scope.profile =  {
-                        language: "eu",
-                        device_id: "1"
-                      };
-    console.log($scope.question);
+    var alertPopup = $ionicPopup.alert({
+      title: $scope.popup_title,
+      buttons: [{ text: 'ADOS', type: 'button-dark'}],
+      template: '<p>'+ $scope.message + '</p>'
+    });
+    alertPopup.then(function(res) {
+      console.log('OK');
+    });
+
+    $state.go('app.main');
     $ionicLoading.hide();
   });
-
-
 
   $scope.savePreferences = function()
   {
@@ -69,7 +78,7 @@ angular.module('euroku.profile', [])
     profileServices.setDetails(language)
           .then(function(resp)
     {
-      console.log("Profile Controller (38): " + resp);
+      console.log("Profile Controller (38): " + resp.data.language);
       $scope.updateLanguage($scope.language_code);
     },
     function(error)
@@ -78,7 +87,5 @@ angular.module('euroku.profile', [])
     });
 
   };
-
-
 
 });

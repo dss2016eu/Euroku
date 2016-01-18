@@ -6,7 +6,7 @@
 * @ngdoc function
 * @name Tribual.Quiz.controller:QuizCtrl
 * @description
-* # QuizCtrl
+* # PricesCtrl
 * Controller of the Euroku Game
 *******************************************************/
 
