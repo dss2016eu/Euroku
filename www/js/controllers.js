@@ -45,14 +45,13 @@ angular.module('euroku.controllers', [])
 
   $scope.shareEmail = function ()
   {
+    $cordovaSocialSharing
+     .shareViaEmail("Kontaktua", "", "")
+     .then(function(result) {
 
-      $cordovaSocialSharing
-       .shareViaEmail("Kontaktua", "", "")
-       .then(function(result) {
-
-       }, function(err) {
-         // An error occurred. Show a message to the user
-       });
+     }, function(err) {
+       // An error occurred. Show a message to the user
+     });
   };
 
   $rootScope.goToPlay = function()
@@ -120,7 +119,8 @@ angular.module('euroku.controllers', [])
     window.localStorage.setItem('select_language', '1');
     $state.go('app.main');
     $ionicHistory.nextViewOptions({
-              disableBack: true
+              disableBack: true,
+              disableAnimate: true
     });
     if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
     {
@@ -255,7 +255,8 @@ angular.module('euroku.controllers', [])
     //$state.go('app.play', {}, {reload: true});
     $state.go('app.quiz');
     $ionicHistory.nextViewOptions({
-              disableBack: true
+              disableBack: true,
+              disableAnimate: true
     });
 
   };
