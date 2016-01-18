@@ -165,5 +165,7 @@ var translations_en = {
     min_field_length: 'Minimum length of this field is 4 characters!',
     max_field_length: 'Maximum length of this field is 20 characters!',
     email_invalid: 'Your email address is invalid. Correct format: info@codesyntax.com',
-    passwords_not_equals: 'Must match the previous entry'
+    passwords_not_equals: 'Must match the previous entry',
+    data_not_load_correct: 'Data load incorrect',
+    server_error_msg: 'There was an unexpected error , if error persists, please notify to info@codesyntax.com.'
 };

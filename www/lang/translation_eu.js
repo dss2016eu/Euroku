@@ -163,5 +163,8 @@ var translations_eu = {
     min_field_length: 'La karakterez osaturik egon behar du gutxienez eremua',
     max_field_length: 'Gehienez 20 karaktere izan ahal ditu eremuak',
     email_invalid: 'Sartutako posta elektronikoa ez da zuzena. Eredu zuzena: info@codesyntax.com',
-    passwords_not_equals: 'Pasahitzak ez datoz bat'
+    passwords_not_equals: 'Pasahitzak ez datoz bat',
+    data_not_load_correct: 'Ezuzteko errorea datuak kargatzean',
+    server_error_msg: 'Ezusteko errore bat eman da datuak kargatzean, arazoarekin
+            jarraituz gero, jarri gurekin harremanetan info@codesyntax.com helbidean.'
 };

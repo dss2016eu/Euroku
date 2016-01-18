@@ -164,5 +164,7 @@ var translations_es = {
     min_field_length: '¡La longitud mínima de carácteres de de 4!',
     max_field_length: '¡El máximo de carácteres permitidos es 20!',
     email_invalid: 'El correo electrónico es incorrecto. El formato correcto es: info@codesyntax.com',
-    passwords_not_equals: 'Las contraseñas no coinciden'
+    passwords_not_equals: 'Las contraseñas no coinciden',
+    data_not_load_correct: 'Error al cargar los datos',
+    server_error_msg: 'Se ha producido un error inesperado, si persiste el error, por favor notifícalo a: info@codesyntax.com.'
 };
