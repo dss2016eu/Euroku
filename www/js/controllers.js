@@ -43,6 +43,18 @@ angular.module('euroku.controllers', [])
     $cordovaSocialSharing.share("#Donostia2016 " + $scope.share_text, "Donostia2016", "img/erokulogoa02.png", "http://dss2016.eu/eu/");
   }
 
+  $scope.shareEmail = function ()
+  {
+
+      $cordovaSocialSharing
+       .shareViaEmail("Kontaktua", "", "")
+       .then(function(result) {
+
+       }, function(err) {
+         // An error occurred. Show a message to the user
+       });
+  };
+
   $rootScope.goToPlay = function()
   {
     if (window.localStorage.getItem('select_language') !== '1')
