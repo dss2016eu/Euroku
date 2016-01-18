@@ -165,6 +165,5 @@ var translations_eu = {
     email_invalid: 'Sartutako posta elektronikoa ez da zuzena. Eredu zuzena: info@codesyntax.com',
     passwords_not_equals: 'Pasahitzak ez datoz bat',
     data_not_load_correct: 'Ezuzteko errorea datuak kargatzean',
-    server_error_msg: 'Ezusteko errore bat eman da datuak kargatzean, arazoarekin
-            jarraituz gero, jarri gurekin harremanetan info@codesyntax.com helbidean.'
+    server_error_msg: 'Ezusteko errore bat eman da datuak kargatzean, arazoarekin jarraituz gero, jarri gurekin harremanetan info@codesyntax.com helbidean.'
 };
