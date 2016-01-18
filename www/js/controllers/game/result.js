@@ -143,7 +143,7 @@ angular.module('euroku.result', [])
   $scope.round = $stateParams.round;
   $scope.rounds = $stateParams.rounds;
 
-  $scope.progress = ($scope.round * 100) / $scope.rounds;
+  $scope.progress = (($scope.round * 100) / $scope.rounds).toFixed(2);
   console.log("Progress: " + $scope.progress);
 
   console.log($scope.user_select_option + "      " + $stateParams.game_id + "      " + $stateParams.question_id);
@@ -154,7 +154,8 @@ angular.module('euroku.result', [])
   {
     $state.go('app.quiz');
     $ionicHistory.nextViewOptions({
-              disableBack: true
+      disableAnimate: true,
+      disableBack: true
     });
 
   };
