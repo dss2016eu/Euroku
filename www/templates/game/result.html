@@ -11,19 +11,22 @@
       </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content>
-    <div class="row erantzuna">
-    <div class="col col-25"><img class="icons" src="img/{{result.correct}}.png" width="100%" height="100%"/></div>
-    <div class="col">
-      <h2>{{result.title}}</h2>
-      <p class="erantzun_text">{{result.text}}</p>
-      <p class="text"><span>{{"correct_answer" | translate}}</span> <br/> {{correct_text}}</p>
-      <p ng-if="result.correct" class="text">{{"progress" | translate}} {{round}} / {{rounds}} ({{progress}} %)</p>
-      <!--<button class="button button-clear button-calm"
-          ng-click="goToSourceCustom()">
-          Info +: {{result.provider}}
-      </button>-->
-    </div>
+    <div class="row erantzuna" ng-show="correct">
+      <div class="col col-25"><img class="icons" src="img/{{result.correct}}.png" width="100%" height="100%"/></div>
+      <div class="col">
+        <!--<h2>{{title}}</h2>-->
+        <p class="text"><span>{{"correct_answer" | translate}}</span> <br/> {{result.correct_answer}}</p>
+        <p class="erantzun_text">{{title}}<!--{{result.correct_answer}}--></p>
 
+
+        <!--Progresoa adierazteko, partida amaitu bada "Jokoa amaitu duzu!" mezua erakutsiko digute-->
+        <p ng-if="result.correct && round<rounds" class="text">{{"progress" | translate}} {{round}} / {{rounds}} </p><!--({{progress}} %)-->
+        <p ng-if="result.correct && round==rounds" class="text">Jokoa amaitu duzu!</p><!--({{progress}} %)-->
+        <!--<button class="button button-clear button-calm"
+            ng-click="goToSourceCustom()">
+            Info +: {{result.provider}}
+        </button>-->
+      </div>
   </div>
 
   <div class="row responsive-sm">
@@ -41,12 +44,14 @@
     </div>
 
   </div>-->
-  <div class="emaitza_azpi">
+  <div class="emaitza_azpi" ng-show="correct">
     <span class="center">
         Jarraitu jokatzen sariak lortzeko!
     </span>
 
-    <button  class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
+    <button ng-if="result.correct && round<rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"next_question" | translate}}</button>
+    <button ng-if="result.correct && round==rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
+    <button ng-if="!result.correct" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
     <span class="center">
         {{"source_text_source" | translate}}
     </span>
