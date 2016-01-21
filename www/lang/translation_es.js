@@ -141,8 +141,8 @@ var translations_es = {
 
     //Result states
 
-    correct_answer: "¡Has acertado!",
-    inorrect_answer: "No has acertado, inténtalo de nuevo.",
+    correct_answer_title: "¡Has acertado!",
+    incorrect_answer_title: "No has acertado, inténtalo de nuevo.",
     progress: "Progreso: ",
 
     //Share messages

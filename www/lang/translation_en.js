@@ -142,8 +142,8 @@ var translations_en = {
 
     //Result states
 
-    correct_answer: "You guessed the question!",
-    inorrect_answer: "You have not successful, try again.",
+    correct_answer_title: "You guessed the question!",
+    incorrect_answer_title: "You have not successful, try again.",
     progress: "Progress: ",
 
     //Share messages

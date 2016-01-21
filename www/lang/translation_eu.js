@@ -140,8 +140,8 @@ var translations_eu = {
 
     //Result states
 
-    correct_answer: "Galdera asmatu duzu!",
-    inorrect_answer: "Galdera EZ duzu asmatu. Saiatu berriro.",
+    correct_answer_title: "Galdera asmatu duzu!",
+    incorrect_answer_title: "Galdera EZ duzu asmatu. Saiatu berriro.",
     progress: "Aurrerapena: ",
 
     //Share messages
