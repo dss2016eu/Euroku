@@ -42,17 +42,18 @@ angular.module('euroku.prices', [])
     pricesServices.getPublicPriceList()
     .then (function(resp)
       {
-        console.log("52: " + resp.data[0].amount);
+        console.log("52: " + resp);
 
         $scope.user_prices = [];
 
-        for (var i = 0; i < resp.data.length; i++)
+        for (var i = 0; i < resp.length; i++)
         {
           var prices = {
                         amount: resp.data[i].amount,
                         title: resp.data[i].title,
                         enddate: resp.data[i].enddate
                       };
+                      console.log(prices);
           $scope.user_prices.push(prices);
         }
         console.log($scope.user_prices);
