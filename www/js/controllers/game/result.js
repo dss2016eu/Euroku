@@ -1,13 +1,14 @@
 angular.module('euroku.result', [])
 
-.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout, questionsServices) {
+.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout, questionsServices, $ionicLoading) {
   console.log($stateParams.choose);
 
   $scope.play = '';
-  $scope.loading = false;
+  $scope.correct = false;
 
   //load translate text to make popup layout with price data
   var language = window.localStorage.getItem('lang');
+  $ionicLoading.show();
 
   $scope.showNewPrice = function (desc, key)
   {
@@ -101,14 +102,17 @@ angular.module('euroku.result', [])
           {
             if (language === "eu")
             {
+              $scope.title = translations_eu.correct_answer_title;
               $scope.correct_text = translations_eu.correct_answer;
             }
             else if (language === "es")
             {
+              $scope.title = translations_es.correct_answer_title;
               $scope.correct_text = translations_es.correct_answer;
             }
             else
             {
+              $scope.title = translations_en.correct_answer_title;
               $scope.correct_text = translations_en.correct_answer;
             }
           }
@@ -116,22 +120,29 @@ angular.module('euroku.result', [])
           {
             if (language === "eu")
             {
+              $scope.title = translations_eu.incorrect_answer_title;
               $scope.correct_text = translations_eu.incorrect_answer;
             }
             else if (language === "es")
             {
+              $scope.title = translations_es.incorrect_answer_title;
               $scope.correct_text = translations_es.incorrect_answer;
             }
             else
             {
+              $scope.title = translations_en.incorrect_answer_title;
               $scope.correct_text = translations_en.incorrect_answer;
             }
           }
+
+          $scope.correct = true;
+          $ionicLoading.hide();
 
         },
         function(error)
         {
           console.error(error);
+          $ionicLoading.hide();
       });
 
   };
