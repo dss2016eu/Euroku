@@ -1,7 +1,16 @@
 angular.module('euroku.profile', [])
-.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading, $state, $ionicPopup) {
+.controller('SettingsCtrl', function($scope, $ionicHistory, $state, profileServices, $ionicLoading, $state, $ionicPopup, $ionicPlatform) {
   $scope.answer_correct = getRandomInt(1,16); //get a number in range 1-16
   $scope.total_answer = 16;
+
+
+  $ionicPlatform.onHardwareBackButton(function(e) {
+    console.log("BACK BUTTON!");
+    e.preventDefault();
+    window.alert("Test");
+    $state.go('app.main');
+    return false;
+  });
 
   $scope.progress = ($scope.answer_correct * 100) / $scope.total_answer;
   $ionicLoading.show();
