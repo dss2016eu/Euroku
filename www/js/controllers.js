@@ -37,6 +37,16 @@ angular.module('euroku.controllers', [])
     $scope.share_text = translations_en.share_social_text;
   }
 
+  $scope.morePlay = function ()
+  {
+    $state.go('app.quiz');
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+
+  };
+
   $rootScope.shareApp = function()
   {
     console.log("SHARE!!!");
