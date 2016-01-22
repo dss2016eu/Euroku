@@ -17,6 +17,8 @@ var translations_eu = {
     about: 'Aplikazioari buruz',
     home: 'Hasiera',
     complete_form_login: 'Saioa hasteko erabiltzailea eta pasahitza sartzea derrigorrezkoa da!',
+    loading_text: 'Kargatzen...',
+
     //komentario froga
     main_description: '5 galderako sorta bat '+
                         'erantzun beharko duzu denborarik laburrenean',
@@ -130,7 +132,8 @@ var translations_eu = {
     trophy_text: 'Saria',
 
     //Prices
-    your_trophy_title: 'Lortu dituzun sariak',
+    your_trophy_title: 'Zure sariak',
+    user_no_obtain_prizes: 'Ez daukazu saririk momentuz, irabazten hasi nahi baduzu, hasi jokatzen!',
     active_trophy_title: 'Eskuragarri dauden sariak',
     disactive_trophy_title: 'Eskuragarri egon diren sariak',
     ok_text_popup: 'ADOS',

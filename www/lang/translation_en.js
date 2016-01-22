@@ -17,6 +17,7 @@ var translations_en = {
     about: 'About application',
     home: 'Start',
     complete_form_login: 'The login username and password is required!',
+    loading_text: 'Loading...',
 
     //komentario froga
     main_description: 'Each game consists of 5 questions ' +
@@ -133,6 +134,7 @@ var translations_en = {
 
     //Prices
     your_trophy_title: 'Win Prizes',
+    user_no_obtain_prizes: 'We do not have any awards , I so want to start earning rewards ,start playing!',
     active_trophy_title: 'Prizes available',
     disactive_trophy_title: 'Prizes not available',
     ok_text_popup: 'OK',

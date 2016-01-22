@@ -17,6 +17,7 @@ var translations_es = {
     about: 'Sobre la aplicación',
     home: 'Inicio',
     complete_form_login: '¡Para iniciar sesión es obligatorio introducir usuario y contraseña!',
+    loading_text: 'Cargando...',
     //komentario froga
     main_description: 'Cada partida consta de 5 preguntas '+
                         'cuyo objetivo principal es responder correctamente en el menor tiempo posible',
@@ -131,7 +132,8 @@ var translations_es = {
     trophy_text: 'Premios',
 
     //Prices
-    your_trophy_title: 'Premios obtenidos',
+    your_trophy_title: 'Tus premios',
+    user_no_obtain_prizes: 'Por el momento no tienes ningún premio, si quieres empezar a ganar premios, ¡empieza a jugar!',
     active_trophy_title: 'Premios disponibles',
     disactive_trophy_title: 'Premios no disponibles',
     ok_text_popup: 'OK',

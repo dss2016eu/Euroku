@@ -13,7 +13,7 @@
       <div class="item item-divider">
         {{'your_trophy_title' | translate}}
       </div>
-      <a class="item item-text-wrap" ng-click="morePlay()" ng-if="user_prices==0"><h2>Ez daukazu saririk, irabaztea nahi duzu. Hasi jokatzen!</h2></a>
+      <a class="item item-text-wrap" ng-click="morePlay()" ng-if="user_prices==0"><h2>{{"user_no_obtain_prizes" | translate}}</h2></a>
       <a class="item item-avatar" href="#" ng-repeat="price in user_prices" ng-if="user_prices>0">
         <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
         <h2>{{price.title}}</h2>
