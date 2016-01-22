@@ -161,14 +161,4 @@ angular.module('euroku.result', [])
 
   $scope.sendSelection();
 
-  $scope.morePlay = function ()
-  {
-    $state.go('app.quiz');
-    $ionicHistory.nextViewOptions({
-      disableAnimate: true,
-      disableBack: true
-    });
-
-  };
-
 });
