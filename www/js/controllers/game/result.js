@@ -38,7 +38,7 @@ angular.module('euroku.result', [])
 
     if (desc === "")
     {
-      desc = "Price text to show in popup modal";
+      desc = "Sariaren titulua joango da (desc hutsa delako agertzen da testu hau)";
     }
     //console.log("irudi maila: " + $scope.img_maila);
     var alertPopup = $ionicPopup.alert({
