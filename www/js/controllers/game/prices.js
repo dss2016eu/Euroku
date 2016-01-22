@@ -100,6 +100,13 @@ angular.module('euroku.prices', [])
       {
         console.error(error);
   });*/
+})
+
+.controller('PriceDetailCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $stateParams) {
+  $rootScope.menu_show = true;
+  $ionicSideMenuDelegate.canDragContent(true);
+
+  console.log($stateParams.id);
 });
 
 
