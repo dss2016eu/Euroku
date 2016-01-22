@@ -59,14 +59,11 @@ angular.module('euroku.services.prices', [])
 
         var device_id = window.localStorage.getItem ('device_id');
 
-        console.log(URL_LOCALHOST+PRICES.list+"?device_id=" + device_id);
-
         console.log(URL_LOCALHOST+PRICES.public_list+"?device_id=" + device_id);
-        return $http.get(URL_LOCALHOST+PRICES.public_list).success(
+
+        return $http.get(URL_LOCALHOST+PRICES.public_list+"?device_id=" + device_id).success(
 
             function(data) {
-
-              console.log("Send user answer...");
               return data;
             }
         );
