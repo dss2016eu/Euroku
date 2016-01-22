@@ -145,6 +145,9 @@ var translations_en = {
     correct_answer_title: "You guessed the question!",
     incorrect_answer_title: "You have not successful, try again.",
     progress: "Progress: ",
+    more_info: "More info",
+    to_play: "Keep playing for more awards!",
+    start_to_play: "Try again",
 
     //Share messages
     share_social_text: 'Share it with your friends!',

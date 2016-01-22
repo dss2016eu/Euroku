@@ -144,6 +144,9 @@ var translations_es = {
     correct_answer_title: "¡Has acertado!",
     incorrect_answer_title: "No has acertado, inténtalo de nuevo.",
     progress: "Progreso: ",
+    more_info: "Más información",
+    to_play: "¡Sigue jugando para obtener más premios!",
+    start_to_play: "Intentarlo de nuevo",
 
     //Share messages
     share_social_text: 'Te animo a descargar Euroku ;)',
