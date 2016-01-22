@@ -130,7 +130,7 @@ var translations_eu = {
     trophy_text: 'Saria',
 
     //Prices
-
+    your_trophy_title: 'Lortu dituzun sariak',
     active_trophy_title: 'Eskuragarri dauden sariak',
     disactive_trophy_title: 'Eskuragarri egon diren sariak',
     ok_text_popup: 'ADOS',

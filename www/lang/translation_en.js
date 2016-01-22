@@ -132,7 +132,7 @@ var translations_en = {
     trophy_text: 'Trophy',
 
     //Prices
-
+    your_trophy_title: 'Win Prizes',
     active_trophy_title: 'Prizes available',
     disactive_trophy_title: 'Prizes not available',
     ok_text_popup: 'OK',

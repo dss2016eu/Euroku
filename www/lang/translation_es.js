@@ -131,7 +131,7 @@ var translations_es = {
     trophy_text: 'Premios',
 
     //Prices
-
+    your_trophy_title: 'Premios obtenidos',
     active_trophy_title: 'Premios disponibles',
     disactive_trophy_title: 'Premios no disponibles',
     ok_text_popup: 'OK',
