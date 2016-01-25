@@ -1,57 +1,41 @@
 
 <ion-view title='<img class="title-image" src="img/logotipoa.png" height="80%"/>' cache-view="false">
-  <ion-nav-bar class="bar-dark">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+  <ion-nav-buttons side="left">
+        <button class="button icon-left ion-arrow-left-c button-clear" ng-click="returnToPrices()">
 
-      <ion-nav-buttons side="left">
-          <button class="button button-clear button-icon ion-navicon"
-             menu-toggle="left">
-          </button>
-      </ion-nav-buttons>
-  </ion-nav-bar>
+        </button>
+    </ion-nav-buttons>
   <ion-content>
     <div class="row erantzuna" ng-show="correct">
       <div class="col col-25"><img class="icons" src="http://www.psdgraphics.com/file/gold-trophy.jpg" width="100%" height="100%"/></div>
       <div class="col">
         <!--<h2>{{title}}</h2>-->
-        <p class="text"><span>Emango den saria</span> <br/> Boligrafoa</p>
-        <p class="erantzun_text">{{title}}<!--{{result.correct_answer}}--></p>
+        <p class="text"><span>Emango den saria</span> <br/> {{price.title}}</p>
+        <p class="erantzun_text"><!--{{result.correct_answer}}--></p>
 
-
-        <!--Progresoa adierazteko, partida amaitu bada "Jokoa amaitu duzu!" mezua erakutsiko digute-->
-        <p ng-if="result.correct && round<rounds" class="text">{{"progress" | translate}} {{round}} / {{rounds}} </p><!--({{progress}} %)-->
-        <p ng-if="result.correct && round==rounds" class="text">Jokoa amaitu duzu!</p><!--({{progress}} %)-->
-        <p ng-if="!result.correct" class="text">{{"progress" | translate}} 0 / {{rounds}} </p><!--({{progress}} %)-->
+        <p class="text">Kantitatea: {{price.amount}}</p><!--({{progress}} %)-->
         <!--<button class="button button-clear button-calm"
             ng-click="goToSourceCustom()">
             Info +: {{result.provider}}
         </button>-->
+        <button  class=" button button-block button-dark" ng-click="openBrowser('http://dss2016.eu/')">Informazio gehiago</button>
       </div>
   </div>
 
   <div class="row responsive-sm">
     <div class="col">
+        <!--<h2>{{title}}</h2>-->
+        <p class="text" ng-if="price.price_key"><span>Lortutako sariaren kodea: HEJDJAKAKA</span></p>
+        <p class="erantzun_text"><!--{{result.correct_answer}}--></p>
 
-    </div>
+        <p class="text" ng-if="price.enddate">Iraungitze data: {{price.enddate}}</p><!--({{progress}} %)-->
+        <p class="text" ng-if="!price.enddate">Iraungitze data: Zehaztu gabe</p><!--({{progress}} %)-->
+        <p class="text"><span><b>Nola jaso:</b></span><br/> Jasotzeko argibideak (zehazteko dago...)</p><!--({{progress}} %)-->
+
+      </div>
   </div>
 
-  <div class="emaitza_azpi" ng-show="correct">
-    <span class="center" ng-if="result.correct">
-        {{"to_play" | translate}}
-    </span>
-    <span class="center" ng-if="!result.correct">
-        {{"start_to_play" | translate}}
-    </span>
 
-    <button ng-if="result.correct && round<rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"next_question" | translate}}</button>
-    <button ng-if="result.correct && round==rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
-    <button ng-if="!result.correct" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
-    <span class="center">
-        {{"source_text_source" | translate}}
-    </span>
-    <button  class=" button button-block button-dark" ng-click="goToSourceCustom()">{{"more_info" | translate}}</button>
-  </div>
 
   </ion-content>
 </ion-view>
