@@ -18,7 +18,7 @@ angular.module('euroku.services.questions', [])
         var game_id = window.localStorage.getItem("game_id");
 
         console.log("Questions (20): " + game_id);
-        if (game_id !== "" && game_id !== undefined)
+        if (game_id !== "" && game_id !== undefined && game_id !== null)
         {
           game_id = "&game_id=" + game_id;
         }
