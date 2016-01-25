@@ -12,7 +12,7 @@
 
 angular.module('euroku.prices', [])
 
-.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices) {
+.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $state, $ionicHistory) {
   $rootScope.menu_show = true;
   $ionicSideMenuDelegate.canDragContent(true);
 
@@ -31,6 +31,9 @@ angular.module('euroku.prices', [])
       for (var i = 0; i < resp.data.length; i++)
       {
         var prices = {
+                      date: resp.data[i].date,
+                      event: resp.data[i].event,
+                      url: resp.data[i].url,
                       amount: resp.data[i].amount,
                       title: resp.data[i].title,
                       enddate: resp.data[i].enddate
@@ -90,23 +93,73 @@ angular.module('euroku.prices', [])
       console.error(error);
     });
 
-  //Lortutako sariaren xehetasunak
-  /*pricesServices.getPriceDetails("DSS2016BOLI_1")
-    .then (function(resp)
+
+  $scope.openPriceDetailItemInfo = function (type, index)
+  {
+    //$state.go('app.detais_price');
+    if (type === 1)
+    {
+      console.log($scope.user_prices[index].price_key);
+    }
+    else
+    {
+      console.log($scope.public_prices[index].price_key);
+      //Save select public prices object in json
+      window.localStorage.setItem("public_price", angular.toJson($scope.public_prices[index]));
+
+    }
+    var price_key = -1;
+    if ($scope.public_prices[index].price_key === undefined || $scope.public_prices[index].price_key === null ||
+        $scope.user_prices[index].price_key === undefined || $scope.user_prices[index].price_key === null)
+    {
+      price_key = -1;
+    }
+
+    $state.go('app.detais_price', { 'id': price_key})
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+    console.log(type+":" + index);
+  };
+})
+
+.controller('PriceDetailCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $stateParams, $state, $ionicHistory) {
+  $rootScope.menu_show = false;
+  $ionicSideMenuDelegate.canDragContent(false);
+
+  console.log($stateParams.id);
+
+  if ($stateParams.id !== "-1")
+  {
+    //Lortutako sariaren xehetasunak
+    pricesServices.getPriceDetails("DSS2016BOLI_1")
+      .then (function(resp)
       {
         console.log("52: " + resp);
       },
       function(error)
       {
         console.error(error);
-  });*/
-})
+    });
+  }
+  else
+  {
+    console.log("Show public price details");
+    $scope.price = JSON.parse(window.localStorage.getItem('public_price'));
+    console.log(JSON.parse(window.localStorage.getItem('public_price')));
+  }
 
-.controller('PriceDetailCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $stateParams) {
-  $rootScope.menu_show = true;
-  $ionicSideMenuDelegate.canDragContent(true);
+  $scope.correct = true;
 
-  console.log($stateParams.id);
+  $scope.returnToPrices = function ()
+  {
+    $state.go('app.prices');
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+  };
 });
 
 
