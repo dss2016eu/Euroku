@@ -1,13 +1,7 @@
 
 <ion-view title="{{'trophy_text' | translate}}">
-    <!--<<ion-nav-buttons side="left">
-        <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="returnToRanking()">
-            {{"back_text" | translate}}
-        </button>
-    </ion-nav-buttons>-->
+
   <ion-content class="has-header white">
-    <!--<h1>{{'trophy_text' | translate}}</h1>
-    <p>{{menu_show}}</p>-->
 
     <div class="list">
       <div class="item item-divider">
@@ -23,21 +17,13 @@
       <div class="item item-divider">
         {{'active_trophy_title' | translate}}
       </div>
-      <a class="item item-avatar" ng-repeat="price in public_prices" href="#">
+      <a class="item item-avatar" ng-repeat="price in public_prices" ng-click="openPriceDetailItemInfo(2,$index)">
         <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
         <h2>{{price.title}}</h2>
-        <p>{{price.amount}}</p>
-        <p>{{price.enddate}}</p>
+        <!--<p>{{price.amount}}</p>-->
+        <p>Amount: {{price.date}}</p>
+        <p ng-if="price.enddate">Amaiera data: {{price.enddate}}</p>
       </a>
-      <!--<div class="item item-divider">
-        {{'disactive_trophy_title' | translate}}
-      </div>
-      <a class="item item-avatar" href="#" ng-repeat="price in user_prices" ng-if="price.calimed == false">
-        <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
-        <h2>{{price.title}}</h2>
-        <p>{{price.amount}}</p>
-        <p>{{price.enddate}}</p>
-      </a>-->
     </div>
   </ion-content>
 </ion-view>
