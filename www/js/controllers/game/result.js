@@ -1,6 +1,6 @@
 angular.module('euroku.result', [])
 
-.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $state, $http, $ionicPopup, $timeout, questionsServices, $ionicLoading) {
+.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $http, $ionicPopup, $timeout, questionsServices, $ionicLoading) {
   console.log($stateParams.choose);
 
   $scope.play = '';
