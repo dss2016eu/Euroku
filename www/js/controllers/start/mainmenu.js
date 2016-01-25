@@ -45,7 +45,8 @@ angular.module('euroku.mainmenu', [])
   };
 
   $ionicHistory.nextViewOptions({
-                  disableBack: true
+                  disableBack: true,
+                  disableAnimation: true
   });
 
   $scope.goToRegisterForm = function ()
