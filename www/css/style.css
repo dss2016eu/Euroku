@@ -146,6 +146,11 @@ img.displayed {
   margin:0;
 }
 
+.erantzuna .col .button
+{
+  padding: 10px !important;
+}
+
 .erantzuna .button{
   line-height: auto;
   height: auto;
