@@ -1,10 +1,12 @@
 angular.module('euroku.result', [])
 
-.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $http, $ionicPopup, $timeout, questionsServices, $ionicLoading) {
+.controller('ResultCtrl', function($scope, $stateParams, $ionicHistory, $http, $ionicPopup, $timeout, questionsServices, $ionicLoading, $rootScope, $ionicSideMenuDelegate) {
   console.log($stateParams.choose);
 
   $scope.play = '';
   $scope.correct = false;
+  $rootScope.menu_show = true;
+  $ionicSideMenuDelegate.canDragContent(true);
 
   //load translate text to make popup layout with price data
   var language = window.localStorage.getItem('lang');
