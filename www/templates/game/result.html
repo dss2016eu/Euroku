@@ -48,7 +48,8 @@
     <button ng-if="result.correct && round==rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
     <button ng-if="!result.correct" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
     <span class="center">
-        {{"source_text_source" | translate}}
+        <!--{{"source_text_source" | translate}}-->
+        {{result.attribution}}
     </span>
     <button  class=" button button-block button-dark" ng-click="goToSourceCustom()">{{"more_info" | translate}}</button>
   </div>
