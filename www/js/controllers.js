@@ -1,9 +1,42 @@
 angular.module('euroku.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout,
-                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing, profileServices) {
+                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing, profileServices, $ionicPlatform) {
 
   $scope.url = "";
+
+  //Hardware Back button manage
+  $ionicPlatform.registerBackButtonAction(function(event){
+    //window.alert("BACK: " + $ionicHistory.currentStateName());
+    console.log("Back: " + $ionicHistory.currentStateName());
+    var url = $ionicHistory.currentStateName();
+    if (url === "app.details_price")
+    {
+      console.log("CONTROLLER 14: " + window.localStorage.getItem('save_from_location'));
+      var dir = window.localStorage.getItem('save_from_location');
+
+      if (dir === "app.iritzia" || dir === "app.komunitatetik")
+      {
+        console.log('url: ' + dir);
+        $state.go(dir, { 'id': dir.substring(4)});
+      }
+      else
+      {
+        $state.go(dir);
+      }
+
+      $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        disableBack: true
+      });
+    }
+    else
+    {
+      navigator.app.exitApp();
+    }
+    event.preventDefault();
+
+  }, 100);
 
   $scope.getRandomBoolean = function()
   {
