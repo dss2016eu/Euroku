@@ -164,7 +164,7 @@ angular.module('euroku', ['ionic',
       }
     })
 
-  .state('app.detais_price', {
+  .state('app.details_price', {
       url: '/prices/detail/:id',
       views: {
         'menuContent': {
