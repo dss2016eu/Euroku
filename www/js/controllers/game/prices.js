@@ -12,15 +12,20 @@
 
 angular.module('euroku.prices', [])
 
-.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $state, $ionicHistory) {
+.controller('PricesCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, pricesServices, $state, $ionicHistory, $ionicLoading) {
   $rootScope.menu_show = true;
   $ionicSideMenuDelegate.canDragContent(true);
+
+  $scope.loading = false;
+
+  $ionicLoading.show();
 
   //Erabiltzailearen sariak
   pricesServices.getUserListPrices().then(function(resp)
   {
     console.log("52: " + resp.data);
     $scope.user_prices = resp.data;
+
     //Dauden sari guztien zerrenda
     pricesServices.getPublicPriceList().then (function(resp)
     {
@@ -42,10 +47,14 @@ angular.module('euroku.prices', [])
         $scope.public_prices.push(prices);
       }
       console.log($scope.public_prices);
+      $scope.loading = true;
+      $ionicLoading.hide();
 
     },
         function(error)
         {
+          $scope.loading = true;
+          $ionicLoading.hide();
           console.error(error);
           $scope.public_prices = [
                           {
@@ -114,8 +123,8 @@ angular.module('euroku.prices', [])
     {
       price_key = -1;
     }
-
-    $state.go('app.detais_price', { 'id': price_key})
+    window.localStorage.setItem('save_from_location', 'app.prices');
+    $state.go('app.details_price', { 'id': price_key})
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
       disableBack: true
@@ -154,6 +163,8 @@ angular.module('euroku.prices', [])
 
   $scope.returnToPrices = function ()
   {
+    $rootScope.menu_show = true;
+    $ionicSideMenuDelegate.canDragContent(true);
     $state.go('app.prices');
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
