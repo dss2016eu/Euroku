@@ -1,9 +1,9 @@
 
-<ion-view title="{{'trophy_text' | translate}}">
+<ion-view title="{{'trophy_text' | translate}}" cache-view="false">
 
   <ion-content class="has-header white">
 
-    <div class="list">
+    <div class="list" ng-show="loading">
       <div class="item item-divider">
         {{'your_trophy_title' | translate}}
       </div>
