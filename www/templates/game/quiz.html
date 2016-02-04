@@ -27,8 +27,8 @@
       <div class="border">
 
         <h3 ng-bind-html="question.title"></h3>
-        <div ng-show="show_image">
-          <img src="{{question.img}}" alt = ""/>
+        <div ng-if="question.photo">
+          <img src="{{localhost}}{{question.photo}}" alt = ""/>
         </div>
 
       </div>
