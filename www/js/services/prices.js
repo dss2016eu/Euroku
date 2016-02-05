@@ -41,9 +41,11 @@ angular.module('euroku.services.prices', [])
         Load device id from local Storage
         *********************************************************/
 
-        console.log(URL_LOCALHOST+PRICES.detail_item+"?price_key=" + price_key);
+        var device_id = window.localStorage.getItem ('device_id');
 
-        return $http.get(URL_LOCALHOST+PRICES.detail_item+"?price_key=" + price_key).success(
+        console.log(URL_LOCALHOST+PRICES.list+"?price_key=" + price_key + "device_id=" + device_id);
+
+        return $http.get(URL_LOCALHOST+PRICES.list+"?price_key=" + price_key+ "&device_id=" + device_id).success(
 
             function(resp)
             {
