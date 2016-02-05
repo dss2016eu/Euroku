@@ -24,8 +24,25 @@ angular.module('euroku.prices', [])
   pricesServices.getUserListPrices().then(function(resp)
   {
     console.log("52: " + resp.data);
-    $scope.user_prices = resp.data;
 
+
+    $scope.user_prices = [];
+
+      for (var i = 0; i < resp.data.length; i++)
+      {
+        var prices = {
+                      date: resp.data[i].date,
+                      event: resp.data[i].event,
+                      url: resp.data[i].url,
+                      amount: resp.data[i].amount,
+                      title: resp.data[i].title,
+                      enddate: resp.data[i].enddate,
+                      key: resp.data[i].key
+                    };
+                    console.log(prices);
+        $scope.user_prices.push(prices);
+      }
+      console.log($scope.user_prices);
     //Dauden sari guztien zerrenda
     pricesServices.getPublicPriceList().then (function(resp)
     {
@@ -106,23 +123,25 @@ angular.module('euroku.prices', [])
   $scope.openPriceDetailItemInfo = function (type, index)
   {
     //$state.go('app.detais_price');
+    var price_key = 0;
     if (type === 1)
     {
-      console.log($scope.user_prices[index].price_key);
+      console.log($scope.user_prices[index].key);
+      price_key = $scope.user_prices[index].key;
     }
     else
     {
       console.log($scope.public_prices[index].price_key);
       //Save select public prices object in json
       window.localStorage.setItem("public_price", angular.toJson($scope.public_prices[index]));
-
+      price_key = -1;
     }
-    var price_key = -1;
-    if ($scope.public_prices[index].price_key === undefined || $scope.public_prices[index].price_key === null ||
+
+    /*if ($scope.public_prices[index].price_key === undefined || $scope.public_prices[index].price_key === null ||
         $scope.user_prices[index].price_key === undefined || $scope.user_prices[index].price_key === null)
     {
       price_key = -1;
-    }
+    }*/
     window.localStorage.setItem('save_from_location', 'app.prices');
     $state.go('app.details_price', { 'id': price_key})
     $ionicHistory.nextViewOptions({
@@ -142,10 +161,12 @@ angular.module('euroku.prices', [])
   if ($stateParams.id !== "-1")
   {
     //Lortutako sariaren xehetasunak
-    pricesServices.getPriceDetails("DSS2016BOLI_1")
+    pricesServices.getPriceDetails($stateParams.id)
       .then (function(resp)
       {
         console.log("52: " + resp);
+        $scope.price = resp.data[0];
+        console.log($scope.price[0]);
       },
       function(error)
       {
