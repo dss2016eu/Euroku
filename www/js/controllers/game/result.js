@@ -62,7 +62,7 @@ angular.module('euroku.result', [])
   {
 
       var params = {
-                      device_id: 1,
+                      device_id: window.localStorage.getItem ('device_id'),
                       question_id: $scope.question_id,
                       game_id: $scope.game_id,
                       answer: $scope.user_select_option
