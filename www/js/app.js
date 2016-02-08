@@ -165,7 +165,7 @@ angular.module('euroku', ['ionic',
     })
 
   .state('app.details_price', {
-      url: '/prices/detail/:id',
+      url: '/prices/detail/:id/:position',
       views: {
         'menuContent': {
           templateUrl: 'templates/game/price/detail.html',
