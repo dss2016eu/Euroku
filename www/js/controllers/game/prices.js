@@ -143,7 +143,7 @@ angular.module('euroku.prices', [])
       price_key = -1;
     }*/
     window.localStorage.setItem('save_from_location', 'app.prices');
-    $state.go('app.details_price', { 'id': price_key})
+    $state.go('app.details_price', { 'id': price_key, 'position': index})
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
       disableBack: true
@@ -164,9 +164,9 @@ angular.module('euroku.prices', [])
     pricesServices.getPriceDetails($stateParams.id)
       .then (function(resp)
       {
-        console.log("52: " + resp);
-        $scope.price = resp.data[0];
-        console.log($scope.price[0]);
+        console.log("52: " + resp.data);
+        $scope.price = resp.data[$stateParams.position];
+        console.log($scope.price[$stateParams.position]);
       },
       function(error)
       {
