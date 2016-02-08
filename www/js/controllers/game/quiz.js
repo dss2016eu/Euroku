@@ -117,7 +117,7 @@ angular.module('euroku.quiz', [])
     $scope.question = resp.data;
     console.log($scope.question);
 
-    $scope.startTimer($scope.question);
+    //$scope.startTimer($scope.question);
 
     $ionicLoading.hide();
     $scope.loading = true;
@@ -137,7 +137,7 @@ angular.module('euroku.quiz', [])
                       rounds: 2
                       };
     console.log($scope.question);
-    $scope.startTimer($scope.question);
+    //$scope.startTimer($scope.question);
     $ionicLoading.hide();
     $scope.loading = true;
     window.localStorage.setItem("game_id", "");
