@@ -7,12 +7,14 @@
       <div class="item item-divider">
         {{'your_trophy_title' | translate}}
       </div>
+      {{user_prices}}
       <a class="item item-text-wrap" ng-click="morePlay()" ng-if="user_prices.length==0"><h2>{{"user_no_obtain_prizes" | translate}}</h2></a>
       <a class="item item-avatar" href="#" ng-repeat="price in user_prices" ng-if="user_prices.length>0" ng-click="openPriceDetailItemInfo(1,$index)">
         <img src="http://www.psdgraphics.com/file/gold-trophy.jpg">
         <h2>{{price.title}}</h2>
         <p>{{price.amount}}</p>
         <p>{{price.enddate}}</p>
+        <p>{{price.key}}</p>
       </a>
       <div class="item item-divider">
         {{'active_trophy_title' | translate}}
