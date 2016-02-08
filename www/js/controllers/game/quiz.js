@@ -122,7 +122,10 @@ angular.module('euroku.quiz', [])
     console.log($scope.question);
 
     //Provisional to show always image!!!
-    $scope.question.photo = "/media/photologue/photos/cache/YU9JTL6FSY_display.jpg";
+    if ($scope.question.photo === "")
+    {
+      $scope.question.photo = "/media/photologue/photos/cache/YU9JTL6FSY_display.jpg";
+    }
 
     $scope.startTimer($scope.question);
 
