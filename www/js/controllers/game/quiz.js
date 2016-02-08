@@ -58,7 +58,11 @@ angular.module('euroku.quiz', [])
       $scope.question_game = question;
       console.log($scope.question_game);
       $rootScope.counter = 10;
-      mytimeout = $timeout($scope.onTimeout, 1000);
+
+      /**********************************************************************
+      DISABLE CHRONOMETER!
+      ***********************************************************************/
+      //mytimeout = $timeout($scope.onTimeout, 1000);
       console.log("138 line: " + $scope.question_game.game_id);
 
     };
@@ -117,7 +121,10 @@ angular.module('euroku.quiz', [])
     $scope.question = resp.data;
     console.log($scope.question);
 
-    //$scope.startTimer($scope.question);
+    //Provisional to show always image!!!
+    $scope.question.photo = "/media/photologue/photos/cache/YU9JTL6FSY_display.jpg";
+
+    $scope.startTimer($scope.question);
 
     $ionicLoading.hide();
     $scope.loading = true;
@@ -137,7 +144,7 @@ angular.module('euroku.quiz', [])
                       rounds: 2
                       };
     console.log($scope.question);
-    //$scope.startTimer($scope.question);
+    $scope.startTimer($scope.question);
     $ionicLoading.hide();
     $scope.loading = true;
     window.localStorage.setItem("game_id", "");
