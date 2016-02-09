@@ -230,16 +230,20 @@ angular.module('euroku.controllers', [])
 
   };
 
+  $scope.storePriceDetailsUrls = function(prices)
+  {
+    var urls = [];
+    for (var i = 0; i < prices.length; i++)
+    {
+      console.log(prices[i].url);
+      urls.push(prices[i].url);
+    }
+    return urls;
+  }
+
   $scope.openBrowser = function (url)
   {
-    if(ionic.Platform.platform() === "android")
-    {
-        window.open(url, '_system', 'location=no');
-    }
-    else
-    {
-        window.open(url, '_blank', 'location=yes');
-    }
+    window.open(url, '_system');
   };
 
 })
