@@ -123,12 +123,14 @@ angular.module('euroku.controllers', [])
   };
   $rootScope.optionsLanguage = function()
   {
+
+    //ion-android-checkbox
     // Show the action sheet
    var hideSheet = $ionicActionSheet.show({
      buttons: [
-       { text: '<b>English</b>' },
-       { text: '<b>Español</b>' },
-       { text: '<b>Euskara</b>' }
+        { text: '<i class="icon ion-android-checkbox positive"></i> English' },
+        { text: '<i class="icon ion-android-checkbox positive"></i> Español' },
+        { text: '<i class="icon ion-android-checkbox positive"></i> Euskara' }
      ],
      //titleText: 'Modify your album',
      cancelText: 'Cancel',
