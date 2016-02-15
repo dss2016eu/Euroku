@@ -1,6 +1,6 @@
 var translations_es = {
     //Hasierako orrialdea, erregistroa edo login egiteko gunean
-    main_title: 'Euskaldunon tribuaren jokoa',
+    main_title: 'Euroku - Juego de la Capital Cultural Europea Donostia-San Sebastián 2016',
     user_input: 'Usuario',
     mail_input: 'Correo Electrónico',
     pass_1_input: 'Contraseña',
@@ -54,7 +54,7 @@ var translations_es = {
     language: 'Idioma',
     lang_en: 'English',
     lang_es: 'Español',
-    lang_eu: 'Euskera',
+    lang_eu: 'Euskara',
 
     //Ranking
     ranking_title: 'Clasificación',
@@ -140,6 +140,12 @@ var translations_es = {
     template_title: '¡Felicidades! ¡Has conseguido un nuevo premio!',
     template_msg_1: '<br/>Utiliza el siguiente código cuando vayas a recoger el premio: <b>',
     template_msg_2: '<p>Podrás consultar todos los premios conseguidos en "Premios"</p>',
+    claimed_text_true: 'RECOGIDO',
+    claimed_text_false: 'PENDIENTE DE RECOGER',
+    event_date_text_label: 'Fecha del evento',
+    win_price_code: 'Código del premio',
+    end_data_text: 'Fecha de finalización',
+    end_data_text_not_set_date: 'Fecha de finalización: Sin especificar',
 
     //Result states
 
@@ -147,11 +153,12 @@ var translations_es = {
     incorrect_answer_title: "No has acertado, inténtalo de nuevo.",
     progress: "Progreso: ",
     more_info: "Más información",
+    more_info_btn: 'Más información',
     to_play: "¡Sigue jugando para obtener más premios!",
     start_to_play: "Intentarlo de nuevo",
 
     //Share messages
-    share_social_text: 'Te animo a descargar Euroku ;)',
+    share_social_text: 'Te animo a descargar Euroku: puedes ganar premios relacionados con DSS2016, la Capital Cultural Eurpopea ;)',
 
     //Pop up message components
 

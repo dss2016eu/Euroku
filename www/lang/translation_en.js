@@ -1,6 +1,6 @@
 var translations_en = {
     //Hasierako orrialdea, erregistroa edo login egiteko gunean
-    main_title: 'Euroku - Donostia 2016 Europe Culture game',
+    main_title: 'Euroku - the game for Donostia 2016, Europe Capital of Culture',
     user_input: 'User',
     mail_input: 'Email',
     pass_1_input: 'Password',
@@ -16,7 +16,7 @@ var translations_en = {
     cancel: 'Cancel',
     about: 'About application',
     home: 'Start',
-    complete_form_login: 'The login username and password is required!',
+    complete_form_login: 'The login username and password are required!',
     loading_text: 'Loading...',
 
     //komentario froga
@@ -130,7 +130,7 @@ var translations_en = {
     back_text: 'Back',
     share_title: 'Share',
     change_language: 'Change Language',
-    trophy_text: 'Trophy',
+    trophy_text: 'Prizes',
 
     //Prices
     your_trophy_title: 'Win Prizes',
@@ -138,26 +138,33 @@ var translations_en = {
     active_trophy_title: 'Prizes available',
     disactive_trophy_title: 'Prizes not available',
     ok_text_popup: 'OK',
-    template_title: 'Congrats! You got a new award!',
-    template_msg_1: '<br/>Use the following code when accepting the award: <b>',
-    template_msg_2: '<p>You will see your winnings in the <b>"Awards"</b></p>',
+    template_title: 'Congrats! You got a new prize!',
+    template_msg_1: '<br/>Use the following code when accepting the prize: <b>',
+    template_msg_2: '<p>You will see your collected prizes in the <b>"Prizes"</b> menu</p>',
+    claimed_text_true: 'PICKED UP',
+    claimed_text_false: 'PENDING COLLECT',
+    event_date_text_label: 'Event date',
+    win_price_code: 'Price code',
+    end_data_text: 'Finish data',
+    end_data_text_not_set_date: 'Finish data: Not specified',
 
     //Result states
 
-    correct_answer_title: "You guessed the question!",
-    incorrect_answer_title: "You have not successful, try again.",
+    correct_answer_title: "You guessed it right!",
+    incorrect_answer_title: "Sorry, that was wrong, please try again.",
     progress: "Progress: ",
     more_info: "More info",
-    to_play: "Keep playing for more awards!",
+    more_info_btn: 'More info',
+    to_play: "Keep playing for more prizes!",
     start_to_play: "Try again",
 
     //Share messages
-    share_social_text: 'Share it with your friends!',
+    share_social_text: 'Share Euroku with your friends! Win prizes related to the European Capital of Culture, Donostia - San Sebastian 2016',
 
     //Pop up message components
 
     popup_title: 'Select language',
-    popup_description: 'To start play in Euroku you must select language',
+    popup_description: 'To start playing Euroku you must select your language',
 
     //Errors messages
     login_no_correct: 'The data log is incorrect. Please try again',

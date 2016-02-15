@@ -35,19 +35,21 @@ angular.module('euroku.prices', [])
                       event: resp.data[i].event,
                       url: resp.data[i].url,
                       amount: resp.data[i].amount,
+                      claimed: resp.data[i].claimed,
+                      last_day_to_claim: resp.data[i].last_day_to_claim,
                       title: resp.data[i].title,
                       enddate: resp.data[i].enddate,
                       key: resp.data[i].key
                     };
                     console.log(prices);
         $scope.user_prices.push(prices);
+
       }
+
       console.log($scope.user_prices);
     //Dauden sari guztien zerrenda
     pricesServices.getPublicPriceList().then (function(resp)
     {
-      console.log("45: " + resp.data);
-
       $scope.public_prices = [];
 
       for (var i = 0; i < resp.data.length; i++)
@@ -63,6 +65,8 @@ angular.module('euroku.prices', [])
                     console.log(prices);
         $scope.public_prices.push(prices);
       }
+      $scope.urls2 = $scope.storePriceDetailsUrls($scope.public_prices);
+      console.log($scope.urls2);
       console.log($scope.public_prices);
       $scope.loading = true;
       $ionicLoading.hide();
@@ -128,27 +132,25 @@ angular.module('euroku.prices', [])
     {
       console.log($scope.user_prices[index].key);
       price_key = $scope.user_prices[index].key;
+      window.localStorage.setItem('save_from_location', 'app.prices');
+      $state.go('app.details_price', { 'id': price_key, 'position': index})
+      $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        disableBack: true
+      });
+      console.log(type+":" + index);
     }
     else
     {
-      console.log($scope.public_prices[index].price_key);
-      //Save select public prices object in json
-      window.localStorage.setItem("public_price", angular.toJson($scope.public_prices[index]));
-      price_key = -1;
+      console.log($scope.urls2[index]);
+      if ($scope.urls2[index] === "")
+      {
+        $scope.urls2[index] = "http://dss2016.eu/";
+      }
+
+      $scope.openBrowser($scope.urls2[index]);
     }
 
-    /*if ($scope.public_prices[index].price_key === undefined || $scope.public_prices[index].price_key === null ||
-        $scope.user_prices[index].price_key === undefined || $scope.user_prices[index].price_key === null)
-    {
-      price_key = -1;
-    }*/
-    window.localStorage.setItem('save_from_location', 'app.prices');
-    $state.go('app.details_price', { 'id': price_key, 'position': index})
-    $ionicHistory.nextViewOptions({
-      disableAnimate: true,
-      disableBack: true
-    });
-    console.log(type+":" + index);
   };
 })
 
@@ -166,18 +168,19 @@ angular.module('euroku.prices', [])
       {
         console.log("52: " + resp.data);
         $scope.price = resp.data[$stateParams.position];
-        console.log($scope.price[$stateParams.position]);
+        console.log($scope.price);
+        $scope.urls = [];
+        $scope.urls.push($scope.price.url);
+        console.log($scope.urls[0]);
+        if ($scope.urls[index] === "")
+        {
+          $scope.urls[index] = "http://dss2016.eu/";
+        }
       },
       function(error)
       {
         console.error(error);
     });
-  }
-  else
-  {
-    console.log("Show public price details");
-    $scope.price = JSON.parse(window.localStorage.getItem('public_price'));
-    console.log(JSON.parse(window.localStorage.getItem('public_price')));
   }
 
   $scope.correct = true;

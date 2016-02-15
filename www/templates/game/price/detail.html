@@ -10,10 +10,11 @@
       <div class="col col-25"><img class="icons" src="http://www.psdgraphics.com/file/gold-trophy.jpg" width="100%" height="100%"/></div>
       <div class="col">
         <!--<h2>{{title}}</h2>-->
-        <p class="text"><span>Emango den saria</span> <br/> {{price.title}}</p>
-        <p class="erantzun_text"><!--{{result.correct_answer}}--></p>
+        <p ng-if="price.claimed"><b>{{'claimed_text_true' | translate}}</b></p>
+        <p ng-if="!price.claimed"><b>{{'claimed_text_false' | translate}}</b></p>
+        <p class="erantzun_text">{{price.title}}</p>
 
-        <p class="text">Kantitatea: {{price.amount}}</p><!--({{progress}} %)-->
+         <p ng-if="price.event">{{'event_date_text_label' | translate}}: {{price.enddate}}</p>
         <!--<button class="button button-clear button-calm"
             ng-click="goToSourceCustom()">
             Info +: {{result.provider}}
@@ -22,18 +23,18 @@
     </div>
     <div class="row resposinve-sm erantzuna">
            <div class="col">
-            <button class="button button-block button-dark" ng-click="openBrowser('http://dss2016.eu/')">Informazio gehiago</button>
+            <button class="button button-block button-dark" ng-click="openBrowser(urls[0])">{{'more_info_btn' | translate}}</button>
          </div>
     </div>
 
   <div class="row responsive-sm">
     <div class="col">
         <br/>
-        <p class="text" ng-if="price.key"><span>Lortutako sariaren kodea: <b>{{price.key}}</b></span></p>
+        <p class="text" ng-if="price.key"><span>{{'win_price_code' | translate}}: <b>{{price.key}}</b></span></p>
         <p class="erantzun_text"><!--{{result.correct_answer}}--></p>
 
-        <p class="text" ng-if="price.enddate">Iraungitze data: {{price.enddate}}</p><!--({{progress}} %)-->
-        <p class="text" ng-if="!price.enddate">Iraungitze data: Zehaztu gabe</p><!--({{progress}} %)-->
+        <p class="text" ng-if="price.enddate">{{'end_data_text' | translate}}: {{price.enddate}}</p><!--({{progress}} %)-->
+        <p class="text" ng-if="!price.enddate">{{'end_data_text_not_set_date' | translate}}</p><!--({{progress}} %)-->
         <p class="text"><span><b>Nola jaso:</b></span><br/> Jasotzeko argibideak (zehazteko dago...)</p><!--({{progress}} %)-->
 
       </div>

@@ -123,12 +123,14 @@ angular.module('euroku.controllers', [])
   };
   $rootScope.optionsLanguage = function()
   {
+
+    //ion-android-checkbox
     // Show the action sheet
    var hideSheet = $ionicActionSheet.show({
      buttons: [
-       { text: '<b>English</b>' },
-       { text: '<b>Español</b>' },
-       { text: '<b>Euskara</b>' }
+        { text: '<i class="icon ion-android-checkbox positive"></i> English' },
+        { text: '<i class="icon ion-android-checkbox positive"></i> Español' },
+        { text: '<i class="icon ion-android-checkbox positive"></i> Euskara' }
      ],
      //titleText: 'Modify your album',
      cancelText: 'Cancel',
@@ -230,16 +232,20 @@ angular.module('euroku.controllers', [])
 
   };
 
+  $scope.storePriceDetailsUrls = function(prices)
+  {
+    var urls = [];
+    for (var i = 0; i < prices.length; i++)
+    {
+      console.log(prices[i].url);
+      urls.push(prices[i].url);
+    }
+    return urls;
+  }
+
   $scope.openBrowser = function (url)
   {
-    if(ionic.Platform.platform() === "android")
-    {
-        window.open(url, '_system', 'location=no');
-    }
-    else
-    {
-        window.open(url, '_blank', 'location=yes');
-    }
+    window.open(url, '_system');
   };
 
 })

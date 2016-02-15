@@ -129,7 +129,7 @@ var translations_eu = {
     back_text: 'Atzera',
     share_title: 'Elkarbanatu',
     change_language: 'Aldatuz hizkuntzaz',
-    trophy_text: 'Saria',
+    trophy_text: 'Sariak',
 
     //Prices
     your_trophy_title: 'Zure sariak',
@@ -140,6 +140,12 @@ var translations_eu = {
     template_title: 'Zorionak, saria lortu duzu!',
     template_msg_1: '<br/>Erabili hurrengo kodea saria jasotzerako orduan: <b>',
     template_msg_2: '<p>Kodea eta instrukzioak gordeta dituzu jada <b>SARIAK</b> menu aukeran</p>',
+    claimed_text_true: 'JASOA',
+    claimed_text_false: 'JASOTZEKO',
+    event_date_text_label: 'Ebento data',
+    win_price_code: 'Lortutako sariaren kodea',
+    end_data_text: 'Iraungitze data',
+    end_data_text_not_set_date: 'Iraungitze data: Zehaztu gabe',
 
     //Result states
 
@@ -147,6 +153,7 @@ var translations_eu = {
     incorrect_answer_title: "Galdera EZ duzu asmatu. Saiatu berriro.",
     progress: "Aurrerapena: ",
     more_info: "Gehiago jakin",
+    more_info_btn: 'Informazio gehiago',
     to_play: "Jarraitu jokatzen sariak lortzeko!",
     start_to_play: "Saiatu berriro",
 
