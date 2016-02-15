@@ -100,28 +100,42 @@ img.displayed {
   background-color:  #459fdc !important;
 }
 
+.border{
+  margin: 0 15px;
+  font-size: 1em;
+}
+
+.border h3{
+ 
+  font-size: 20px;
+}
 .answers{
   width: 80%;
+   font-size: 20px !important;
   clear:both;
-  margin-top: 50px !important;
+  margin-top: 20px !important;
   text-align:center;
+  font-size: 120%;
 }
 
 
 .item_ans{
   margin-top: 15px !important;
   border-radius: 10px;
+  border-color: #459fdc !important;
 }
 
 .question{
   color: #d71a4a;
   float: left;
   margin-left: 20px;
+
 }
 
 #chronotime{
   font-size: 22px;
   margin-top: 5px;
+  margin-right: 10px;
 }
 /**emaitza*************/
 
