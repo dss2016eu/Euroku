@@ -54,37 +54,37 @@ angular.module('euroku.quiz', [])
       mytimeout = $timeout($scope.onTimeout, 1000);
   };
 
-    $scope.startTimer = function(question) {
-      $scope.question_game = question;
-      console.log($scope.question_game);
+  $scope.startTimer = function(question) {
+    $scope.question_game = question;
+    console.log($scope.question_game);
+    $rootScope.counter = 10;
+
+    /**********************************************************************
+    DISABLE CHRONOMETER!
+    ***********************************************************************/
+    mytimeout = $timeout($scope.onTimeout, 1000);
+    console.log("138 line: " + $scope.question_game.game_id);
+
+  };
+
+  // stops and resets the current timer
+  $scope.stopTimer = function() {
+      $scope.$broadcast('timer-stopped', $scope.counter);
       $rootScope.counter = 10;
+      console.log($scope.counter);
+      $timeout.cancel(mytimeout);
+  };
 
-      /**********************************************************************
-      DISABLE CHRONOMETER!
-      ***********************************************************************/
-      mytimeout = $timeout($scope.onTimeout, 1000);
-      console.log("138 line: " + $scope.question_game.game_id);
-
-    };
-
-    // stops and resets the current timer
-    $scope.stopTimer = function() {
-        $scope.$broadcast('timer-stopped', $scope.counter);
-        $rootScope.counter = 10;
-        console.log($scope.counter);
-        $timeout.cancel(mytimeout);
-    };
-
-    // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
-    $scope.$on('timer-stopped', function(event, remaining) {
-        if(remaining === 0) {
-            console.log('your time ran out!');
-            $rootScope.show_time = "00:10";
-            $rootScope.counter = 10;
-            //Send -1 if time end...
-            $scope.sendOption(-1);
-        }
-    });
+  // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
+  $scope.$on('timer-stopped', function(event, remaining) {
+      if(remaining === 0) {
+          console.log('your time ran out!');
+          $rootScope.show_time = "00:10";
+          $rootScope.counter = 10;
+          //Send -1 if time end...
+          $scope.sendOption(-1);
+      }
+  });
 
   $scope.sendOption = function (option)
   {
@@ -122,10 +122,10 @@ angular.module('euroku.quiz', [])
     console.log($scope.question);
 
     //Provisional to show always image!!!
-    if ($scope.question.photo === "")
+    /*if ($scope.question.photo === "")
     {
       $scope.question.photo = "/media/photologue/photos/cache/YU9JTL6FSY_display.jpg";
-    }
+    }*/
 
     $scope.startTimer($scope.question);
 
