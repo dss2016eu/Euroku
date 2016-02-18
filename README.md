@@ -29,6 +29,7 @@
 * Social Sharing (Edukia partekatzeko): cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
 * Keyboard: cordova plugin add ionic-plugin-keyboard
 * Plugin Whitelist: cordova plugin add cordova-plugin-whitelist
+* Inapbrowser: cordova plugin add cordova-plugin-inappbrowser
 
 #API dokumentazioa#
 
