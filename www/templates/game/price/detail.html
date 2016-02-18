@@ -14,7 +14,7 @@
         <p ng-if="!price.claimed"><b>{{'claimed_text_false' | translate}}</b></p>
         <p class="erantzun_text">{{price.title}}</p>
 
-         <p ng-if="price.event">{{'event_date_text_label' | translate}}: {{price.enddate}}</p>
+         <p ng-if="price.event">{{'event_date_text_label' | translate}}: {{price.date}}</p>
         <!--<button class="button button-clear button-calm"
             ng-click="goToSourceCustom()">
             Info +: {{result.provider}}
