@@ -66,7 +66,7 @@ angular.module('euroku.profile', [])
   },
   function(error)
   {
-    console.error("Errorea");
+    console.error("Errorea" + error);
 
     var alertPopup = $ionicPopup.alert({
       title: $scope.popup_title,
