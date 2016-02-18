@@ -180,9 +180,9 @@ angular.module('euroku.controllers', [])
       },
       function(error)
       {
-        window.localStorage.setItem ('device_id', 1);
+        window.localStorage.setItem ('device_id', '');
         window.localStorage.setItem('select_language', '');
-        console.error(error);
+        window.alert(error);
       });
     }
     else
