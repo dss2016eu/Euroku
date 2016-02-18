@@ -27,6 +27,8 @@
 * ngMessages (Angular Messages): https://github.com/angular/bower-angular-messages
 * ngCordova: http://ngcordova.com
 * Social Sharing (Edukia partekatzeko): cordova plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git
+* Keyboard: cordova plugin add ionic-plugin-keyboard
+* Plugin Whitelist: cordova plugin add cordova-plugin-whitelist
 
 #API dokumentazioa#
 
