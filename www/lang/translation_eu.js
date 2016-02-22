@@ -146,6 +146,7 @@ var translations_eu = {
     win_price_code: 'Lortutako sariaren kodea',
     end_data_text: 'Iraungitze data',
     end_data_text_not_set_date: 'Iraungitze data: Zehaztu gabe',
+    maps_app_open_btn_lbl: 'Nola heldu',
 
     //Result states
 

@@ -146,6 +146,7 @@ var translations_es = {
     win_price_code: 'Código del premio',
     end_data_text: 'Fecha de finalización',
     end_data_text_not_set_date: 'Fecha de finalización: Sin especificar',
+    maps_app_open_btn_lbl: 'Como llegar al punto',
 
     //Result states
 

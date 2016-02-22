@@ -147,6 +147,7 @@ var translations_en = {
     win_price_code: 'Price code',
     end_data_text: 'Finish data',
     end_data_text_not_set_date: 'Finish data: Not specified',
+    maps_app_open_btn_lbl: 'Getting to the point',
 
     //Result states
 
