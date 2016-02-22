@@ -35,7 +35,9 @@
 
         <p class="text" ng-if="price.enddate">{{'end_data_text' | translate}}: {{price.enddate}}</p><!--({{progress}} %)-->
         <p class="text" ng-if="!price.enddate">{{'end_data_text_not_set_date' | translate}}</p><!--({{progress}} %)-->
-        <p class="text"><span><b>Nola jaso:</b></span><br/> Jasotzeko argibideak (zehazteko dago...)</p><!--({{progress}} %)-->
+        <p class="text"><span><b>Nola jaso:</b></span><br/> Jasotzeko argibideak (zehazteko dago...)</p><!--({{progress}} %-->
+
+        <button class=" button button-block button-dark" ng-click="goToInformPoint()">{{"start_play" | translate}}</button>
 
       </div>
   </div>
