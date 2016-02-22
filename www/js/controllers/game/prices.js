@@ -172,16 +172,30 @@ angular.module('euroku.prices', [])
         $scope.urls = [];
         $scope.urls.push($scope.price.url);
         console.log($scope.urls[0]);
-        if ($scope.urls[index] === "")
-        {
-          $scope.urls[index] = "http://dss2016.eu/";
-        }
+        
       },
       function(error)
       {
         console.error(error);
     });
   }
+
+  $scope.goToInformPoint = function ()
+  { 
+    var location = '43.32005921624546,-1.9846737384796143';
+    console.log(location);
+    if (!ionic.Platform.isAndroid()) {
+        var url = 'maps://?q=' + location;
+        console.log("Browser or iOS: " + url);
+      } 
+      else if (ionic.Platform.isAndroid())
+      {
+        var url = 'geo://0,0?q='+location+'&z=15';
+        console.log("Android " + url);
+      }
+
+      window.open(url, '_system');
+  };
 
   $scope.correct = true;
 
