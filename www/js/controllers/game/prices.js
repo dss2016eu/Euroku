@@ -170,7 +170,15 @@ angular.module('euroku.prices', [])
         $scope.price = resp.data[$stateParams.position];
         console.log($scope.price);
         $scope.urls = [];
-        $scope.urls.push($scope.price.url);
+        if ($scope.price.url !== "")
+        {
+          $scope.urls.push($scope.price.url);
+        }
+        else
+        {
+          $scope.urls.push("http://dss2016.eu/");
+        }
+        
         console.log($scope.urls[0]);
         
       },
