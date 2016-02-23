@@ -146,8 +146,9 @@ var translations_es = {
     win_price_code: 'Código del premio',
     end_data_text: 'Fecha de finalización',
     end_data_text_not_set_date: 'Fecha de finalización: Sin especificar',
-    maps_app_open_btn_lbl: 'Como llegar al punto',
-
+    maps_app_open_btn_lbl: 'Como llegar',
+    prices_instructions_1: 'Instrucciones para recoger el premio:',
+    prices_instructions_2: 'Puedes recoger el premio en el punto de información que ha instalado San Sebastián 2016 en Alderdi Eder. El horario de apertura es de 10:30 a 20:00 todos los días de la semana.',
     //Result states
 
     correct_answer_title: "¡Has acertado!",

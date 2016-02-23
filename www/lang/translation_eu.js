@@ -147,6 +147,8 @@ var translations_eu = {
     end_data_text: 'Iraungitze data',
     end_data_text_not_set_date: 'Iraungitze data: Zehaztu gabe',
     maps_app_open_btn_lbl: 'Nola heldu',
+    prices_instructions_1: 'Jasotzeko argibideak:',
+    prices_instructions_2: 'Zure saria Donostia 2016k Alderdi Ederren duen informazio puntuan jaso beharko duzu. Bulegoa egunero 10:30etatik 20:00etara zabalik dago.',
 
     //Result states
 

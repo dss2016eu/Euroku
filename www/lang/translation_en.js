@@ -148,7 +148,8 @@ var translations_en = {
     end_data_text: 'Finish data',
     end_data_text_not_set_date: 'Finish data: Not specified',
     maps_app_open_btn_lbl: 'Getting to the point',
-
+    prices_instructions_1: 'Instructions to collect the prize:',
+    prices_instructions_2: 'You can get your award at the San Sebastian 2016 information point in Alderdi Eder. We are open everyday from 10:30 to 20:00.',
     //Result states
 
     correct_answer_title: "You guessed it right!",
