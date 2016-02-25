@@ -116,9 +116,9 @@ var translations_eu = {
     sponsor: 'Babeslea',
     developer: 'Garatzailea',
     creator: 'Sortzailea',
-    paragraph_1: 'Eus-----kakakakakkakakakakaka',
-    paragraph_2: 'Eus-----kakakakakkakakakakaka',
-    paragraph_3: 'Eus------kakakakakkakakakakaka',
+    paragraph_1: 'Europako Kultur Hiriburuaren jokoa da Euroku.',
+    paragraph_2: 'Galderak Donostiako Hiriburutzaren programarekin dute zerikusia, baita ere Europako kultura, hizkuntza eta hiriekin. Erantzun bakoitzarekin, egitarauko elementu baterako esteka izango duzu.',
+    paragraph_3: 'Galdera bakoitzak 3 erantzun posible ditu. Galderem kopuru jakin bat erreskadan asmatuz gero, saria jasoko duzu: opari bat, merchandising elementuren bat edo ekintzaren baterako sarrerak izan daitezke. Sariak Donostian bertan jaso ahal izango da.',
     paragraph_requirements_text: 'Gailuaren gutxieneko ezaugarriak',
     requirement_one: 'Gutxienez 1GB RAM Memoria',
     requirement_two: 'Android 4.X gutxienez',
@@ -144,8 +144,8 @@ var translations_eu = {
     claimed_text_false: 'JASOTZEKO',
     event_date_text_label: 'Ebento data',
     win_price_code: 'Lortutako sariaren kodea',
-    end_data_text: 'Iraungitze data',
-    end_data_text_not_set_date: 'Iraungitze data: Zehaztu gabe',
+    end_data_text: 'Saria jasotzeko azken eguna',
+    end_data_text_not_set_date: 'Saria jasotzeko azken eguna: Zehaztu gabe',
     maps_app_open_btn_lbl: 'Nola heldu',
     prices_instructions_1: 'Jasotzeko argibideak:',
     prices_instructions_2: 'Zure saria Donostia 2016k Alderdi Ederren duen informazio puntuan jaso beharko duzu. Bulegoa egunero 10:30etatik 20:00etara zabalik dago.',
@@ -153,7 +153,7 @@ var translations_eu = {
     //Result states
 
     correct_answer_title: "Galdera asmatu duzu!",
-    incorrect_answer_title: "Galdera EZ duzu asmatu. Saiatu berriro.",
+    incorrect_answer_title: "Ez duzu asmatu. Saiatu berriro.",
     progress: "Aurrerapena: ",
     more_info: "Gehiago jakin",
     more_info_btn: 'Informazio gehiago',
@@ -161,7 +161,7 @@ var translations_eu = {
     start_to_play: "Saiatu berriro",
 
     //Share messages
-    share_social_text: 'Euroku jeistera animatzen zaitut',
+    share_social_text: 'Euroku jaistera animatzen zaitut',
 
     //Pop up message components
 

@@ -144,8 +144,8 @@ var translations_es = {
     claimed_text_false: 'PENDIENTE DE RECOGER',
     event_date_text_label: 'Fecha del evento',
     win_price_code: 'Código del premio',
-    end_data_text: 'Fecha de finalización',
-    end_data_text_not_set_date: 'Fecha de finalización: Sin especificar',
+    end_data_text: 'Último día de recogida del premio',
+    end_data_text_not_set_date: 'Último día de recogida del premio: Sin especificar',
     maps_app_open_btn_lbl: 'Como llegar',
     prices_instructions_1: 'Instrucciones para recoger el premio:',
     prices_instructions_2: 'Puedes recoger el premio en el punto de información que ha instalado San Sebastián 2016 en Alderdi Eder. El horario de apertura es de 10:30 a 20:00 todos los días de la semana.',
@@ -164,7 +164,7 @@ var translations_es = {
 
     //Pop up message components
 
-    popup_title: 'Selecciona idioma',
+    popup_title: 'Seleccionar idioma',
     popup_description: 'Debes de seleccionar un idioma para poder empezar a jugar en Euroku',
 
     //Errors messages
