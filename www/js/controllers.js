@@ -319,7 +319,7 @@ angular.module('euroku.controllers', [])
     }
     else if (index === 2)
     {
-      url = 'http://www.ahotsak.eus';
+      url = 'http://dss2016.eu/';
     }
     else
     {
