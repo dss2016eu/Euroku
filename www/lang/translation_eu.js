@@ -119,7 +119,7 @@ var translations_eu = {
     paragraph_1: 'Eus-----kakakakakkakakakakaka',
     paragraph_2: 'Eus-----kakakakakkakakakakaka',
     paragraph_3: 'Eus------kakakakakkakakakakaka',
-    paragraph_requirements_text: 'Eus-----kakakakakkakakakakaka',
+    paragraph_requirements_text: 'Gailuaren gutxieneko ezaugarriak',
     requirement_one: 'Gutxienez 1GB RAM Memoria',
     requirement_two: 'Android 4.X gutxienez',
 

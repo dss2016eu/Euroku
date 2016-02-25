@@ -120,7 +120,7 @@ var translations_en = {
     paragraph_1: 'EN-----kakakakakkakakakakaka',
     paragraph_2: 'EN-----kakakakakkakakakakaka',
     paragraph_3: 'EN------kakakakakkakakakakaka',
-    paragraph_requirements_text: 'EN-----kakakakakkakakakakaka',
+    paragraph_requirements_text: 'Minimum requirements',
     requirement_one: 'Minimun 1GB RAM Memory',
     requirement_two: 'Android 4.X minimun',
 
