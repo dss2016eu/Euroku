@@ -186,6 +186,16 @@ img.displayed {
   margin-top: 15px;
 }
 
+.logotype
+{
+  float: left;
+  margin-left: 5px;
+  width: 65%;
+  height: 65%;
+  display: inline;
+  top: 20%;
+  position: relative;
+}
 
 .player_level{
   max-width: 100%;
