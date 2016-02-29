@@ -190,11 +190,17 @@ img.displayed {
 {
   float: left;
   margin-left: 5px;
-  width: 60%;
-  height: 60%;
+  width: 150px;
+  height: 20px;
   display: inline;
   top: 20%;
   position: relative;
+}
+
+.title .logotype
+{
+  margin-top: 2px;
+  margin-left: 0px !important;
 }
 
 .player_level{
