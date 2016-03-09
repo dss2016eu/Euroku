@@ -190,10 +190,9 @@ img.displayed {
 {
   float: left;
   margin-left: 5px;
-  width: 150px;
-  height: 20px;
-  display: inline;
-  top: 20%;
+  max-width: 150px;
+  max-height: 23px;
+  top:15%;
   position: relative;
 }
 
