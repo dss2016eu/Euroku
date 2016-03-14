@@ -196,6 +196,19 @@ img.displayed {
   position: relative;
 }
 
+.about_logo, .dss
+{
+  margin: 0 auto;
+  max-width: 180px;
+  max-height: 51px;
+  top:15%;
+  position: relative;
+}
+.dss{
+  max-width: 230px !important;
+  max-height: 46px !important;
+}
+
 .title .logotype
 {
   margin-top: 2px;
