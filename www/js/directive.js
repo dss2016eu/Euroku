@@ -49,10 +49,30 @@ angular.module('euroku.directives', [])
       }
     };
   })
+.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+        controller: ["$scope", "$rootScope", function($scope, $rootScope) {
+            
+            
+            $scope.test = function(arg) {
+                console.log(arg);
+            }
+        }],
+        link: function(scope, element, attrs) {
+            element.bind('load', function() {
+                console.log('image is loaded');
+                console.log(scope.startTimer());
+                
+            });
+        }
+    };
+})
 .directive('dynamic', function ($compile) {
     return {
       restrict: 'A',
       replace: true,
+
       link: function (scope, ele, attrs) {
         scope.$watch(attrs.dynamic, function(html) {
           ele.html(html);
