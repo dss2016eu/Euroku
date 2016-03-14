@@ -54,10 +54,25 @@ angular.module('euroku.quiz', [])
       mytimeout = $timeout($scope.onTimeout, 1000);
   };
 
-  $scope.startTimer = function(question) {
-    $scope.question_game = question;
+  $scope.startTime = function ()
+  {
+    console.log("OK!!!!");
+  }
+
+  $scope.startTimer = function() {
+
+    console.log("Start counter!!!");
+    //$scope.question_game = question;
     console.log($scope.question_game);
     $rootScope.counter = 10;
+
+    $scope.loading = true;
+    $ionicLoading.hide();
+
+    $timeout(function () {
+       
+
+    }, 750);
 
     /**********************************************************************
     DISABLE CHRONOMETER!
@@ -127,29 +142,26 @@ angular.module('euroku.quiz', [])
       $scope.question.photo = "/media/photologue/photos/cache/YU9JTL6FSY_display.jpg";
     }*/
 
-    $scope.startTimer($scope.question);
+    //$scope.startTimer($scope.question);
 
-    $ionicLoading.hide();
-    $scope.loading = true;
+    $scope.question_game = $scope.question;
+    console.log(JSON.stringify($scope.question_game));
+    $rootScope.counter = 10;
+
+    if ($scope.question_game.photo === "")
+    {
+      console.log("Not image question");
+      $scope.startTimer();
+    }
+
+    
+    
   //console.log($scope.question);
   },
   function(error)
   {
     console.error("Errorea");
 
-    $scope.question = {
-                      answers: ["Irazi", "Areriotu", "Zarratu"],
-                      title: "'Etsaitu' Bizkaian",
-                      photo: "",
-                      game_id: 130,
-                      id: 129,
-                      round: 1,
-                      rounds: 2
-                      };
-    console.log($scope.question);
-    $scope.startTimer($scope.question);
-    $ionicLoading.hide();
-    $scope.loading = true;
     window.localStorage.setItem("game_id", "");
   });
 

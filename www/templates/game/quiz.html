@@ -24,11 +24,11 @@
       <div class="question_title">
         <h2></h2>
       </div>
-      <div class="border">
+      <div class="border item-text-wrap">
 
         <h3 ng-bind-html="question.title"></h3>
         <div ng-if="question.photo">
-          <img src="{{localhost}}{{question.photo}}" alt = ""/>
+          <img ng-src="{{localhost}}{{question.photo}}" imageonload/>
         </div>
 
       </div>
