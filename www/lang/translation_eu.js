@@ -128,7 +128,7 @@ var translations_eu = {
     logout: 'Itxi saioa',
     back_text: 'Atzera',
     share_title: 'Elkarbanatu',
-    change_language: 'Aldatuz hizkuntzaz',
+    change_language: 'Aldatu hizkuntza',
     trophy_text: 'Sariak',
 
     //Prices
