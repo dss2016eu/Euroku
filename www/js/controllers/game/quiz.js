@@ -63,7 +63,7 @@ angular.module('euroku.quiz', [])
     DISABLE CHRONOMETER!
     ***********************************************************************/
     mytimeout = $timeout($scope.onTimeout, 1000);
-    console.log("138 line: " + $scope.question_game.game_id);
+    console.log("138 line: " + $scope.question_game);
 
   };
 

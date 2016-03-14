@@ -20,7 +20,7 @@
 
 
         <!--Progresoa adierazteko, partida amaitu bada "Jokoa amaitu duzu!" mezua erakutsiko digute-->
-        <p ng-if="result.correct && round<rounds" class="text">{{"progress" | translate}} {{round}} / {{rounds}} </p><!--({{progress}} %)-->
+        <p ng-if="result.correct && round!=rounds" class="text">{{"progress" | translate}} {{round}} / {{rounds}} </p><!--({{progress}} %)-->
         <p ng-if="result.correct && round==rounds" class="text">Jokoa amaitu duzu!</p><!--({{progress}} %)-->
         <p ng-if="!result.correct" class="text">{{"progress" | translate}} 0 / {{rounds}} </p><!--({{progress}} %)-->
         <!--<button class="button button-clear button-calm"
@@ -44,7 +44,7 @@
         {{"start_to_play" | translate}}
     </span>
 
-    <button ng-if="result.correct && round<rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"next_question" | translate}}</button>
+    <button ng-if="result.correct && round!=rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"next_question" | translate}}</button>
     <button ng-if="result.correct && round==rounds" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
     <button ng-if="!result.correct" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
     <span class="center">

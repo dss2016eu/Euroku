@@ -77,7 +77,7 @@ angular.module('euroku.result', [])
         .then(function(resp)
         {
           $scope.result = resp.data;
-          console.log("52: " + resp.data.correct);
+          console.log("52: " + JSON.stringify(resp.data));
 
           if ($scope.result.correct === true)
           {
@@ -155,6 +155,8 @@ angular.module('euroku.result', [])
   $scope.game_id = $stateParams.game_id;
   $scope.round = $stateParams.round;
   $scope.rounds = $stateParams.rounds;
+
+  console.log($scope.round + " / " + $scope.rounds);
 
   $scope.progress = (($scope.round * 100) / $scope.rounds).toFixed(2);
   console.log("Progress: " + $scope.progress);
