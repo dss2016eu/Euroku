@@ -19,7 +19,7 @@ angular.module('euroku.services.profile', [])
 
         console.log(URL_LOCALHOST+REGISTER + "?language=" + lang_code);
 
-        return $http.get(URL_LOCALHOST+REGISTER).success(
+        return $http.get(URL_LOCALHOST+REGISTER+ "?language=" + lang_code).success(
 
             function(resp)
             {
