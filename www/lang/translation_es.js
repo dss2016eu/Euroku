@@ -160,7 +160,7 @@ var translations_es = {
     start_to_play: "Intentarlo de nuevo",
 
     //Share messages
-    share_social_text: 'Te animo a descargar Euroku: puedes ganar premios relacionados con DSS2016, la Capital Cultural Eurpopea ;)',
+    share_social_text: 'Te animo a descargar Euroku: puedes ganar premios relacionados con DSS2016, la Capital Cultural Europea ;)',
 
     //Pop up message components
 

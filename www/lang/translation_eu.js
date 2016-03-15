@@ -161,7 +161,7 @@ var translations_eu = {
     start_to_play: "Saiatu berriro",
 
     //Share messages
-    share_social_text: 'Euroku jaistera animatzen zaitut',
+    share_social_text: 'Euroku jaistera animatzen zaitut: DSS2016rekin zerikusia duten sariak lortu ditzazkezu ;)',
 
     //Pop up message components
 
