@@ -190,7 +190,7 @@ angular.module('euroku.prices', [])
 
   $scope.goToInformPoint = function ()
   { 
-    var location = '43.32005921624546,-1.9846737384796143';
+    var location = '43.315329, -1.982663';
     console.log(location);
     if (!ionic.Platform.isAndroid()) {
         var url = 'maps://?q=' + location;
