@@ -148,7 +148,10 @@ var translations_es = {
     end_data_text_not_set_date: 'Último día de recogida del premio: Sin especificar',
     maps_app_open_btn_lbl: 'Como llegar',
     prices_instructions_1: 'Instrucciones para recoger el premio:',
-    prices_instructions_2: 'Puedes recoger el premio en el punto de información que ha instalado San Sebastián 2016 en Alderdi Eder. El horario de apertura es de 10:30 a 20:00 todos los días de la semana.',
+    prices_instructions_2: 'Espacio 2016',
+    prices_instructions_3: 'Calle Easo, 43 Donostia /San Sebastián 20006 Spain',
+    prices_instructions_4: 'Horario: de lunes a viernes 09:00-19:00.',
+
     //Result states
 
     correct_answer_title: "¡Has acertado!",

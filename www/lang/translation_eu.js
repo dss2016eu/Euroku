@@ -148,7 +148,9 @@ var translations_eu = {
     end_data_text_not_set_date: 'Saria jasotzeko azken eguna: Zehaztu gabe',
     maps_app_open_btn_lbl: 'Nola heldu',
     prices_instructions_1: 'Jasotzeko argibideak:',
-    prices_instructions_2: 'Zure saria Donostia 2016k Alderdi Ederren duen informazio puntuan jaso beharko duzu. Bulegoa egunero 10:30etatik 20:00etara zabalik dago.',
+    prices_instructions_2: '2016 Gunea',
+    prices_instructions_3: 'Easo kalea, 43 Donostia /San Sebastián 20006 Spain',
+    prices_instructions_4: 'Ordutegia: Astelehenetik ostiralera 09:00-19:00.',
 
     //Result states
 

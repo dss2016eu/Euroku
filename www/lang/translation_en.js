@@ -149,7 +149,9 @@ var translations_en = {
     end_data_text_not_set_date: 'Last day to collect the prize: Not specified',
     maps_app_open_btn_lbl: 'Info Point Map',
     prices_instructions_1: 'Instructions to collect the prize:',
-    prices_instructions_2: 'You can get your award at the San Sebastian 2016 information point in Alderdi Eder. We are open everyday from 10:30 to 20:00.',
+    prices_instructions_2: 'Space 2016',
+    prices_instructions_3: 'Easo street, 43 Donostia /San Sebastián 20006 Spain',
+    prices_instructions_4: 'Schedule: from Monday to Friday 09:00-19:00.',
     //Result states
 
     correct_answer_title: "You guessed it right!",
