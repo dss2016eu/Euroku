@@ -15,13 +15,18 @@ angular.module('euroku.quiz', [])
 .controller('QuizCtrl', function($scope, $http, $ionicLoading, $ionicHistory,
 									$state, $ionicScrollDelegate, $translate, $ionicSideMenuDelegate, questionsServices, $timeout, $rootScope, URL_LOCALHOST) {
 
-  $scope.loading = false;
+  $scope.$on('$ionicView.beforeEnter', function()
+  {
 
-  $rootScope.counter = 10;
-  $rootScope.menu_show= false;
+    $scope.loading = false;
 
-  $ionicSideMenuDelegate.canDragContent(false);
+    $rootScope.counter = 10;
+    $rootScope.menu_show= false;
 
+    $ionicSideMenuDelegate.canDragContent(false);
+
+  });
+  
   $scope.localhost = URL_LOCALHOST;
 
   $scope.localhost = $scope.localhost.substring(0, $scope.localhost.length-1);
