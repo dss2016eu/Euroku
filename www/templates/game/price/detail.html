@@ -35,7 +35,9 @@
 
         <p class="text" ng-if="price.enddate">{{'end_data_text' | translate}}: {{price.enddate}}</p><!--({{progress}} %)-->
         <p class="text" ng-if="!price.enddate">{{'end_data_text_not_set_date' | translate}}</p><!--({{progress}} %)-->
-        <p class="text"><span><b>{{'prices_instructions_1' | translate}}</b></span><br/><b>{{'prices_instructions_2' | translate}}</b>
+        <span><b>{{'prices_instructions_1' | translate}}</b></span>
+        <span ng-bind-html="html" class="text"></span>
+        <!--<br/><b>{{'prices_instructions_2' | translate}}</b>
                 <br/>{{'prices_instructions_3' | translate}}
                 <br/>{{'prices_instructions_4' | translate}}</p><!--({{progress}} %-->
 
