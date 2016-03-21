@@ -28,7 +28,12 @@
             Info +: {{result.provider}}
         </button>-->
       </div>
-  </div>
+    </div>
+
+    <div class="row erantzuna" ng-show="incorrect">
+      <p>{{'data_not_correct' | translate}}</p>
+      <button ng-if="!result.correct" class=" button button-block button-dark" ng-click="morePlay()">{{"start_play" | translate}}</button>
+    </div>
 
   <div class="row responsive-sm">
     <div class="col">
