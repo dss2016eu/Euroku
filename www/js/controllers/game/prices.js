@@ -20,6 +20,8 @@ angular.module('euroku.prices', [])
 
   $ionicLoading.show();
 
+  //window.localStorage.setItem('device_id', '0861d1f1844a47f89ea8c87a8ccbc4ea');
+
   //Erabiltzailearen sariak
   pricesServices.getUserListPrices().then(function(resp)
   {
@@ -178,8 +180,12 @@ angular.module('euroku.prices', [])
         {
           $scope.urls.push("http://dss2016.eu/");
         }
+
+        $scope.html = $scope.price.html;
         
         console.log($scope.urls[0]);
+
+        console.log($scope.price.latlong);
         
       },
       function(error)
@@ -191,6 +197,11 @@ angular.module('euroku.prices', [])
   $scope.goToInformPoint = function ()
   { 
     var location = '43.315329, -1.982663';
+    if ($scope.price.latlong !== "")
+    {
+      location = $scope.price.latlong;
+      console.log(location);
+    }
     console.log(location);
     if (!ionic.Platform.isAndroid()) {
         var url = 'maps://?q=' + location;
