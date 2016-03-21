@@ -21,10 +21,11 @@
     "com.ionic.keyboard",
     "cordova-plugin-device",
     "cordova-plugin-globalization",
-    "nl.x-services.plugins.socialsharing"
+    "nl.x-services.plugins.socialsharing",
+    "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios",
-    "android"
+    "android",
+    "ios"
   ]
 }

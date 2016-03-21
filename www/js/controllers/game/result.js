@@ -5,6 +5,7 @@ angular.module('euroku.result', [])
 
   $scope.play = '';
   $scope.correct = false;
+  $scope.incorrect = false;
   $rootScope.menu_show = true;
   $ionicSideMenuDelegate.canDragContent(true);
 
@@ -145,6 +146,9 @@ angular.module('euroku.result', [])
         {
           console.error(error);
           $ionicLoading.hide();
+          console.log("Error...");
+          $scope.correct = false;
+          $scope.incorrect = true;
       });
 
   };
