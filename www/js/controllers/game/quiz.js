@@ -85,6 +85,10 @@ angular.module('euroku.quiz', [])
     mytimeout = $timeout($scope.onTimeout, 1000);
     console.log("138 line: " + $scope.question_game);
 
+    window.localStorage.setItem("game_id", "");
+
+    console.log("GAME_ID: " + window.localStorage.getItem("game_id"));
+
   };
 
   // stops and resets the current timer
