@@ -17,7 +17,7 @@ angular.module('euroku', ['ionic',
                           'pascalprecht.translate',
                           'ngMessages'])
 
-.run(function($ionicPlatform, URL_LOCALHOST) {
+.run(function($ionicPlatform, URL_LOCALHOST, ANALYTICS) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -25,6 +25,20 @@ angular.module('euroku', ['ionic',
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
 
+    }
+
+    //Required com.rjfun.cordova.plugin.admob
+    if(typeof analytics !== "undefined")
+    {
+        analytics.startTrackerWithId(ANALYTICS.tracker_id);
+        console.log("User Tracker ID: " + ANALYTICS.tracker_id);
+        //Test register trackview
+        //analytics.trackView(ANALYTICS.start_app + );
+        analytics.trackView(ANALYTICS.start_app + " (" + window.localStorage.getItem('lang') + ")");
+    }
+    else
+    {
+        console.log("Google Analytics Unavailable");
     }
     /*if (window.StatusBar) {
       // org.apache.cordova.statusbar required
