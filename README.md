@@ -30,6 +30,7 @@
 * Keyboard: cordova plugin add ionic-plugin-keyboard
 * Plugin Whitelist: cordova plugin add cordova-plugin-whitelist
 * Inapbrowser: cordova plugin add cordova-plugin-inappbrowser
+* Google Analytics: cordova plugin add cordova-plugin-google-analytics
 
 #API dokumentazioa#
 
