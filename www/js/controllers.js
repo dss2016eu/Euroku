@@ -1,7 +1,7 @@
 angular.module('euroku.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, URL_LOCALHOST, $ionicHistory, $rootScope, $timeout,
-                            $ionicActionSheet, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing, profileServices, $ionicPlatform) {
+                            $ionicActionSheet, ANALYTICS, $rootScope, $translate, $ionicPopup, $state, $cordovaSocialSharing, profileServices, $ionicPlatform) {
 
   $scope.url = "";
 
@@ -38,6 +38,28 @@ angular.module('euroku.controllers', [])
 
   }, 100);
 
+  $scope.openView = function(state)
+  {
+    if (state === 'whatis')
+    {
+      $scope.trackGoogleAnalyticsEvent(ANALYTICS.what_is_euroku);
+    }
+    else if (state === 'prices')
+    {
+      $scope.trackGoogleAnalyticsEvent(ANALYTICS.prices);
+    }
+    $scope.noAnimateNoHistory();
+    $state.go('app.' + state);
+  }
+
+  $scope.noAnimateNoHistory = function()
+  {
+    $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        disableBack: true
+      });
+  };
+
   $scope.getRandomBoolean = function()
   {
     return parseInt(Math.random() * 2) ?  true : false;
@@ -72,6 +94,7 @@ angular.module('euroku.controllers', [])
 
   $scope.morePlay = function ()
   {
+    $scope.trackGoogleAnalyticsEvent(ANALYTICS.start_play);
     $state.go('app.quiz');
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
@@ -82,6 +105,7 @@ angular.module('euroku.controllers', [])
 
   $rootScope.shareApp = function()
   {
+    $scope.trackGoogleAnalyticsEvent(ANALYTICS.share_app);
     console.log("SHARE!!!");
     $cordovaSocialSharing.share("#Donostia2016 " + $scope.share_text, null, null, "http://dss2016.eu/");
   }
@@ -123,6 +147,8 @@ angular.module('euroku.controllers', [])
   };
   $rootScope.optionsLanguage = function()
   {
+
+    $scope.trackGoogleAnalyticsEvent(ANALYTICS.select_language_option);
 
     //ion-android-checkbox
     // Show the action sheet
@@ -245,12 +271,27 @@ angular.module('euroku.controllers', [])
 
   $scope.openBrowser = function (url)
   {
+    if (url != 'http://www.codesyntax.com' && url != 'http://dss2016.eu/')
+    {
+      $scope.trackGoogleAnalyticsEvent(ANALYTICS.show_source);
+    }
     window.open(url, '_system');
+  };
+
+  $scope.trackGoogleAnalyticsEvent = function (text)
+  {
+    console.log(text);
+    if(typeof analytics !== "undefined")
+    {
+      console.log("Register GA Event: " + text);
+      
+      analytics.trackView(text + " (" + window.localStorage.getItem('lang') + ")");
+    }
   };
 
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate, profileServices)
+.controller('MainCtrl', function($scope, ANALYTICS, $ionicSideMenuDelegate, $state, $translate, $rootScope, $ionicHistory, $ionicSideMenuDelegate, profileServices)
 {
   //$ionicSideMenuDelegate.canDragContent(false);
   $rootScope.menu_show = true;
@@ -279,7 +320,6 @@ angular.module('euroku.controllers', [])
     $ionicSideMenuDelegate.canDragContent(true);
     if (window.localStorage.getItem('device_id') === null || window.localStorage.getItem('device_id') === "")
     {
-
       console.log("Update to: " + key);
       $scope.updateLanguage (key);
 
@@ -289,6 +329,8 @@ angular.module('euroku.controllers', [])
 
   $scope.goPlay = function()
   {
+
+    $scope.trackGoogleAnalyticsEvent(ANALYTICS.start_play);
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
       disableBack: true
@@ -297,9 +339,10 @@ angular.module('euroku.controllers', [])
   };
 })
 
-.controller('WhatIsCtrl', function($scope, $ionicHistory, $state) {
+.controller('WhatIsCtrl', function($scope, $ionicHistory, $state, ANALYTICS) {
   $scope.morePlay = function ()
   {
+    $scope.trackGoogleAnalyticsEvent(ANALYTICS.start_play);
     window.localStorage.setItem ('result', 'true');
     //$state.go('app.play', {}, {reload: true});
     $state.go('app.quiz');
@@ -307,7 +350,6 @@ angular.module('euroku.controllers', [])
               disableBack: true,
               disableAnimate: true
     });
-
   };
   $scope.goToSource = function (index)
   {
@@ -315,10 +357,13 @@ angular.module('euroku.controllers', [])
     console.log(index+"index...");
     if (index === 1)
     {
+     
+      $scope.trackGoogleAnalyticsEvent(ANALYTICS.go_to_web_cs);
       url = 'http://www.codesyntax.com';
     }
     else if (index === 2)
     {
+      $scope.trackGoogleAnalyticsEvent(ANALYTICS.go_to_web_dss2016);
       url = 'http://dss2016.eu/';
     }
     else
