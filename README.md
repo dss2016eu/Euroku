@@ -1,27 +1,27 @@
-#Garapenerako instalazioa egiteko instrukzioak:#
+#Development of installation instructions:#
 
-1.- Instalatu NodeJS. Jarraitu argibide hauek: https://nodejs.org/
+1.- Install NodeJS. More info: https://nodejs.org/
 
-2.- Instalatu Cordova eta Ionic: 
+2.- Install Cordova and Ionic: 
 
     $ sudo npm install -g cordova ionic
 
-3.- Gero, proiektu honen dependentziak bakarrik instalatu
+3.- After you install the dependencies of these projects
 
     $ npm install
     $ bower install
 
-4.- Garapen ingurunea martxan jarri:
+4.- Start app in browser:
 
     $ ionic serve
 
-5.- Aplikazioa konpilatzeko fitxategiak sortu:
+5.- Create files to compile application in Android and iOS platforms:
 
     $ ionic platform add ios android
 
-6.- Pauso horren ostean, platforms/ios eta platforms/android direktorioak sortuko ditu gero Android Studio eta XCode-rekin ireki, aplikazioak konpilatu eta dagokion app-storera kargatu ahal izateko.
+6.- After this step, platforms/ios and platforms/android directories will create more open Android Studio and XCode with applications to compile and load the App-Store.
 
-#Instalaturik dituen moduloak:#
+#Installed modules list and references:#
 
 * Angular Translate (pascalprecht.translate): https://github.com/angular-translate/angular-translate
 * ngMessages (Angular Messages): https://github.com/angular/bower-angular-messages
@@ -32,14 +32,14 @@
 * Inapbrowser: cordova plugin add cordova-plugin-inappbrowser
 * Google Analytics: cordova plugin add cordova-plugin-google-analytics
 
-#API dokumentazioa#
+#API documentation#
 
-* http://eurokudok.arno.cs
+* http://eurokudok.arno.cs (local url)
 
-# Formulario balidazioa #
+# Validate forms #
 
-Ionic-en liburutegiez gain 'Angular Messages" liburutegiak beharko ditugu.
+Apart from the need Ionic libraries of "Angular Messages".
 
-#Aplikazioaren balore konstanteak#
+#App constant values#
 
-* 'constant.js' fitxategian edukiko dugu aukera editatzeko daudenak eta berriak gehitzeko. Hau, www/constant direktorioaren barruan aurkituko dugu.
+* 'Constant.js' chance to edit the contents of files and add new ones. File find in inside www/constant directory.
